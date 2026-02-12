@@ -201,15 +201,16 @@
         .logo-mark {
             width: 36px;
             height: 36px;
-            border-radius: 10px;
-            background: var(--gradient-accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--bg-primary);
             position: relative;
+        }
+
+        .logo-mark svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 8px rgba(0, 212, 170, 0.3));
         }
 
         .logo-mark::after {
@@ -255,6 +256,82 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: 24px;
+            position: relative;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 50px;
+            border: 1px solid var(--border-medium);
+            background: transparent;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .lang-toggle:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-start);
+            color: var(--text-primary);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-medium);
+            border-radius: 12px;
+            padding: 8px 0;
+            list-style: none;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            min-width: 120px;
+            z-index: 1001;
+        }
+
+        .lang-dropdown.open {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        .lang-dropdown li {
+            padding: 0;
+        }
+
+        .lang-dropdown a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .lang-dropdown a:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+
+        .lang-dropdown a.active {
+            color: var(--accent-start);
+            font-weight: 600;
         }
 
         .nav-cta {
@@ -358,9 +435,31 @@
             -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
         }
 
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 6vw, 80px);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
         .hero-content {
             position: relative;
             z-index: 1;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-diagram {
+            width: 100%;
+            height: 100%;
         }
 
         .hero-badge {
@@ -499,8 +598,22 @@
             position: relative;
         }
 
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' style='stop-color:%2300D4AA;stop-opacity:0.05' /%3E%3Cstop offset='100%' style='stop-color:%230099FF;stop-opacity:0.05' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 50 10 L 90 30 L 90 70 L 50 90 L 10 70 L 10 30 Z' fill='none' stroke='url(%23grad)' stroke-width='0.5' opacity='0.3'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='url(%23grad)' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E") repeat;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
         .services-header {
             margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
         }
 
         .services-grid {
@@ -511,6 +624,8 @@
             border: 1px solid var(--border-subtle);
             border-radius: 20px;
             overflow: hidden;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card {
@@ -620,42 +735,10 @@
             padding: 40px;
         }
 
-        /* Animated code block */
-        .code-block {
+        .architecture-diagram {
             width: 100%;
-            background: rgba(0,0,0,0.4);
-            border-radius: 12px;
-            border: 1px solid var(--border-subtle);
-            padding: 24px;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            line-height: 1.8;
-            overflow: hidden;
+            height: 100%;
         }
-
-        .code-line {
-            opacity: 0;
-            animation: type-in 0.5s var(--ease-out-expo) forwards;
-        }
-
-        .code-line:nth-child(1) { animation-delay: 0.2s; }
-        .code-line:nth-child(2) { animation-delay: 0.5s; }
-        .code-line:nth-child(3) { animation-delay: 0.8s; }
-        .code-line:nth-child(4) { animation-delay: 1.1s; }
-        .code-line:nth-child(5) { animation-delay: 1.4s; }
-        .code-line:nth-child(6) { animation-delay: 1.7s; }
-        .code-line:nth-child(7) { animation-delay: 2.0s; }
-
-        @keyframes type-in {
-            from { opacity: 0; transform: translateX(-10px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .code-keyword { color: var(--accent-end); }
-        .code-func { color: var(--accent-start); }
-        .code-string { color: #FFD166; }
-        .code-comment { color: var(--text-tertiary); }
-        .code-bracket { color: var(--text-secondary); }
 
         .about-features {
             display: flex;
@@ -983,6 +1066,7 @@
            ═══════════════════════════════════════════════════ */
         @media (max-width: 968px) {
             .nav-links { display: none; }
+            .language-switcher { display: none; }
             .menu-toggle { display: flex; }
 
             .services-grid {
@@ -996,6 +1080,14 @@
 
             .about-visual {
                 aspect-ratio: 16/10;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                display: none;
             }
 
             .process-steps {
@@ -1133,14 +1225,52 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <div class="logo-mark">E</div>
+                <div class="logo-mark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0099FF;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Outer circle -->
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="url(#logoGrad)" stroke-width="1.5" opacity="0.8"/>
+                        <!-- Central nodes -->
+                        <circle cx="20" cy="10" r="2.5" fill="url(#logoGrad)" />
+                        <circle cx="28" cy="20" r="2.5" fill="url(#logoGrad)" />
+                        <circle cx="20" cy="30" r="2.5" fill="url(#logoGrad)" />
+                        <circle cx="12" cy="20" r="2.5" fill="url(#logoGrad)" />
+                        <circle cx="20" cy="20" r="2" fill="url(#logoGrad)" />
+                        <!-- Connecting lines -->
+                        <line x1="20" y1="10" x2="20" y2="20" stroke="url(#logoGrad)" stroke-width="1" opacity="0.6"/>
+                        <line x1="20" y1="20" x2="28" y2="20" stroke="url(#logoGrad)" stroke-width="1" opacity="0.6"/>
+                        <line x1="20" y1="20" x2="20" y2="30" stroke="url(#logoGrad)" stroke-width="1" opacity="0.6"/>
+                        <line x1="20" y1="20" x2="12" y2="20" stroke="url(#logoGrad)" stroke-width="1" opacity="0.6"/>
+                        <!-- E-shape formed by nodes -->
+                        <line x1="12" y1="10" x2="28" y2="10" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+                        <line x1="12" y1="20" x2="26" y2="20" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+                        <line x1="12" y1="30" x2="28" y2="30" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+                    </svg>
+                </div>
                 EcoVibe
             </a>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#process" data-i18n="nav.process">Process</a></li>
+                <li>
+                    <div class="language-switcher">
+                        <button class="lang-toggle" id="langToggle" aria-label="Language">
+                            <span id="langDisplay">EN</span>
+                            <span style="opacity: 0.5;">|</span>
+                        </button>
+                        <ul class="lang-dropdown" id="langDropdown">
+                            <li><a href="#" data-lang="en" class="active">English</a></li>
+                            <li><a href="#" data-lang="zh">中文</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in Touch</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -1151,10 +1281,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuClose">&times;</button>
-        <a href="#services" onclick="closeMobileMenu()">Services</a>
-        <a href="#about" onclick="closeMobileMenu()">About</a>
-        <a href="#process" onclick="closeMobileMenu()">Process</a>
-        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+        <a href="#services" onclick="closeMobileMenu()" data-i18n="nav.services">Services</a>
+        <a href="#about" onclick="closeMobileMenu()" data-i18n="nav.about">About</a>
+        <a href="#process" onclick="closeMobileMenu()" data-i18n="nav.process">Process</a>
+        <a href="#contact" onclick="closeMobileMenu()" data-i18n="nav.cta">Contact</a>
     </div>
 
     <!-- Hero -->
@@ -1162,42 +1292,113 @@
         <div class="hero-bg">
             <div class="grid-pattern"></div>
         </div>
-        <div class="container hero-content">
-            <div class="hero-badge reveal">
-                <div class="hero-badge-dot"></div>
-                Pioneering Digital Futures
-            </div>
-            <h1 class="reveal reveal-delay-1">
-                Architect Your<br><span class="gradient-text">Digital Evolution</span>
-            </h1>
-            <p class="hero-desc reveal reveal-delay-2">
-                We engineer bespoke software solutions and strategic IT consulting that transform enterprises into agile, future-ready digital ecosystems.
-            </p>
-            <div class="hero-actions reveal reveal-delay-3">
-                <a href="#contact" class="btn-primary">
-                    Start a Project
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge reveal">
+                        <div class="hero-badge-dot"></div>
+                        <span data-i18n="hero.badge">Pioneering Digital Futures</span>
+                    </div>
+                    <h1 class="reveal reveal-delay-1" data-i18n="hero.title">
+                        Architect Your<br><span class="gradient-text">Digital Evolution</span>
+                    </h1>
+                    <p class="hero-desc reveal reveal-delay-2" data-i18n="hero.desc">
+                        We engineer bespoke software solutions and strategic IT consulting that transform enterprises into agile, future-ready digital ecosystems.
+                    </p>
+                    <div class="hero-actions reveal reveal-delay-3">
+                        <a href="#contact" class="btn-primary" data-i18n="hero.cta">
+                            Start a Project
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn-ghost" data-i18n="hero.explore">Explore Services</a>
+                    </div>
+                    <div class="hero-stats reveal reveal-delay-4">
+                        <div class="hero-stat">
+                            <h3 class="gradient-text">150+</h3>
+                            <p data-i18n="hero.stat1">Projects Delivered</p>
+                        </div>
+                        <div class="hero-stat">
+                            <h3 class="gradient-text">98%</h3>
+                            <p data-i18n="hero.stat2">Client Retention</p>
+                        </div>
+                        <div class="hero-stat">
+                            <h3 class="gradient-text">12+</h3>
+                            <p data-i18n="hero.stat3">Years of Expertise</p>
+                        </div>
+                        <div class="hero-stat">
+                            <h3 class="gradient-text">24/7</h3>
+                            <p data-i18n="hero.stat4">Support Coverage</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual reveal reveal-delay-2">
+                    <svg class="hero-diagram" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#0099FF;stop-opacity:0.3" />
+                            </linearGradient>
+                            <style>
+                                @keyframes float-up { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+                                @keyframes rotate-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                                @keyframes pulse-glow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+                                .node { animation: float-up 4s ease-in-out infinite; }
+                                .node:nth-child(2) { animation-delay: 0.2s; }
+                                .node:nth-child(3) { animation-delay: 0.4s; }
+                                .node:nth-child(4) { animation-delay: 0.6s; }
+                                .node:nth-child(5) { animation-delay: 0.8s; }
+                                .connection { animation: pulse-glow 3s ease-in-out infinite; }
+                                .center-ring { animation: rotate-slow 20s linear infinite; }
+                            </style>
+                        </defs>
+                        <!-- Background circles -->
+                        <circle cx="250" cy="250" r="200" fill="none" stroke="url(#arcGrad)" stroke-width="1" opacity="0.2"/>
+                        <circle cx="250" cy="250" r="150" fill="none" stroke="url(#arcGrad)" stroke-width="1" opacity="0.15"/>
+                        <circle cx="250" cy="250" r="100" fill="none" stroke="url(#arcGrad)" stroke-width="1" opacity="0.1"/>
+
+                        <!-- Animated ring -->
+                        <circle cx="250" cy="250" r="180" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.4" class="center-ring"/>
+
+                        <!-- Connection lines -->
+                        <line x1="250" y1="250" x2="250" y2="100" stroke="url(#arcGrad)" stroke-width="2" opacity="0.4" class="connection"/>
+                        <line x1="250" y1="250" x2="360" y2="180" stroke="url(#arcGrad)" stroke-width="2" opacity="0.4" class="connection" style="animation-delay: 0.3s"/>
+                        <line x1="250" y1="250" x2="360" y2="320" stroke="url(#arcGrad)" stroke-width="2" opacity="0.4" class="connection" style="animation-delay: 0.6s"/>
+                        <line x1="250" y1="250" x2="250" y2="400" stroke="url(#arcGrad)" stroke-width="2" opacity="0.4" class="connection" style="animation-delay: 0.9s"/>
+                        <line x1="250" y1="250" x2="140" y2="320" stroke="url(#arcGrad)" stroke-width="2" opacity="0.4" class="connection" style="animation-delay: 1.2s"/>
+                        <line x1="250" y1="250" x2="140" y2="180" stroke="url(#arcGrad)" stroke-width="2" opacity="0.4" class="connection" style="animation-delay: 1.5s"/>
+
+                        <!-- Nodes -->
+                        <g class="node">
+                            <circle cx="250" cy="100" r="12" fill="url(#arcGrad)"/>
+                            <circle cx="250" cy="100" r="18" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                        <g class="node">
+                            <circle cx="360" cy="180" r="12" fill="url(#arcGrad)"/>
+                            <circle cx="360" cy="180" r="18" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                        <g class="node">
+                            <circle cx="360" cy="320" r="12" fill="url(#arcGrad)"/>
+                            <circle cx="360" cy="320" r="18" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                        <g class="node">
+                            <circle cx="250" cy="400" r="12" fill="url(#arcGrad)"/>
+                            <circle cx="250" cy="400" r="18" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                        <g class="node">
+                            <circle cx="140" cy="320" r="12" fill="url(#arcGrad)"/>
+                            <circle cx="140" cy="320" r="18" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                        <g class="node">
+                            <circle cx="140" cy="180" r="12" fill="url(#arcGrad)"/>
+                            <circle cx="140" cy="180" r="18" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+
+                        <!-- Center hub -->
+                        <circle cx="250" cy="250" r="16" fill="url(#arcGrad)"/>
+                        <circle cx="250" cy="250" r="24" fill="none" stroke="url(#arcGrad)" stroke-width="2" opacity="0.6" class="center-ring"/>
                     </svg>
-                </a>
-                <a href="#services" class="btn-ghost">Explore Services</a>
-            </div>
-            <div class="hero-stats reveal reveal-delay-4">
-                <div class="hero-stat">
-                    <h3 class="gradient-text">150+</h3>
-                    <p>Projects Delivered</p>
-                </div>
-                <div class="hero-stat">
-                    <h3 class="gradient-text">98%</h3>
-                    <p>Client Retention</p>
-                </div>
-                <div class="hero-stat">
-                    <h3 class="gradient-text">12+</h3>
-                    <p>Years of Expertise</p>
-                </div>
-                <div class="hero-stat">
-                    <h3 class="gradient-text">24/7</h3>
-                    <p>Support Coverage</p>
                 </div>
             </div>
         </div>
@@ -1206,27 +1407,27 @@
     <!-- Tech Marquee -->
     <div class="marquee-section">
         <div class="marquee-track">
-            <span class="marquee-item">Cloud Architecture</span>
-            <span class="marquee-item">Enterprise ERP</span>
-            <span class="marquee-item">Digital Workflow</span>
-            <span class="marquee-item">API Integration</span>
-            <span class="marquee-item">Data Analytics</span>
-            <span class="marquee-item">Cybersecurity</span>
-            <span class="marquee-item">AI & Automation</span>
-            <span class="marquee-item">DevOps</span>
-            <span class="marquee-item">Microservices</span>
-            <span class="marquee-item">SaaS Platforms</span>
+            <span class="marquee-item" data-i18n="marquee.1">Cloud Architecture</span>
+            <span class="marquee-item" data-i18n="marquee.2">Enterprise ERP</span>
+            <span class="marquee-item" data-i18n="marquee.3">Digital Workflow</span>
+            <span class="marquee-item" data-i18n="marquee.4">API Integration</span>
+            <span class="marquee-item" data-i18n="marquee.5">Data Analytics</span>
+            <span class="marquee-item" data-i18n="marquee.6">Cybersecurity</span>
+            <span class="marquee-item" data-i18n="marquee.7">AI & Automation</span>
+            <span class="marquee-item" data-i18n="marquee.8">DevOps</span>
+            <span class="marquee-item" data-i18n="marquee.9">Microservices</span>
+            <span class="marquee-item" data-i18n="marquee.10">SaaS Platforms</span>
             <!-- duplicate for seamless loop -->
-            <span class="marquee-item">Cloud Architecture</span>
-            <span class="marquee-item">Enterprise ERP</span>
-            <span class="marquee-item">Digital Workflow</span>
-            <span class="marquee-item">API Integration</span>
-            <span class="marquee-item">Data Analytics</span>
-            <span class="marquee-item">Cybersecurity</span>
-            <span class="marquee-item">AI & Automation</span>
-            <span class="marquee-item">DevOps</span>
-            <span class="marquee-item">Microservices</span>
-            <span class="marquee-item">SaaS Platforms</span>
+            <span class="marquee-item" data-i18n="marquee.1">Cloud Architecture</span>
+            <span class="marquee-item" data-i18n="marquee.2">Enterprise ERP</span>
+            <span class="marquee-item" data-i18n="marquee.3">Digital Workflow</span>
+            <span class="marquee-item" data-i18n="marquee.4">API Integration</span>
+            <span class="marquee-item" data-i18n="marquee.5">Data Analytics</span>
+            <span class="marquee-item" data-i18n="marquee.6">Cybersecurity</span>
+            <span class="marquee-item" data-i18n="marquee.7">AI & Automation</span>
+            <span class="marquee-item" data-i18n="marquee.8">DevOps</span>
+            <span class="marquee-item" data-i18n="marquee.9">Microservices</span>
+            <span class="marquee-item" data-i18n="marquee.10">SaaS Platforms</span>
         </div>
     </div>
 
@@ -1234,9 +1435,9 @@
     <section class="services" id="services">
         <div class="container">
             <div class="services-header">
-                <div class="section-label reveal">What We Do</div>
-                <h2 class="section-title reveal reveal-delay-1">Comprehensive Solutions<br>for the <span class="gradient-text">Modern Enterprise</span></h2>
-                <p class="section-desc reveal reveal-delay-2">We bridge the gap between legacy systems and next-generation technology, crafting solutions that scale with your ambitions.</p>
+                <div class="section-label reveal" data-i18n="services.label">What We Do</div>
+                <h2 class="section-title reveal reveal-delay-1" data-i18n="services.title">Comprehensive Solutions<br>for the <span class="gradient-text">Modern Enterprise</span></h2>
+                <p class="section-desc reveal reveal-delay-2" data-i18n="services.desc">We bridge the gap between legacy systems and next-generation technology, crafting solutions that scale with your ambitions.</p>
             </div>
             <div class="services-grid reveal reveal-delay-3">
                 <div class="service-card">
@@ -1244,48 +1445,48 @@
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A8.966 8.966 0 0 1 3 12c0-1.264.26-2.467.732-3.558" /></svg>
                     </div>
-                    <h3>IT Strategy & Consulting</h3>
-                    <p>Align technology with business objectives through roadmaps, audits, and architecture advisory that future-proof your operations.</p>
+                    <h3 data-i18n="service.1.title">IT Strategy & Consulting</h3>
+                    <p data-i18n="service.1.desc">Align technology with business objectives through roadmaps, audits, and architecture advisory that future-proof your operations.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-num">02</span>
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
                     </div>
-                    <h3>Custom Software Development</h3>
-                    <p>Purpose-built applications engineered from the ground up — from web platforms and mobile apps to complex enterprise systems.</p>
+                    <h3 data-i18n="service.2.title">Custom Software Development</h3>
+                    <p data-i18n="service.2.desc">Purpose-built applications engineered from the ground up — from web platforms and mobile apps to complex enterprise systems.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-num">03</span>
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z" /></svg>
                     </div>
-                    <h3>Cloud & Infrastructure</h3>
-                    <p>Seamless cloud migration, hybrid setups, and infrastructure optimization on AWS, Azure, or GCP for maximum reliability.</p>
+                    <h3 data-i18n="service.3.title">Cloud & Infrastructure</h3>
+                    <p data-i18n="service.3.desc">Seamless cloud migration, hybrid setups, and infrastructure optimization on AWS, Azure, or GCP for maximum reliability.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-num">04</span>
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" /></svg>
                     </div>
-                    <h3>Enterprise Digitalization</h3>
-                    <p>End-to-end digital transformation — automate workflows, digitize processes, and create connected ecosystems that drive efficiency.</p>
+                    <h3 data-i18n="service.4.title">Enterprise Digitalization</h3>
+                    <p data-i18n="service.4.desc">End-to-end digital transformation — automate workflows, digitize processes, and create connected ecosystems that drive efficiency.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-num">05</span>
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
                     </div>
-                    <h3>AI & Data Intelligence</h3>
-                    <p>Leverage machine learning, predictive analytics, and intelligent automation to unlock actionable insights from your data.</p>
+                    <h3 data-i18n="service.5.title">AI & Data Intelligence</h3>
+                    <p data-i18n="service.5.desc">Leverage machine learning, predictive analytics, and intelligent automation to unlock actionable insights from your data.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-num">06</span>
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
                     </div>
-                    <h3>Cybersecurity & Compliance</h3>
-                    <p>Protect your digital assets with comprehensive security audits, zero-trust architecture, and regulatory compliance frameworks.</p>
+                    <h3 data-i18n="service.6.title">Cybersecurity & Compliance</h3>
+                    <p data-i18n="service.6.desc">Protect your digital assets with comprehensive security audits, zero-trust architecture, and regulatory compliance frameworks.</p>
                 </div>
             </div>
         </div>
@@ -1297,29 +1498,85 @@
             <div class="about-grid">
                 <div class="about-visual reveal">
                     <div class="about-visual-inner">
-                        <div class="code-block">
-                            <div class="code-line"><span class="code-comment">// EcoVibe Digital Engine</span></div>
-                            <div class="code-line"><span class="code-keyword">const</span> <span class="code-func">transform</span> = <span class="code-keyword">async</span> (enterprise) => <span class="code-bracket">{</span></div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> strategy = <span class="code-keyword">await</span> <span class="code-func">analyze</span>(enterprise);</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> solution = <span class="code-func">architect</span>(strategy);</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> result = <span class="code-func">deploy</span>(solution);</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">"Future Ready"</span>;</div>
-                            <div class="code-line"><span class="code-bracket">}</span>;</div>
-                        </div>
+                        <svg class="architecture-diagram" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="archGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:0.4" />
+                                    <stop offset="100%" style="stop-color:#0099FF;stop-opacity:0.4" />
+                                </linearGradient>
+                                <style>
+                                    @keyframes dataFlow { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
+                                    .data-line { stroke-dasharray: 10,5; animation: dataFlow 3s linear infinite; }
+                                    .layer-box { transition: all 0.3s ease; }
+                                </style>
+                            </defs>
+
+                            <!-- Title -->
+                            <text x="200" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#F0F0F5" data-i18n="about.arch.title">System Architecture</text>
+
+                            <!-- Frontend Layer -->
+                            <rect x="50" y="60" width="300" height="60" fill="none" stroke="url(#archGrad)" stroke-width="2" rx="8" class="layer-box"/>
+                            <text x="200" y="92" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600" fill="#00D4AA">Frontend Layer</text>
+                            <circle cx="80" cy="80" r="6" fill="url(#archGrad)"/>
+                            <circle cx="140" cy="80" r="6" fill="url(#archGrad)"/>
+                            <circle cx="200" cy="80" r="6" fill="url(#archGrad)"/>
+                            <circle cx="260" cy="80" r="6" fill="url(#archGrad)"/>
+                            <circle cx="320" cy="80" r="6" fill="url(#archGrad)"/>
+
+                            <!-- Data flow line -->
+                            <line x1="200" y1="120" x2="200" y2="150" stroke="url(#archGrad)" stroke-width="2" class="data-line" stroke-linecap="round"/>
+
+                            <!-- API Layer -->
+                            <rect x="50" y="150" width="300" height="60" fill="none" stroke="url(#archGrad)" stroke-width="2" rx="8" class="layer-box"/>
+                            <text x="200" y="182" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600" fill="#00B4D8">API Gateway</text>
+                            <circle cx="120" cy="170" r="6" fill="url(#archGrad)"/>
+                            <circle cx="200" cy="170" r="6" fill="url(#archGrad)"/>
+                            <circle cx="280" cy="170" r="6" fill="url(#archGrad)"/>
+
+                            <!-- Data flow line -->
+                            <line x1="200" y1="210" x2="200" y2="240" stroke="url(#archGrad)" stroke-width="2" class="data-line" stroke-linecap="round"/>
+
+                            <!-- Backend Layer -->
+                            <rect x="50" y="240" width="300" height="60" fill="none" stroke="url(#archGrad)" stroke-width="2" rx="8" class="layer-box"/>
+                            <text x="200" y="272" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600" fill="#00B4D8">Backend Services</text>
+                            <circle cx="90" cy="260" r="6" fill="url(#archGrad)"/>
+                            <circle cx="160" cy="260" r="6" fill="url(#archGrad)"/>
+                            <circle cx="230" cy="260" r="6" fill="url(#archGrad)"/>
+                            <circle cx="300" cy="260" r="6" fill="url(#archGrad)"/>
+
+                            <!-- Data flow line -->
+                            <line x1="200" y1="300" x2="200" y2="330" stroke="url(#archGrad)" stroke-width="2" class="data-line" stroke-linecap="round"/>
+
+                            <!-- Database Layer -->
+                            <g>
+                                <path d="M 80 360 Q 80 330 120 330 L 280 330 Q 320 330 320 360 L 320 400 Q 320 430 280 430 L 120 430 Q 80 430 80 400 Z" fill="none" stroke="url(#archGrad)" stroke-width="2"/>
+                                <ellipse cx="200" cy="345" rx="120" ry="20" fill="none" stroke="url(#archGrad)" stroke-width="2"/>
+                                <text x="200" y="385" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600" fill="#0099FF">Data Layer</text>
+                                <circle cx="140" cy="365" r="5" fill="url(#archGrad)"/>
+                                <circle cx="200" cy="375" r="5" fill="url(#archGrad)"/>
+                                <circle cx="260" cy="365" r="5" fill="url(#archGrad)"/>
+                            </g>
+
+                            <!-- Arrows on sides -->
+                            <text x="25" y="92" font-family="Inter, sans-serif" font-size="11" fill="url(#archGrad)" opacity="0.6">UI/UX</text>
+                            <text x="25" y="182" font-family="Inter, sans-serif" font-size="11" fill="url(#archGrad)" opacity="0.6">Route</text>
+                            <text x="25" y="272" font-family="Inter, sans-serif" font-size="11" fill="url(#archGrad)" opacity="0.6">Logic</text>
+                            <text x="25" y="390" font-family="Inter, sans-serif" font-size="11" fill="url(#archGrad)" opacity="0.6">Store</text>
+                        </svg>
                     </div>
                 </div>
                 <div>
-                    <div class="section-label reveal">Why EcoVibe</div>
-                    <h2 class="section-title reveal reveal-delay-1">Engineering Tomorrow's<br><span class="gradient-text">Digital Landscape</span></h2>
-                    <p class="section-desc reveal reveal-delay-2">We don't just build software — we design digital ecosystems that evolve with your business. Our approach combines deep technical expertise with strategic vision.</p>
+                    <div class="section-label reveal" data-i18n="about.label">Why EcoVibe</div>
+                    <h2 class="section-title reveal reveal-delay-1" data-i18n="about.title">Engineering Tomorrow's<br><span class="gradient-text">Digital Landscape</span></h2>
+                    <p class="section-desc reveal reveal-delay-2" data-i18n="about.desc">We don't just build software — we design digital ecosystems that evolve with your business. Our approach combines deep technical expertise with strategic vision.</p>
                     <div class="about-features">
                         <div class="about-feature reveal reveal-delay-1">
                             <div class="about-feature-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
                             </div>
                             <div>
-                                <h4>Rapid Execution</h4>
-                                <p>Agile methodologies with sprint cycles that deliver tangible results from week one.</p>
+                                <h4 data-i18n="about.feature1.title">Rapid Execution</h4>
+                                <p data-i18n="about.feature1.desc">Agile methodologies with sprint cycles that deliver tangible results from week one.</p>
                             </div>
                         </div>
                         <div class="about-feature reveal reveal-delay-2">
@@ -1327,8 +1584,8 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" /></svg>
                             </div>
                             <div>
-                                <h4>Scalable Architecture</h4>
-                                <p>Systems designed to grow — from startup MVPs to enterprise-grade platforms handling millions.</p>
+                                <h4 data-i18n="about.feature2.title">Scalable Architecture</h4>
+                                <p data-i18n="about.feature2.desc">Systems designed to grow — from startup MVPs to enterprise-grade platforms handling millions.</p>
                             </div>
                         </div>
                         <div class="about-feature reveal reveal-delay-3">
@@ -1336,8 +1593,8 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
                             </div>
                             <div>
-                                <h4>Security-First Mindset</h4>
-                                <p>Every solution is built with enterprise-grade security woven into the architecture from day one.</p>
+                                <h4 data-i18n="about.feature3.title">Security-First Mindset</h4>
+                                <p data-i18n="about.feature3.desc">Every solution is built with enterprise-grade security woven into the architecture from day one.</p>
                             </div>
                         </div>
                     </div>
@@ -1350,30 +1607,30 @@
     <section class="process" id="process">
         <div class="container">
             <div class="process-header">
-                <div class="section-label reveal">Our Process</div>
-                <h2 class="section-title reveal reveal-delay-1">From Vision to <span class="gradient-text">Production</span></h2>
-                <p class="section-desc reveal reveal-delay-2">A proven methodology that ensures every project delivers measurable impact.</p>
+                <div class="section-label reveal" data-i18n="process.label">Our Process</div>
+                <h2 class="section-title reveal reveal-delay-1" data-i18n="process.title">From Vision to <span class="gradient-text">Production</span></h2>
+                <p class="section-desc reveal reveal-delay-2" data-i18n="process.desc">A proven methodology that ensures every project delivers measurable impact.</p>
             </div>
             <div class="process-steps reveal reveal-delay-3">
                 <div class="process-step">
                     <div class="step-number">01</div>
-                    <h3>Discovery</h3>
-                    <p>Deep-dive into your operations, pain points, and aspirations to map the optimal digital strategy.</p>
+                    <h3 data-i18n="process.step1.title">Discovery</h3>
+                    <p data-i18n="process.step1.desc">Deep-dive into your operations, pain points, and aspirations to map the optimal digital strategy.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">02</div>
-                    <h3>Architecture</h3>
-                    <p>Design scalable systems with clean interfaces, robust APIs, and forward-thinking tech choices.</p>
+                    <h3 data-i18n="process.step2.title">Architecture</h3>
+                    <p data-i18n="process.step2.desc">Design scalable systems with clean interfaces, robust APIs, and forward-thinking tech choices.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">03</div>
-                    <h3>Engineering</h3>
-                    <p>Agile development sprints with continuous testing, integration, and stakeholder feedback loops.</p>
+                    <h3 data-i18n="process.step3.title">Engineering</h3>
+                    <p data-i18n="process.step3.desc">Agile development sprints with continuous testing, integration, and stakeholder feedback loops.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">04</div>
-                    <h3>Launch & Evolve</h3>
-                    <p>Smooth deployment with monitoring, analytics, and iterative optimization for sustained growth.</p>
+                    <h3 data-i18n="process.step4.title">Launch & Evolve</h3>
+                    <p data-i18n="process.step4.desc">Smooth deployment with monitoring, analytics, and iterative optimization for sustained growth.</p>
                 </div>
             </div>
         </div>
@@ -1382,25 +1639,25 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-label reveal">Contact</div>
-            <h2 class="section-title reveal reveal-delay-1">Let's Build<br><span class="gradient-text">Something Great</span></h2>
-            <p class="section-desc reveal reveal-delay-2" style="margin-bottom: 3rem;">Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you within 24 hours.</p>
+            <div class="section-label reveal" data-i18n="contact.label">Contact</div>
+            <h2 class="section-title reveal reveal-delay-1" data-i18n="contact.title">Let's Build<br><span class="gradient-text">Something Great</span></h2>
+            <p class="section-desc reveal reveal-delay-2" style="margin-bottom: 3rem;" data-i18n="contact.desc">Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you within 24 hours.</p>
             <div class="contact-wrapper reveal reveal-delay-3">
-                <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST" id="contactForm">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <label for="name" data-i18n="form.name.label">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" data-i18n-placeholder="form.name.placeholder" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                        <label for="email" data-i18n="form.email.label">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@company.com" data-i18n-placeholder="form.email.placeholder" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                        <label for="message" data-i18n="form.message.label">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project..." data-i18n-placeholder="form.message.placeholder" required></textarea>
                     </div>
                     <div class="form-submit">
-                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" data-i18n="form.submit">
                             Send Message
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </button>
@@ -1412,7 +1669,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
                         </div>
                         <div>
-                            <h4>Email Us</h4>
+                            <h4 data-i18n="contact.email.title">Email Us</h4>
                             <p><a href="mailto:takemethere.17@outlook.com">takemethere.17@outlook.com</a></p>
                         </div>
                     </div>
@@ -1421,7 +1678,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.264.26-2.467.732-3.558"/></svg>
                         </div>
                         <div>
-                            <h4>Website</h4>
+                            <h4 data-i18n="contact.website.title">Website</h4>
                             <p><a href="https://www.ecovibe.space">www.ecovibe.space</a></p>
                         </div>
                     </div>
@@ -1430,8 +1687,8 @@
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </div>
                         <div>
-                            <h4>Response Time</h4>
-                            <p>Within 24 hours, guaranteed</p>
+                            <h4 data-i18n="contact.response.title">Response Time</h4>
+                            <p data-i18n="contact.response.desc">Within 24 hours, guaranteed</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -1439,8 +1696,8 @@
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
                         </div>
                         <div>
-                            <h4>Global Reach</h4>
-                            <p>Remote-first, serving clients worldwide</p>
+                            <h4 data-i18n="contact.location.title">Global Reach</h4>
+                            <p data-i18n="contact.location.desc">Remote-first, serving clients worldwide</p>
                         </div>
                     </div>
                 </div>
@@ -1454,21 +1711,268 @@
             <div class="footer-inner">
                 <div class="footer-left">
                     <a href="#" class="nav-logo" style="font-size: 1.1rem;">
-                        <div class="logo-mark" style="width: 30px; height: 30px; font-size: 0.9rem; border-radius: 8px;">E</div>
+                        <div class="logo-mark" style="width: 30px; height: 30px;">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="logoGradSmall" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#0099FF;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="20" cy="20" r="18" fill="none" stroke="url(#logoGradSmall)" stroke-width="1.5" opacity="0.8"/>
+                                <circle cx="20" cy="10" r="2.5" fill="url(#logoGradSmall)" />
+                                <circle cx="28" cy="20" r="2.5" fill="url(#logoGradSmall)" />
+                                <circle cx="20" cy="30" r="2.5" fill="url(#logoGradSmall)" />
+                                <circle cx="12" cy="20" r="2.5" fill="url(#logoGradSmall)" />
+                                <circle cx="20" cy="20" r="2" fill="url(#logoGradSmall)" />
+                                <line x1="20" y1="10" x2="20" y2="20" stroke="url(#logoGradSmall)" stroke-width="1" opacity="0.6"/>
+                                <line x1="20" y1="20" x2="28" y2="20" stroke="url(#logoGradSmall)" stroke-width="1" opacity="0.6"/>
+                                <line x1="20" y1="20" x2="20" y2="30" stroke="url(#logoGradSmall)" stroke-width="1" opacity="0.6"/>
+                                <line x1="20" y1="20" x2="12" y2="20" stroke="url(#logoGradSmall)" stroke-width="1" opacity="0.6"/>
+                                <line x1="12" y1="10" x2="28" y2="10" stroke="url(#logoGradSmall)" stroke-width="1" opacity="0.5"/>
+                                <line x1="12" y1="20" x2="26" y2="20" stroke="url(#logoGradSmall)" stroke-width="1" opacity="0.5"/>
+                                <line x1="12" y1="30" x2="28" y2="30" stroke="url(#logoGradSmall)" stroke-width="1" opacity="0.5"/>
+                            </svg>
+                        </div>
                         EcoVibe
                     </a>
-                    <span class="footer-copy">&copy; 2026 EcoVibe. All rights reserved.</span>
+                    <span class="footer-copy" data-i18n="footer.copy">&copy; 2026 EcoVibe. All rights reserved.</span>
                 </div>
                 <ul class="footer-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#contact" data-i18n="nav.cta">Contact</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
     <script>
+        // ═══════════════════════════════════════════════════
+        // INTERNATIONALIZATION (i18n)
+        // ═══════════════════════════════════════════════════
+        const translations = {
+            en: {
+                'nav.services': 'Services',
+                'nav.about': 'About',
+                'nav.process': 'Process',
+                'nav.cta': 'Get in Touch',
+                'hero.badge': 'Pioneering Digital Futures',
+                'hero.title': 'Architect Your<br><span class="gradient-text">Digital Evolution</span>',
+                'hero.desc': 'We engineer bespoke software solutions and strategic IT consulting that transform enterprises into agile, future-ready digital ecosystems.',
+                'hero.cta': 'Start a Project',
+                'hero.explore': 'Explore Services',
+                'hero.stat1': 'Projects Delivered',
+                'hero.stat2': 'Client Retention',
+                'hero.stat3': 'Years of Expertise',
+                'hero.stat4': 'Support Coverage',
+                'marquee.1': 'Cloud Architecture',
+                'marquee.2': 'Enterprise ERP',
+                'marquee.3': 'Digital Workflow',
+                'marquee.4': 'API Integration',
+                'marquee.5': 'Data Analytics',
+                'marquee.6': 'Cybersecurity',
+                'marquee.7': 'AI & Automation',
+                'marquee.8': 'DevOps',
+                'marquee.9': 'Microservices',
+                'marquee.10': 'SaaS Platforms',
+                'services.label': 'What We Do',
+                'services.title': 'Comprehensive Solutions<br>for the <span class="gradient-text">Modern Enterprise</span>',
+                'services.desc': 'We bridge the gap between legacy systems and next-generation technology, crafting solutions that scale with your ambitions.',
+                'service.1.title': 'IT Strategy & Consulting',
+                'service.1.desc': 'Align technology with business objectives through roadmaps, audits, and architecture advisory that future-proof your operations.',
+                'service.2.title': 'Custom Software Development',
+                'service.2.desc': 'Purpose-built applications engineered from the ground up — from web platforms and mobile apps to complex enterprise systems.',
+                'service.3.title': 'Cloud & Infrastructure',
+                'service.3.desc': 'Seamless cloud migration, hybrid setups, and infrastructure optimization on AWS, Azure, or GCP for maximum reliability.',
+                'service.4.title': 'Enterprise Digitalization',
+                'service.4.desc': 'End-to-end digital transformation — automate workflows, digitize processes, and create connected ecosystems that drive efficiency.',
+                'service.5.title': 'AI & Data Intelligence',
+                'service.5.desc': 'Leverage machine learning, predictive analytics, and intelligent automation to unlock actionable insights from your data.',
+                'service.6.title': 'Cybersecurity & Compliance',
+                'service.6.desc': 'Protect your digital assets with comprehensive security audits, zero-trust architecture, and regulatory compliance frameworks.',
+                'about.label': 'Why EcoVibe',
+                'about.title': 'Engineering Tomorrow's<br><span class="gradient-text">Digital Landscape</span>',
+                'about.desc': 'We don\'t just build software — we design digital ecosystems that evolve with your business. Our approach combines deep technical expertise with strategic vision.',
+                'about.arch.title': 'System Architecture',
+                'about.feature1.title': 'Rapid Execution',
+                'about.feature1.desc': 'Agile methodologies with sprint cycles that deliver tangible results from week one.',
+                'about.feature2.title': 'Scalable Architecture',
+                'about.feature2.desc': 'Systems designed to grow — from startup MVPs to enterprise-grade platforms handling millions.',
+                'about.feature3.title': 'Security-First Mindset',
+                'about.feature3.desc': 'Every solution is built with enterprise-grade security woven into the architecture from day one.',
+                'process.label': 'Our Process',
+                'process.title': 'From Vision to <span class="gradient-text">Production</span>',
+                'process.desc': 'A proven methodology that ensures every project delivers measurable impact.',
+                'process.step1.title': 'Discovery',
+                'process.step1.desc': 'Deep-dive into your operations, pain points, and aspirations to map the optimal digital strategy.',
+                'process.step2.title': 'Architecture',
+                'process.step2.desc': 'Design scalable systems with clean interfaces, robust APIs, and forward-thinking tech choices.',
+                'process.step3.title': 'Engineering',
+                'process.step3.desc': 'Agile development sprints with continuous testing, integration, and stakeholder feedback loops.',
+                'process.step4.title': 'Launch & Evolve',
+                'process.step4.desc': 'Smooth deployment with monitoring, analytics, and iterative optimization for sustained growth.',
+                'contact.label': 'Contact',
+                'contact.title': 'Let\'s Build<br><span class="gradient-text">Something Great</span>',
+                'contact.desc': 'Have a project in mind? We\'d love to hear about it. Drop us a message and we\'ll get back to you within 24 hours.',
+                'contact.email.title': 'Email Us',
+                'contact.website.title': 'Website',
+                'contact.response.title': 'Response Time',
+                'contact.response.desc': 'Within 24 hours, guaranteed',
+                'contact.location.title': 'Global Reach',
+                'contact.location.desc': 'Remote-first, serving clients worldwide',
+                'form.name.label': 'Your Name',
+                'form.name.placeholder': 'John Doe',
+                'form.email.label': 'Email Address',
+                'form.email.placeholder': 'john@company.com',
+                'form.message.label': 'Your Message',
+                'form.message.placeholder': 'Tell us about your project...',
+                'form.submit': 'Send Message',
+                'footer.copy': '&copy; 2026 EcoVibe. All rights reserved.'
+            },
+            zh: {
+                'nav.services': '服务',
+                'nav.about': '关于',
+                'nav.process': '流程',
+                'nav.cta': '联系我们',
+                'hero.badge': '引领数字未来',
+                'hero.title': '构建您的<br><span class="gradient-text">数字化进程</span>',
+                'hero.desc': '我们设计和开发定制化软件解决方案及战略性IT咨询，将企业转变为敏捷、面向未来的数字生态系统。',
+                'hero.cta': '开始项目',
+                'hero.explore': '浏览服务',
+                'hero.stat1': '项目交付',
+                'hero.stat2': '客户保留率',
+                'hero.stat3': '年行业经验',
+                'hero.stat4': '全天候支持',
+                'marquee.1': '云架构',
+                'marquee.2': '企业ERP',
+                'marquee.3': '数字工作流',
+                'marquee.4': 'API集成',
+                'marquee.5': '数据分析',
+                'marquee.6': '网络安全',
+                'marquee.7': '人工智能与自动化',
+                'marquee.8': 'DevOps',
+                'marquee.9': '微服务',
+                'marquee.10': 'SaaS平台',
+                'services.label': '我们的服务',
+                'services.title': '全面的解决方案<br>为<span class="gradient-text">现代企业</span>服务',
+                'services.desc': '我们弥合遗留系统与下一代技术之间的差距，打造能够随着您的野心扩展的解决方案。',
+                'service.1.title': 'IT战略与咨询',
+                'service.1.desc': '通过路线图、审计和架构顾问，使技术与业务目标相结合，为您的运营保驾护航。',
+                'service.2.title': '定制软件开发',
+                'service.2.desc': '从头开始设计的专用应用程序 - 从网络平台和移动应用到复杂的企业系统。',
+                'service.3.title': '云与基础设施',
+                'service.3.desc': '在AWS、Azure或GCP上进行无缝云迁移、混合设置和基础设施优化，实现最大可靠性。',
+                'service.4.title': '企业数字化',
+                'service.4.desc': '端到端的数字化转型 - 自动化工作流、数字化流程、创建连接的生态系统以提高效率。',
+                'service.5.title': '人工智能与数据智能',
+                'service.5.desc': '利用机器学习、预测分析和智能自动化来解锁数据中的可操作洞察。',
+                'service.6.title': '网络安全与合规',
+                'service.6.desc': '通过全面的安全审计、零信任架构和监管合规框架保护您的数字资产。',
+                'about.label': '为什么选择EcoVibe',
+                'about.title': '设计未来的<br><span class="gradient-text">数字景观</span>',
+                'about.desc': '我们不仅仅构建软件 - 我们设计能与您的业务一起演进的数字生态系统。我们的方法结合了深厚的技术专知和战略远见。',
+                'about.arch.title': '系统架构',
+                'about.feature1.title': '快速执行',
+                'about.feature1.desc': '敏捷方法论，通过冲刺周期从第一周就交付实际成果。',
+                'about.feature2.title': '可扩展架构',
+                'about.feature2.desc': '系统设计用于增长 - 从初创公司MVP到处理数百万的企业级平台。',
+                'about.feature3.title': '安全优先心态',
+                'about.feature3.desc': '每个解决方案都从第一天开始就将企业级安全融入到架构中。',
+                'process.label': '我们的流程',
+                'process.title': '从愿景到<span class="gradient-text">生产</span>',
+                'process.desc': '经过验证的方法论确保每个项目都能交付可衡量的影响。',
+                'process.step1.title': '发现',
+                'process.step1.desc': '深入了解您的业务、痛点和抱负，以制定最佳的数字战略。',
+                'process.step2.title': '架构',
+                'process.step2.desc': '设计具有清晰接口、健壮API和前瞻性技术选择的可扩展系统。',
+                'process.step3.title': '工程',
+                'process.step3.desc': '敏捷开发冲刺，持续测试、集成和利益相关者反馈循环。',
+                'process.step4.title': '发布与演进',
+                'process.step4.desc': '平稳的部署，监控、分析和迭代优化以实现持续增长。',
+                'contact.label': '联系我们',
+                'contact.title': '让我们一起<br><span class="gradient-text">创造伟大</span>',
+                'contact.desc': '有项目想法？我们很想听听。给我们留言，我们会在24小时内回复。',
+                'contact.email.title': '发送邮件',
+                'contact.website.title': '网站',
+                'contact.response.title': '响应时间',
+                'contact.response.desc': '保证24小时内回复',
+                'contact.location.title': '全球范围',
+                'contact.location.desc': '远程优先，为全球客户服务',
+                'form.name.label': '您的名字',
+                'form.name.placeholder': 'John Doe',
+                'form.email.label': '电子邮件地址',
+                'form.email.placeholder': 'john@company.com',
+                'form.message.label': '您的信息',
+                'form.message.placeholder': '告诉我们您的项目...',
+                'form.submit': '发送信息',
+                'footer.copy': '&copy; 2026 EcoVibe. 版权所有。'
+            }
+        };
+
+        let currentLang = localStorage.getItem('ecovibe_lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('ecovibe_lang', lang);
+            updatePageTranslations();
+            updateLanguageUI();
+        }
+
+        function updatePageTranslations() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const text = translations[currentLang][key] || translations['en'][key];
+                if (key === 'hero.title' || key === 'services.title' || key === 'about.title' || key === 'process.title' || key === 'contact.title') {
+                    el.innerHTML = text;
+                } else {
+                    el.textContent = text;
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                const text = translations[currentLang][key] || translations['en'][key];
+                el.placeholder = text;
+            });
+        }
+
+        function updateLanguageUI() {
+            document.getElementById('langDisplay').textContent = currentLang === 'en' ? 'EN' : '中文';
+            document.querySelectorAll('.lang-dropdown a').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-lang') === currentLang);
+            });
+        }
+
+        // Language switcher
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.getElementById('langDropdown');
+
+        if (langToggle) {
+            langToggle.addEventListener('click', () => {
+                langDropdown.classList.toggle('open');
+            });
+        }
+
+        document.querySelectorAll('.lang-dropdown a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = link.getAttribute('data-lang');
+                setLanguage(lang);
+                langDropdown.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!langToggle?.contains(e.target) && !langDropdown?.contains(e.target)) {
+                langDropdown?.classList.remove('open');
+            }
+        });
+
+        // Initialize translations
+        updatePageTranslations();
+        updateLanguageUI();
+
         // ═══════════════════════════════════════════════════
         // Navigation scroll effect
         // ═══════════════════════════════════════════════════
