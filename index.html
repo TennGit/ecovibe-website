@@ -1359,59 +1359,273 @@
                     </div>
                 </div>
                 <div class="hero-right">
-                    <svg class="hero-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="hero-illustration" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.6"/>
-                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.4"/>
+                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.5"/>
                             </linearGradient>
+                            <linearGradient id="heroGrad2" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.4"/>
+                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.15"/>
+                            </linearGradient>
+                            <linearGradient id="dataFlow" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0"/>
+                                <stop offset="50%" stop-color="#00D4AA" stop-opacity="1"/>
+                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0"/>
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <filter id="softGlow">
+                                <feGaussianBlur stdDeviation="6" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <clipPath id="termClip"><rect x="56" y="36" width="290" height="195" rx="6"/></clipPath>
+                            <clipPath id="dashClip"><rect x="316" y="36" width="160" height="195" rx="6"/></clipPath>
                         </defs>
 
-                        <!-- Cloud shape -->
-                        <path d="M 150 80 Q 120 80 110 100 Q 90 100 90 120 Q 90 140 110 140 L 290 140 Q 310 140 310 120 Q 310 100 290 100 Q 280 80 250 80 Q 230 60 200 60 Q 170 60 150 80" fill="none" stroke="url(#heroGrad)" stroke-width="2" opacity="0.7"/>
-
-                        <!-- Browser/Monitor window -->
-                        <rect x="80" y="160" width="240" height="160" rx="12" fill="none" stroke="url(#heroGrad)" stroke-width="2"/>
-                        <rect x="80" y="160" width="240" height="32" rx="12" ry="0" fill="none" stroke="url(#heroGrad)" stroke-width="2"/>
-                        <circle cx="95" cy="176" r="3" fill="url(#heroGrad)" opacity="0.6"/>
-                        <circle cx="108" cy="176" r="3" fill="url(#heroGrad)" opacity="0.6"/>
-                        <circle cx="121" cy="176" r="3" fill="url(#heroGrad)" opacity="0.6"/>
-
-                        <!-- Code lines inside browser -->
-                        <line x1="95" y1="200" x2="175" y2="200" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.5"/>
-                        <line x1="95" y1="215" x2="225" y2="215" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.5"/>
-                        <line x1="95" y1="230" x2="200" y2="230" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.5"/>
-                        <line x1="95" y1="245" x2="180" y2="245" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.5"/>
-                        <line x1="95" y1="260" x2="210" y2="260" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.5"/>
-                        <line x1="95" y1="275" x2="170" y2="275" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.5"/>
-
-                        <!-- Dashed connection from browser to cloud -->
-                        <line x1="200" y1="160" x2="200" y2="140" stroke="url(#heroGrad)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.5"/>
-
-                        <!-- Database cylinder below -->
-                        <rect x="170" y="310" width="60" height="15" rx="7" fill="none" stroke="url(#heroGrad)" stroke-width="2"/>
-                        <ellipse cx="200" cy="310" rx="30" ry="8" fill="none" stroke="url(#heroGrad)" stroke-width="2"/>
-                        <line x1="170" y1="310" x2="170" y2="335" stroke="url(#heroGrad)" stroke-width="2"/>
-                        <line x1="230" y1="310" x2="230" y2="335" stroke="url(#heroGrad)" stroke-width="2"/>
-                        <ellipse cx="200" cy="335" rx="30" ry="8" fill="none" stroke="url(#heroGrad)" stroke-width="2"/>
-
-                        <!-- Connection from browser to database -->
-                        <line x1="200" y1="320" x2="200" y2="310" stroke="url(#heroGrad)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.5"/>
-
-                        <!-- Gears -->
-                        <g opacity="0.4">
-                            <circle cx="320" cy="120" r="12" fill="none" stroke="url(#heroGrad)" stroke-width="1.5"/>
-                            <circle cx="320" cy="120" r="8" fill="none" stroke="url(#heroGrad)" stroke-width="1.5"/>
-                            <rect x="318" y="102" width="4" height="6" fill="url(#heroGrad)"/>
-                            <rect x="318" y="132" width="4" height="6" fill="url(#heroGrad)"/>
-                            <rect x="302" y="118" width="6" height="4" fill="url(#heroGrad)"/>
-                            <rect x="332" y="118" width="6" height="4" fill="url(#heroGrad)"/>
+                        <!-- ═══ Background grid ═══ -->
+                        <g opacity="0.06">
+                            <line x1="0" y1="65" x2="520" y2="65" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="130" x2="520" y2="130" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="195" x2="520" y2="195" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="260" x2="520" y2="260" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="325" x2="520" y2="325" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="390" x2="520" y2="390" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="455" x2="520" y2="455" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="65" y1="0" x2="65" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="130" y1="0" x2="130" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="195" y1="0" x2="195" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="260" y1="0" x2="260" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="325" y1="0" x2="325" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="390" y1="0" x2="390" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="455" y1="0" x2="455" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
                         </g>
 
-                        <!-- Floating brackets -->
-                        <text x="60" y="200" font-family="JetBrains Mono" font-size="28" fill="url(#heroGrad)" opacity="0.3">{</text>
-                        <text x="320" y="280" font-family="JetBrains Mono" font-size="28" fill="url(#heroGrad)" opacity="0.3">}</text>
-                        <text x="50" y="340" font-family="JetBrains Mono" font-size="20" fill="url(#heroGrad)" opacity="0.25">&lt;&gt;</text>
+                        <!-- ═══ TERMINAL WINDOW — code editor ═══ -->
+                        <g>
+                            <rect x="50" y="20" width="300" height="210" rx="10" fill="rgba(6,6,10,0.9)" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.9"/>
+                            <!-- Title bar -->
+                            <rect x="50" y="20" width="300" height="28" rx="10" fill="rgba(255,255,255,0.03)"/>
+                            <circle cx="66" cy="34" r="4" fill="#FF5F56"/>
+                            <circle cx="80" cy="34" r="4" fill="#FFBD2E"/>
+                            <circle cx="94" cy="34" r="4" fill="#27C93F"/>
+                            <text x="200" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(240,240,245,0.35)">main.ts — EcoVibe</text>
+
+                            <!-- Real code lines -->
+                            <g clip-path="url(#termClip)" font-family="JetBrains Mono, monospace" font-size="8.5">
+                                <!-- Line numbers -->
+                                <text x="60" y="62" fill="rgba(240,240,245,0.15)">1</text>
+                                <text x="60" y="74" fill="rgba(240,240,245,0.15)">2</text>
+                                <text x="60" y="86" fill="rgba(240,240,245,0.15)">3</text>
+                                <text x="60" y="98" fill="rgba(240,240,245,0.15)">4</text>
+                                <text x="60" y="110" fill="rgba(240,240,245,0.15)">5</text>
+                                <text x="60" y="122" fill="rgba(240,240,245,0.15)">6</text>
+                                <text x="60" y="134" fill="rgba(240,240,245,0.15)">7</text>
+                                <text x="60" y="146" fill="rgba(240,240,245,0.15)">8</text>
+                                <text x="60" y="158" fill="rgba(240,240,245,0.15)">9</text>
+                                <text x="56" y="170" fill="rgba(240,240,245,0.15)">10</text>
+                                <text x="56" y="182" fill="rgba(240,240,245,0.15)">11</text>
+                                <text x="56" y="194" fill="rgba(240,240,245,0.15)">12</text>
+                                <text x="56" y="206" fill="rgba(240,240,245,0.15)">13</text>
+                                <text x="56" y="218" fill="rgba(240,240,245,0.15)">14</text>
+
+                                <!-- Actual code -->
+                                <text x="76" y="62"><tspan fill="#C792EA">import</tspan><tspan fill="#F0F0F5"> { Module } </tspan><tspan fill="#C792EA">from</tspan><tspan fill="#C3E88D"> '@nestjs/common'</tspan></text>
+                                <text x="76" y="74"><tspan fill="#C792EA">import</tspan><tspan fill="#F0F0F5"> { I18nService } </tspan><tspan fill="#C792EA">from</tspan><tspan fill="#C3E88D"> './i18n'</tspan></text>
+                                <text x="76" y="86" fill="rgba(240,240,245,0.2)"></text>
+                                <text x="76" y="98"><tspan fill="#FFCB6B">@Module</tspan><tspan fill="#89DDFF">({</tspan></text>
+                                <text x="76" y="110"><tspan fill="#F0F0F5">  providers: [</tspan></text>
+                                <text x="76" y="122"><tspan fill="#F0F0F5">    </tspan><tspan fill="#82AAFF">ApiGateway</tspan><tspan fill="#89DDFF">,</tspan></text>
+                                <text x="76" y="134"><tspan fill="#F0F0F5">    </tspan><tspan fill="#82AAFF">AuthService</tspan><tspan fill="#89DDFF">,</tspan></text>
+                                <text x="76" y="146"><tspan fill="#F0F0F5">    </tspan><tspan fill="#82AAFF">I18nService</tspan><tspan fill="#89DDFF">,</tspan></text>
+                                <text x="76" y="158"><tspan fill="#F0F0F5">  ]</tspan><tspan fill="#89DDFF">,</tspan></text>
+                                <text x="76" y="170"><tspan fill="#F0F0F5">  </tspan><tspan fill="#F0F0F5">exports: [</tspan><tspan fill="#82AAFF">ApiGateway</tspan><tspan fill="#F0F0F5">]</tspan></text>
+                                <text x="76" y="182"><tspan fill="#89DDFF">})</tspan></text>
+                                <text x="76" y="194"><tspan fill="#C792EA">export class</tspan><tspan fill="#FFCB6B"> AppModule</tspan><tspan fill="#F0F0F5"> {}</tspan></text>
+                                <!-- Cursor blink -->
+                                <rect x="166" y="196" width="6" height="10" fill="#00D4AA" opacity="0.6">
+                                    <animate attributeName="opacity" values="0.6;0;0.6" dur="1.2s" repeatCount="indefinite"/>
+                                </rect>
+                            </g>
+                        </g>
+
+                        <!-- ═══ MONITORING DASHBOARD (right panel) ═══ -->
+                        <g>
+                            <rect x="310" y="20" width="170" height="210" rx="10" fill="rgba(6,6,10,0.9)" stroke="url(#heroGrad)" stroke-width="1.0" opacity="0.7"/>
+                            <rect x="310" y="20" width="170" height="28" rx="10" fill="rgba(255,255,255,0.03)"/>
+                            <text x="395" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">system monitor</text>
+
+                            <g clip-path="url(#dashClip)">
+                                <!-- CPU graph -->
+                                <text x="322" y="62" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">CPU</text>
+                                <text x="460" y="62" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.6">23%</text>
+                                <polyline points="322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60" fill="none" stroke="#00D4AA" stroke-width="1.2" opacity="0.5"/>
+                                <polyline points="322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60" fill="url(#heroGrad2)" stroke="none" opacity="0.3">
+                                    <animate attributeName="points" values="322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60;322,75 335,78 348,72 361,76 374,68 387,73 400,67 413,71 426,64 439,69 452,62 465,65;322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60" dur="4s" repeatCount="indefinite"/>
+                                </polyline>
+
+                                <!-- Memory bar -->
+                                <text x="322" y="98" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">MEM</text>
+                                <text x="460" y="98" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.6">4.2G</text>
+                                <rect x="322" y="103" width="143" height="5" rx="2" fill="rgba(255,255,255,0.05)"/>
+                                <rect x="322" y="103" width="86" height="5" rx="2" fill="url(#heroGrad)" opacity="0.4"/>
+
+                                <!-- Network throughput -->
+                                <text x="322" y="126" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">NET</text>
+                                <text x="448" y="126" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.5">↑↓ 2.4Gb</text>
+                                <polyline points="322,140 332,137 342,141 352,134 362,138 372,132 382,136 392,129 402,133 412,127 422,131 432,125 442,129 452,123 462,127" fill="none" stroke="#0099FF" stroke-width="1" opacity="0.35"/>
+
+                                <!-- Container pods -->
+                                <text x="322" y="162" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">PODS</text>
+                                <g opacity="0.5">
+                                    <rect x="322" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
+                                    <circle cx="329" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
+                                    <rect x="340" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
+                                    <circle cx="347" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
+                                    <rect x="358" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
+                                    <circle cx="365" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
+                                    <rect x="376" y="168" width="14" height="14" rx="3" fill="none" stroke="#FFBD2E" stroke-width="0.8"/>
+                                    <circle cx="383" cy="175" r="2" fill="#FFBD2E" opacity="0.6"/>
+                                    <rect x="394" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
+                                    <circle cx="401" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
+                                    <rect x="412" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
+                                    <circle cx="419" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
+                                    <rect x="430" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
+                                    <circle cx="437" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
+                                    <rect x="448" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
+                                    <circle cx="455" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
+                                </g>
+
+                                <!-- Latency -->
+                                <text x="322" y="200" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">P99</text>
+                                <text x="446" y="200" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.5">12ms</text>
+                                <rect x="322" y="205" width="143" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                                <rect x="322" y="205" width="24" height="4" rx="2" fill="#00D4AA" opacity="0.5"/>
+                            </g>
+                        </g>
+
+                        <!-- ═══ MICROSERVICES ARCHITECTURE (center area) ═══ -->
+                        <g transform="translate(40, 258)">
+                            <!-- API Gateway node -->
+                            <g filter="url(#glow)">
+                                <rect x="155" y="0" width="130" height="36" rx="8" fill="rgba(0,212,170,0.08)" stroke="#00D4AA" stroke-width="1.2" opacity="0.8"/>
+                                <text x="220" y="14" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.5">API GATEWAY</text>
+                                <text x="220" y="27" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#00D4AA">:443 → router</text>
+                            </g>
+
+                            <!-- Connection lines from gateway down -->
+                            <line x1="180" y1="36" x2="70" y2="70" stroke="url(#heroGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+                            <line x1="220" y1="36" x2="220" y2="70" stroke="url(#heroGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+                            <line x1="260" y1="36" x2="370" y2="70" stroke="url(#heroGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+
+                            <!-- Data flow particles on connections -->
+                            <circle r="2" fill="#00D4AA" opacity="0.8">
+                                <animateMotion dur="2s" repeatCount="indefinite" path="M180,36 L70,70"/>
+                            </circle>
+                            <circle r="2" fill="#0099FF" opacity="0.8">
+                                <animateMotion dur="1.8s" repeatCount="indefinite" path="M220,36 L220,70"/>
+                            </circle>
+                            <circle r="2" fill="#00D4AA" opacity="0.8">
+                                <animateMotion dur="2.2s" repeatCount="indefinite" path="M260,36 L370,70"/>
+                            </circle>
+
+                            <!-- Service: Auth -->
+                            <rect x="10" y="70" width="120" height="46" rx="6" fill="rgba(6,6,10,0.8)" stroke="url(#heroGrad)" stroke-width="1" opacity="0.6"/>
+                            <circle cx="26" cy="85" r="5" fill="none" stroke="#FFCB6B" stroke-width="1" opacity="0.6"/>
+                            <path d="M24,84 L26,86 L29,82" fill="none" stroke="#FFCB6B" stroke-width="0.8" opacity="0.6"/>
+                            <text x="36" y="88" font-family="JetBrains Mono, monospace" font-size="7.5" fill="rgba(240,240,245,0.6)">auth-svc</text>
+                            <text x="24" y="106" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.25)">JWT · OAuth2 · RBAC</text>
+
+                            <!-- Service: Core -->
+                            <rect x="160" y="70" width="120" height="46" rx="6" fill="rgba(6,6,10,0.8)" stroke="url(#heroGrad)" stroke-width="1" opacity="0.6"/>
+                            <rect x="174" y="80" width="8" height="10" rx="1" fill="none" stroke="#82AAFF" stroke-width="0.8" opacity="0.6"/>
+                            <rect x="177" y="83" width="2" height="4" fill="#82AAFF" opacity="0.4"/>
+                            <text x="188" y="88" font-family="JetBrains Mono, monospace" font-size="7.5" fill="rgba(240,240,245,0.6)">core-api</text>
+                            <text x="174" y="106" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.25)">REST · GraphQL · gRPC</text>
+
+                            <!-- Service: i18n / Intl -->
+                            <rect x="310" y="70" width="120" height="46" rx="6" fill="rgba(6,6,10,0.8)" stroke="url(#heroGrad)" stroke-width="1" opacity="0.6"/>
+                            <circle cx="326" cy="87" r="6" fill="none" stroke="#C792EA" stroke-width="0.8" opacity="0.5"/>
+                            <text x="323" y="90" font-family="JetBrains Mono, monospace" font-size="6" fill="#C792EA" opacity="0.5">🌐</text>
+                            <text x="338" y="88" font-family="JetBrains Mono, monospace" font-size="7.5" fill="rgba(240,240,245,0.6)">i18n-svc</text>
+                            <text x="322" y="106" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.25)">EN · ZH · NL · DE</text>
+
+                            <!-- Message Queue bar -->
+                            <rect x="50" y="138" width="340" height="24" rx="5" fill="rgba(0,153,255,0.04)" stroke="#0099FF" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.4"/>
+                            <text x="220" y="154" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.35">──── message bus (events) ────</text>
+
+                            <!-- Connection lines from services to message queue -->
+                            <line x1="70" y1="116" x2="70" y2="138" stroke="url(#heroGrad)" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.25"/>
+                            <line x1="220" y1="116" x2="220" y2="138" stroke="url(#heroGrad)" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.25"/>
+                            <line x1="370" y1="116" x2="370" y2="138" stroke="url(#heroGrad)" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.25"/>
+
+                            <!-- Data stores row -->
+                            <!-- PostgreSQL -->
+                            <g transform="translate(25, 182)">
+                                <rect x="0" y="0" width="105" height="36" rx="5" fill="rgba(6,6,10,0.7)" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.45"/>
+                                <ellipse cx="20" cy="12" rx="8" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                                <line x1="12" y1="12" x2="12" y2="22" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                                <line x1="28" y1="12" x2="28" y2="22" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                                <ellipse cx="20" cy="22" rx="8" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                                <text x="36" y="20" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">PostgreSQL</text>
+                            </g>
+
+                            <!-- Redis -->
+                            <g transform="translate(168, 182)">
+                                <rect x="0" y="0" width="105" height="36" rx="5" fill="rgba(6,6,10,0.7)" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.45"/>
+                                <rect x="10" y="8" width="16" height="3" rx="1" fill="#FF5F56" opacity="0.35"/>
+                                <rect x="10" y="14" width="16" height="3" rx="1" fill="#FF5F56" opacity="0.25"/>
+                                <rect x="10" y="20" width="16" height="3" rx="1" fill="#FF5F56" opacity="0.15"/>
+                                <text x="34" y="20" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">Redis cache</text>
+                            </g>
+
+                            <!-- S3/Object Store -->
+                            <g transform="translate(310, 182)">
+                                <rect x="0" y="0" width="105" height="36" rx="5" fill="rgba(6,6,10,0.7)" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.45"/>
+                                <rect x="10" y="9" width="14" height="18" rx="2" fill="none" stroke="#FFBD2E" stroke-width="0.8" opacity="0.35"/>
+                                <line x1="13" y1="14" x2="21" y2="14" stroke="#FFBD2E" stroke-width="0.5" opacity="0.3"/>
+                                <line x1="13" y1="18" x2="19" y2="18" stroke="#FFBD2E" stroke-width="0.5" opacity="0.3"/>
+                                <text x="30" y="20" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">Object store</text>
+                            </g>
+
+                            <!-- Connection lines from message queue to data stores -->
+                            <line x1="100" y1="162" x2="75" y2="182" stroke="url(#heroGrad)" stroke-width="0.6" stroke-dasharray="2,3" opacity="0.2"/>
+                            <line x1="220" y1="162" x2="220" y2="182" stroke="url(#heroGrad)" stroke-width="0.6" stroke-dasharray="2,3" opacity="0.2"/>
+                            <line x1="340" y1="162" x2="365" y2="182" stroke="url(#heroGrad)" stroke-width="0.6" stroke-dasharray="2,3" opacity="0.2"/>
+                        </g>
+
+                        <!-- ═══ CI/CD Pipeline strip at bottom ═══ -->
+                        <g transform="translate(50, 490)">
+                            <rect x="0" y="0" width="420" height="22" rx="4" fill="rgba(39,201,63,0.04)" stroke="#27C93F" stroke-width="0.6" opacity="0.3"/>
+                            <!-- Pipeline stages -->
+                            <circle cx="40" cy="11" r="4" fill="#27C93F" opacity="0.4"/>
+                            <text x="52" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.35">build</text>
+                            <line x1="80" y1="11" x2="110" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="120" cy="11" r="4" fill="#27C93F" opacity="0.4"/>
+                            <text x="132" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.35">test</text>
+                            <line x1="152" y1="11" x2="182" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="192" cy="11" r="4" fill="#27C93F" opacity="0.4"/>
+                            <text x="204" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.35">scan</text>
+                            <line x1="230" y1="11" x2="260" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="270" cy="11" r="4" fill="#FFBD2E" opacity="0.4"/>
+                            <text x="282" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#FFBD2E" opacity="0.35">staging</text>
+                            <line x1="318" y1="11" x2="348" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="358" cy="11" r="4" fill="#27C93F" opacity="0.4"/>
+                            <text x="370" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.35">deploy</text>
+                            <!-- Animated pipeline progress -->
+                            <rect x="0" y="20" width="420" height="2" rx="1" fill="rgba(255,255,255,0.03)"/>
+                            <rect x="0" y="20" width="0" height="2" rx="1" fill="url(#heroGrad)" opacity="0.5">
+                                <animate attributeName="width" values="0;420;0" dur="6s" repeatCount="indefinite"/>
+                            </rect>
+                        </g>
+
+                        <!-- ═══ Floating ambient elements ═══ -->
+                        <text x="8" y="52" font-family="JetBrains Mono, monospace" font-size="9" fill="url(#heroGrad)" opacity="0.08">kubectl apply -f</text>
+                        <text x="370" y="510" font-family="JetBrains Mono, monospace" font-size="9" fill="url(#heroGrad)" opacity="0.08">docker compose up</text>
+                        <text x="6" y="480" font-family="JetBrains Mono, monospace" font-size="8" fill="url(#heroGrad)" opacity="0.06">git push origin main</text>
                     </svg>
                 </div>
             </div>
@@ -1423,52 +1637,339 @@
         <div class="container">
             <div class="about-container">
                 <div class="about-left">
-                    <svg class="about-illustration" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="about-illustration" viewBox="0 0 440 540" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="archGrad" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.6"/>
+                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.7"/>
                                 <stop offset="100%" stop-color="#0099FF" stop-opacity="0.5"/>
                             </linearGradient>
-                        </defs>
-
-                        <!-- Frontend Layer -->
-                        <rect x="60" y="50" width="280" height="70" rx="10" fill="none" stroke="url(#archGrad)" stroke-width="2"/>
-                        <text x="80" y="95" font-family="Space Grotesk" font-size="14" font-weight="600" fill="url(#archGrad)">Frontend</text>
-                        <circle cx="340" cy="85" r="12" fill="none" stroke="url(#archGrad)" stroke-width="1.5"/>
-                        <circle cx="340" cy="85" r="6" fill="none" stroke="url(#archGrad)" stroke-width="1"/>
-
-                        <!-- Arrow from Frontend to API -->
-                        <defs>
-                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                                <polygon points="0 0, 10 3, 0 6" fill="url(#archGrad)"/>
+                            <linearGradient id="archGrad2" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </linearGradient>
+                            <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#00D4AA" opacity="0.5"/>
                             </marker>
+                            <filter id="archGlow">
+                                <feGaussianBlur stdDeviation="2" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
                         </defs>
-                        <line x1="200" y1="120" x2="200" y2="160" stroke="url(#archGrad)" stroke-width="2" stroke-dasharray="6,4" opacity="0.6" marker-end="url(#arrowhead)"/>
 
-                        <!-- API Layer -->
-                        <rect x="60" y="160" width="280" height="70" rx="10" fill="none" stroke="url(#archGrad)" stroke-width="2"/>
-                        <text x="80" y="205" font-family="Space Grotesk" font-size="14" font-weight="600" fill="url(#archGrad)">API Gateway</text>
-                        <circle cx="340" cy="195" r="12" fill="none" stroke="url(#archGrad)" stroke-width="1.5"/>
-                        <path d="M 340 183 L 340 207 M 328 195 L 352 195" stroke="url(#archGrad)" stroke-width="1.5"/>
+                        <!-- Background subtle pattern -->
+                        <g opacity="0.04">
+                            <line x1="0" y1="90" x2="440" y2="90" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="180" x2="440" y2="180" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="270" x2="440" y2="270" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="360" x2="440" y2="360" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="0" y1="450" x2="440" y2="450" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="88" y1="0" x2="88" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="176" y1="0" x2="176" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="264" y1="0" x2="264" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
+                            <line x1="352" y1="0" x2="352" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
+                        </g>
 
-                        <!-- Arrow from API to Backend -->
-                        <line x1="200" y1="230" x2="200" y2="270" stroke="url(#archGrad)" stroke-width="2" stroke-dasharray="6,4" opacity="0.6" marker-end="url(#arrowhead)"/>
+                        <!-- ═══ LAYER 1: CLIENT TIER ═══ -->
+                        <g>
+                            <!-- Layer label -->
+                            <text x="20" y="28" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.3" letter-spacing="2">CLIENT TIER</text>
+                            <line x1="20" y1="34" x2="420" y2="34" stroke="#00D4AA" stroke-width="0.5" opacity="0.1"/>
 
-                        <!-- Backend Layer -->
-                        <rect x="60" y="270" width="280" height="70" rx="10" fill="none" stroke="url(#archGrad)" stroke-width="2"/>
-                        <text x="80" y="315" font-family="Space Grotesk" font-size="14" font-weight="600" fill="url(#archGrad)">Backend</text>
-                        <circle cx="340" cy="305" r="12" fill="none" stroke="url(#archGrad)" stroke-width="1.5"/>
-                        <rect x="334" y="299" width="12" height="12" fill="none" stroke="url(#archGrad)" stroke-width="1"/>
+                            <!-- Browser clients -->
+                            <g transform="translate(20, 44)">
+                                <!-- Web app -->
+                                <rect x="0" y="0" width="120" height="52" rx="6" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="1" opacity="0.7"/>
+                                <rect x="0" y="0" width="120" height="16" rx="6" fill="rgba(255,255,255,0.02)"/>
+                                <circle cx="10" cy="8" r="2.5" fill="#FF5F56" opacity="0.5"/>
+                                <circle cx="19" cy="8" r="2.5" fill="#FFBD2E" opacity="0.5"/>
+                                <circle cx="28" cy="8" r="2.5" fill="#27C93F" opacity="0.5"/>
+                                <text x="60" y="11" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.25)">React + Next.js</text>
+                                <!-- Mini wireframe inside -->
+                                <rect x="6" y="20" width="108" height="4" rx="1" fill="rgba(0,212,170,0.15)"/>
+                                <rect x="6" y="28" width="52" height="18" rx="2" fill="rgba(0,212,170,0.06)"/>
+                                <rect x="62" y="28" width="52" height="18" rx="2" fill="rgba(0,153,255,0.06)"/>
+                                <rect x="8" y="30" width="30" height="2" rx="1" fill="rgba(240,240,245,0.1)"/>
+                                <rect x="8" y="35" width="45" height="1.5" rx="1" fill="rgba(240,240,245,0.05)"/>
+                                <rect x="8" y="39" width="38" height="1.5" rx="1" fill="rgba(240,240,245,0.05)"/>
+                                <rect x="64" y="30" width="24" height="2" rx="1" fill="rgba(240,240,245,0.1)"/>
+                                <rect x="64" y="35" width="40" height="1.5" rx="1" fill="rgba(240,240,245,0.05)"/>
+                            </g>
 
-                        <!-- Arrow from Backend to Database -->
-                        <line x1="200" y1="340" x2="200" y2="380" stroke="url(#archGrad)" stroke-width="2" stroke-dasharray="6,4" opacity="0.6" marker-end="url(#arrowhead)"/>
+                            <!-- Mobile app -->
+                            <g transform="translate(160, 44)">
+                                <rect x="0" y="0" width="120" height="52" rx="6" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="1" opacity="0.7"/>
+                                <!-- Phone frame -->
+                                <rect x="42" y="6" width="22" height="40" rx="4" fill="none" stroke="rgba(240,240,245,0.15)" stroke-width="0.8"/>
+                                <rect x="44" y="11" width="18" height="28" rx="1" fill="rgba(0,212,170,0.05)"/>
+                                <circle cx="53" cy="45" r="1.5" fill="none" stroke="rgba(240,240,245,0.1)" stroke-width="0.5"/>
+                                <rect x="46" y="14" width="14" height="2" rx="1" fill="rgba(0,212,170,0.15)"/>
+                                <rect x="46" y="19" width="10" height="1" rx="0.5" fill="rgba(240,240,245,0.08)"/>
+                                <rect x="46" y="22" width="14" height="8" rx="1" fill="rgba(0,153,255,0.08)"/>
+                                <rect x="46" y="33" width="8" height="1" rx="0.5" fill="rgba(240,240,245,0.06)"/>
+                                <!-- Tablet frame -->
+                                <rect x="72" y="10" width="32" height="36" rx="4" fill="none" stroke="rgba(240,240,245,0.1)" stroke-width="0.7"/>
+                                <rect x="74" y="14" width="28" height="26" rx="1" fill="rgba(0,153,255,0.04)"/>
+                                <text x="20" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.2)">React</text>
+                                <text x="20" y="38" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.2)">Native</text>
+                            </g>
 
-                        <!-- Database Layer -->
-                        <rect x="60" y="380" width="280" height="60" rx="10" fill="none" stroke="url(#archGrad)" stroke-width="2"/>
-                        <text x="80" y="420" font-family="Space Grotesk" font-size="14" font-weight="600" fill="url(#archGrad)">Database</text>
-                        <circle cx="340" cy="410" r="12" fill="none" stroke="url(#archGrad)" stroke-width="1.5"/>
-                        <circle cx="340" cy="410" r="8" fill="none" stroke="url(#archGrad)" stroke-width="1"/>
-                        <line x="332" y="410" x="348" y="410"/>
+                            <!-- API consumers -->
+                            <g transform="translate(300, 44)">
+                                <rect x="0" y="0" width="120" height="52" rx="6" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="1" opacity="0.7"/>
+                                <text x="60" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.3)">3rd Party</text>
+                                <!-- API doc lines -->
+                                <text x="12" y="30" font-family="JetBrains Mono, monospace" font-size="5.5"><tspan fill="#C792EA" opacity="0.5">GET</tspan><tspan fill="rgba(240,240,245,0.2)"> /api/v2/data</tspan></text>
+                                <text x="12" y="40" font-family="JetBrains Mono, monospace" font-size="5.5"><tspan fill="#82AAFF" opacity="0.5">POST</tspan><tspan fill="rgba(240,240,245,0.2)"> /api/v2/sync</tspan></text>
+                                <text x="12" y="50" font-family="JetBrains Mono, monospace" font-size="5.5"><tspan fill="#FFCB6B" opacity="0.5">WS</tspan><tspan fill="rgba(240,240,245,0.2)"> /realtime</tspan></text>
+                            </g>
+                        </g>
+
+                        <!-- ═══ Connection arrows: Client → Gateway ═══ -->
+                        <g opacity="0.35">
+                            <line x1="80" y1="96" x2="140" y2="120" stroke="url(#archGrad)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowhead)"/>
+                            <line x1="220" y1="96" x2="220" y2="120" stroke="url(#archGrad)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowhead)"/>
+                            <line x1="360" y1="96" x2="300" y2="120" stroke="url(#archGrad)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowhead)"/>
+                        </g>
+
+                        <!-- ═══ LAYER 2: EDGE / GATEWAY ═══ -->
+                        <g>
+                            <text x="20" y="118" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.3" letter-spacing="2">EDGE</text>
+
+                            <!-- Load balancer + CDN + WAF -->
+                            <g transform="translate(20, 126)">
+                                <rect x="0" y="0" width="400" height="40" rx="8" fill="rgba(0,153,255,0.04)" stroke="#0099FF" stroke-width="1" opacity="0.5"/>
+                                <!-- LB icon -->
+                                <g transform="translate(20, 8)">
+                                    <line x1="12" y1="0" x2="0" y2="12" stroke="#0099FF" stroke-width="0.8" opacity="0.5"/>
+                                    <line x1="12" y1="0" x2="24" y2="12" stroke="#0099FF" stroke-width="0.8" opacity="0.5"/>
+                                    <line x1="12" y1="0" x2="12" y2="12" stroke="#0099FF" stroke-width="0.8" opacity="0.5"/>
+                                    <circle cx="0" cy="14" r="3" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.4"/>
+                                    <circle cx="12" cy="14" r="3" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.4"/>
+                                    <circle cx="24" cy="14" r="3" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.4"/>
+                                </g>
+                                <text x="58" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">Load Balancer</text>
+                                <!-- Separator -->
+                                <line x1="150" y1="8" x2="150" y2="32" stroke="rgba(240,240,245,0.06)" stroke-width="1"/>
+                                <!-- CDN icon -->
+                                <circle cx="170" cy="20" r="8" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.35"/>
+                                <ellipse cx="170" cy="20" rx="8" ry="4" fill="none" stroke="#00D4AA" stroke-width="0.5" opacity="0.25"/>
+                                <line x1="162" y1="20" x2="178" y2="20" stroke="#00D4AA" stroke-width="0.5" opacity="0.25"/>
+                                <text x="185" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">CDN</text>
+                                <!-- Separator -->
+                                <line x1="220" y1="8" x2="220" y2="32" stroke="rgba(240,240,245,0.06)" stroke-width="1"/>
+                                <!-- WAF -->
+                                <g transform="translate(236, 12)">
+                                    <rect x="0" y="0" width="14" height="16" rx="2" fill="none" stroke="#FFCB6B" stroke-width="0.8" opacity="0.35"/>
+                                    <line x1="3" y1="5" x2="11" y2="5" stroke="#FFCB6B" stroke-width="0.5" opacity="0.25"/>
+                                    <line x1="3" y1="8" x2="11" y2="8" stroke="#FFCB6B" stroke-width="0.5" opacity="0.25"/>
+                                    <line x1="3" y1="11" x2="8" y2="11" stroke="#FFCB6B" stroke-width="0.5" opacity="0.25"/>
+                                </g>
+                                <text x="258" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">WAF</text>
+                                <!-- Separator -->
+                                <line x1="290" y1="8" x2="290" y2="32" stroke="rgba(240,240,245,0.06)" stroke-width="1"/>
+                                <!-- SSL -->
+                                <g transform="translate(306, 11)">
+                                    <rect x="2" y="6" width="10" height="10" rx="2" fill="none" stroke="#27C93F" stroke-width="0.8" opacity="0.4"/>
+                                    <path d="M4,6 L4,4 Q4,0 7,0 Q10,0 10,4 L10,6" fill="none" stroke="#27C93F" stroke-width="0.8" opacity="0.4"/>
+                                </g>
+                                <text x="324" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.35)">TLS 1.3</text>
+                                <!-- Status indicator -->
+                                <circle cx="388" cy="20" r="3" fill="#27C93F" opacity="0.4">
+                                    <animate attributeName="opacity" values="0.4;0.15;0.4" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                            </g>
+                        </g>
+
+                        <!-- ═══ Connection: Gateway → Services ═══ -->
+                        <g opacity="0.3">
+                            <line x1="120" y1="166" x2="80" y2="200" stroke="url(#archGrad)" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+                            <line x1="220" y1="166" x2="220" y2="200" stroke="url(#archGrad)" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+                            <line x1="320" y1="166" x2="360" y2="200" stroke="url(#archGrad)" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+                        </g>
+
+                        <!-- Animated data packets -->
+                        <circle r="1.5" fill="#00D4AA" opacity="0.7">
+                            <animateMotion dur="2.5s" repeatCount="indefinite" path="M120,166 L80,200"/>
+                        </circle>
+                        <circle r="1.5" fill="#0099FF" opacity="0.7">
+                            <animateMotion dur="2s" repeatCount="indefinite" path="M220,166 L220,200"/>
+                        </circle>
+                        <circle r="1.5" fill="#00D4AA" opacity="0.7">
+                            <animateMotion dur="2.8s" repeatCount="indefinite" path="M320,166 L360,200"/>
+                        </circle>
+
+                        <!-- ═══ LAYER 3: SERVICES ═══ -->
+                        <g>
+                            <text x="20" y="198" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.3" letter-spacing="2">SERVICES</text>
+
+                            <!-- Kubernetes cluster outline -->
+                            <rect x="14" y="206" width="412" height="100" rx="10" fill="none" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="8,4" opacity="0.15"/>
+                            <text x="30" y="218" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.15)">☸ k8s cluster</text>
+
+                            <!-- Service pods -->
+                            <!-- Auth service -->
+                            <g transform="translate(24, 225)">
+                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.6"/>
+                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,212,170,0.04)"/>
+                                <circle cx="10" cy="7" r="2" fill="#27C93F" opacity="0.5"/>
+                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.4)">auth-svc</text>
+                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#C792EA" opacity="0.4">class</tspan><tspan fill="rgba(240,240,245,0.25)"> AuthGuard</tspan></text>
+                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.15)">  validate(jwt)</tspan></text>
+                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.15)">  refresh(token)</tspan></text>
+                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.1)">replicas: 3</text>
+                            </g>
+
+                            <!-- Core API -->
+                            <g transform="translate(124, 225)">
+                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.6"/>
+                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,212,170,0.04)"/>
+                                <circle cx="10" cy="7" r="2" fill="#27C93F" opacity="0.5"/>
+                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.4)">core-api</text>
+                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#FFCB6B" opacity="0.4">@Get</tspan><tspan fill="rgba(240,240,245,0.2)">(</tspan><tspan fill="#C3E88D" opacity="0.3">'/v2'</tspan><tspan fill="rgba(240,240,245,0.2)">)</tspan></text>
+                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.15)">  findAll(query)</tspan></text>
+                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.15)">  create(dto)</tspan></text>
+                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.1)">replicas: 5</text>
+                            </g>
+
+                            <!-- i18n Service -->
+                            <g transform="translate(224, 225)">
+                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.6"/>
+                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,153,255,0.04)"/>
+                                <circle cx="10" cy="7" r="2" fill="#27C93F" opacity="0.5"/>
+                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.4)">i18n-svc</text>
+                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.15)">locales:</text>
+                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#27C93F" opacity="0.3">✓</tspan><tspan fill="rgba(240,240,245,0.15)"> en nl zh de fr</tspan></text>
+                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.15)">  translate(key)</text>
+                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.1)">replicas: 2</text>
+                            </g>
+
+                            <!-- Worker/Queue processor -->
+                            <g transform="translate(326, 225)">
+                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.6"/>
+                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,153,255,0.04)"/>
+                                <circle cx="10" cy="7" r="2" fill="#FFBD2E" opacity="0.5"/>
+                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.4)">worker</text>
+                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#82AAFF" opacity="0.4">async</tspan><tspan fill="rgba(240,240,245,0.15)"> process()</tspan></text>
+                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.15)">  queue.consume()</tspan></text>
+                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.15)">  emit(result)</tspan></text>
+                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.1)">replicas: 4</text>
+                            </g>
+                        </g>
+
+                        <!-- ═══ Event Bus ═══ -->
+                        <g transform="translate(20, 320)">
+                            <rect x="0" y="0" width="400" height="22" rx="4" fill="rgba(0,153,255,0.03)" stroke="#0099FF" stroke-width="0.6" stroke-dasharray="6,4" opacity="0.3"/>
+                            <text x="200" y="14" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#0099FF" opacity="0.25">──── event stream (Kafka / RabbitMQ) ────</text>
+                            <!-- Animated stream pulse -->
+                            <rect x="0" y="19" width="0" height="2" rx="1" fill="url(#archGrad)" opacity="0.3">
+                                <animate attributeName="width" values="0;400;0" dur="5s" repeatCount="indefinite"/>
+                            </rect>
+                        </g>
+
+                        <!-- ═══ Connection: Services → Event Bus ═══ -->
+                        <g opacity="0.2">
+                            <line x1="69" y1="293" x2="69" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
+                            <line x1="169" y1="293" x2="169" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
+                            <line x1="269" y1="293" x2="269" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
+                            <line x1="371" y1="293" x2="371" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
+                        </g>
+
+                        <!-- ═══ Connection: Event Bus → Data ═══ -->
+                        <g opacity="0.2">
+                            <line x1="100" y1="342" x2="80" y2="370" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3" marker-end="url(#arrowhead)"/>
+                            <line x1="220" y1="342" x2="220" y2="370" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3" marker-end="url(#arrowhead)"/>
+                            <line x1="340" y1="342" x2="360" y2="370" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3" marker-end="url(#arrowhead)"/>
+                        </g>
+
+                        <!-- ═══ LAYER 4: DATA TIER ═══ -->
+                        <g>
+                            <text x="20" y="366" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.3" letter-spacing="2">DATA TIER</text>
+
+                            <!-- PostgreSQL -->
+                            <g transform="translate(20, 376)">
+                                <rect x="0" y="0" width="120" height="46" rx="5" fill="rgba(6,6,10,0.8)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.5"/>
+                                <ellipse cx="18" cy="14" rx="9" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.35"/>
+                                <line x1="9" y1="14" x2="9" y2="30" stroke="#00D4AA" stroke-width="0.8" opacity="0.35"/>
+                                <line x1="27" y1="14" x2="27" y2="30" stroke="#00D4AA" stroke-width="0.8" opacity="0.35"/>
+                                <ellipse cx="18" cy="30" rx="9" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.35"/>
+                                <ellipse cx="18" cy="22" rx="9" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.5" opacity="0.2"/>
+                                <text x="38" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">PostgreSQL</text>
+                                <text x="38" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.15)">primary + replica</text>
+                            </g>
+
+                            <!-- Redis -->
+                            <g transform="translate(160, 376)">
+                                <rect x="0" y="0" width="120" height="46" rx="5" fill="rgba(6,6,10,0.8)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.5"/>
+                                <rect x="8" y="10" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.25"/>
+                                <rect x="8" y="17" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.18"/>
+                                <rect x="8" y="24" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.12"/>
+                                <rect x="8" y="31" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.08"/>
+                                <text x="36" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">Redis</text>
+                                <text x="36" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.15)">cache + session</text>
+                            </g>
+
+                            <!-- Elasticsearch / S3 -->
+                            <g transform="translate(300, 376)">
+                                <rect x="0" y="0" width="120" height="46" rx="5" fill="rgba(6,6,10,0.8)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.5"/>
+                                <g opacity="0.3" transform="translate(8, 8)">
+                                    <circle cx="10" cy="10" r="8" fill="none" stroke="#FFBD2E" stroke-width="0.8"/>
+                                    <line x1="16" y1="16" x2="22" y2="22" stroke="#FFBD2E" stroke-width="0.8"/>
+                                </g>
+                                <text x="36" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.3)">Elastic</text>
+                                <text x="36" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.15)">search + logs</text>
+                            </g>
+                        </g>
+
+                        <!-- ═══ LAYER 5: INFRA / OBSERVABILITY ═══ -->
+                        <g>
+                            <text x="20" y="442" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.3" letter-spacing="2">OBSERVABILITY</text>
+
+                            <g transform="translate(20, 452)">
+                                <rect x="0" y="0" width="400" height="36" rx="6" fill="rgba(6,6,10,0.7)" stroke="url(#archGrad)" stroke-width="0.6" opacity="0.3"/>
+
+                                <!-- Grafana-like mini chart -->
+                                <polyline points="16,24 26,18 36,22 46,14 56,20 66,12 76,16 86,10 96,14" fill="none" stroke="#00D4AA" stroke-width="1" opacity="0.3"/>
+                                <text x="106" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.2)">Grafana</text>
+
+                                <line x1="152" y1="6" x2="152" y2="30" stroke="rgba(240,240,245,0.05)" stroke-width="1"/>
+
+                                <!-- Prometheus -->
+                                <circle cx="172" cy="18" r="6" fill="none" stroke="#FF5F56" stroke-width="0.8" opacity="0.25"/>
+                                <circle cx="172" cy="18" r="2" fill="#FF5F56" opacity="0.2"/>
+                                <text x="184" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.2)">Prometheus</text>
+
+                                <line x1="248" y1="6" x2="248" y2="30" stroke="rgba(240,240,245,0.05)" stroke-width="1"/>
+
+                                <!-- Jaeger tracing -->
+                                <g transform="translate(260, 12)" opacity="0.25">
+                                    <rect x="0" y="0" width="18" height="3" rx="1" fill="#00D4AA"/>
+                                    <rect x="4" y="5" width="14" height="3" rx="1" fill="#0099FF"/>
+                                    <rect x="8" y="10" width="10" height="3" rx="1" fill="#C792EA"/>
+                                </g>
+                                <text x="284" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.2)">Tracing</text>
+
+                                <line x1="328" y1="6" x2="328" y2="30" stroke="rgba(240,240,245,0.05)" stroke-width="1"/>
+
+                                <!-- Alerts -->
+                                <text x="342" y="15" font-family="JetBrains Mono, monospace" font-size="8" fill="#27C93F" opacity="0.25">✓</text>
+                                <text x="356" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.2)">0 alerts</text>
+                            </g>
+                        </g>
+
+                        <!-- ═══ Region labels (bottom) ═══ -->
+                        <g transform="translate(20, 502)">
+                            <rect x="0" y="0" width="400" height="26" rx="5" fill="rgba(0,212,170,0.02)" stroke="url(#archGrad)" stroke-width="0.4" opacity="0.2"/>
+                            <text x="14" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.15)">regions:</text>
+                            <rect x="62" y="5" width="60" height="16" rx="3" fill="rgba(0,212,170,0.06)"/>
+                            <text x="68" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#00D4AA" opacity="0.35">eu-west-1</text>
+                            <rect x="130" y="5" width="60" height="16" rx="3" fill="rgba(0,153,255,0.04)"/>
+                            <text x="136" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#0099FF" opacity="0.25">eu-west-2</text>
+                            <rect x="198" y="5" width="66" height="16" rx="3" fill="rgba(0,153,255,0.04)"/>
+                            <text x="204" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#0099FF" opacity="0.25">us-east-1</text>
+                            <rect x="272" y="5" width="66" height="16" rx="3" fill="rgba(0,153,255,0.04)"/>
+                            <text x="278" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#0099FF" opacity="0.25">ap-south-1</text>
+                            <text x="352" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.1)">multi-AZ</text>
+                        </g>
                     </svg>
                 </div>
 
@@ -1528,66 +2029,167 @@
             </div>
 
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Service 1: IT Strategy -->
                 <div class="service-card reveal reveal-delay-1">
                     <div class="service-icon">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 4c6.627 0 12 5.373 12 12s-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4m0 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10m0 4c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3m0 2c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1m-6 6c0-2.209 1.791-4 4-4h4c2.209 0 4 1.791 4 4v2h-2v-2c0-1.105-.895-2-2-2h-4c-1.105 0-2 .895-2 2v2H10v-2z"/>
+                            <!-- Roadmap / strategy icon -->
+                            <path d="M6 6h20v20H6z" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" rx="2" opacity="0.4"/>
+                            <line x1="6" y1="12" x2="26" y2="12" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.2"/>
+                            <line x1="6" y1="18" x2="26" y2="18" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.2"/>
+                            <line x1="16" y1="6" x2="16" y2="26" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.2"/>
+                            <!-- Strategy path -->
+                            <polyline points="9,22 12,16 18,14 22,9" fill="none" stroke="url(#heroGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="22" r="1.5" fill="#00D4AA"/>
+                            <circle cx="12" cy="16" r="1.5" fill="#00B4D8"/>
+                            <circle cx="18" cy="14" r="1.5" fill="#0099FF"/>
+                            <circle cx="22" cy="9" r="1.5" fill="#0099FF"/>
+                            <!-- Target -->
+                            <circle cx="22" cy="9" r="3" fill="none" stroke="#00D4AA" stroke-width="0.6" opacity="0.4"/>
                         </svg>
                     </div>
                     <h3 data-i18n="service.1.title">IT Strategy & Consulting</h3>
                     <p data-i18n="service.1.desc">Fuse technology roadmaps, system audits, and architecture consulting to align tech with business objectives.</p>
                 </div>
 
-                <!-- Service 2 -->
+                <!-- Service 2: Custom Software -->
                 <div class="service-card reveal reveal-delay-2">
                     <div class="service-icon">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 4c-2.209 0-4 1.791-4 4v16c0 2.209 1.791 4 4 4h16c2.209 0 4-1.791 4-4V8c0-2.209-1.791-4-4-4H8m0 2h16c1.105 0 2 .895 2 2v12H6V8c0-1.105.895-2 2-2m0 14h16v2c0 1.105-.895 2-2 2H8c-1.105 0-2-.895-2-2v-2m4-8h8v2H12v-2m0 4h5v2h-5v-2"/>
+                            <!-- Terminal window -->
+                            <rect x="3" y="5" width="26" height="22" rx="3" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" opacity="0.5"/>
+                            <rect x="3" y="5" width="26" height="6" rx="3" fill="rgba(0,212,170,0.08)"/>
+                            <circle cx="7" cy="8" r="1" fill="#FF5F56" opacity="0.7"/>
+                            <circle cx="10.5" cy="8" r="1" fill="#FFBD2E" opacity="0.7"/>
+                            <circle cx="14" cy="8" r="1" fill="#27C93F" opacity="0.7"/>
+                            <!-- Code lines -->
+                            <text x="6" y="16" font-family="monospace" font-size="3.5" fill="#C792EA" opacity="0.6">const</text>
+                            <text x="14.5" y="16" font-family="monospace" font-size="3.5" fill="#82AAFF" opacity="0.5">app</text>
+                            <text x="20" y="16" font-family="monospace" font-size="3.5" fill="rgba(240,240,245,0.3)">=</text>
+                            <line x1="6" y1="19" x2="22" y2="19" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.2"/>
+                            <line x1="8" y1="22" x2="20" y2="22" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.15"/>
+                            <line x1="6" y1="25" x2="16" y2="25" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.2"/>
+                            <!-- Cursor -->
+                            <rect x="16.5" y="24" width="1.5" height="3" fill="#00D4AA" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;0;0.5" dur="1.2s" repeatCount="indefinite"/>
+                            </rect>
                         </svg>
                     </div>
                     <h3 data-i18n="service.2.title">Custom Software Development</h3>
                     <p data-i18n="service.2.desc">Build bespoke apps from scratch—web platforms, mobile, to complex enterprise systems.</p>
                 </div>
 
-                <!-- Service 3 -->
+                <!-- Service 3: Cloud -->
                 <div class="service-card reveal reveal-delay-3">
                     <div class="service-icon">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 2c4.418 0 8 3.582 8 8v12c0 4.418-3.582 8-8 8H8c-4.418 0-8-3.582-8-8V10c0-4.418 3.582-8 8-8h16m0 2H8c-3.314 0-6 2.686-6 6v12c0 3.314 2.686 6 6 6h16c3.314 0 6-2.686 6-6V10c0-3.314-2.686-6-6-6zm-6 4c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6m0 2c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm8-1c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z"/>
+                            <!-- Cloud shape -->
+                            <path d="M8 22h16c2.8 0 5-2.2 5-5s-1.8-4.6-4.3-5C24 9.2 21.5 7 18.5 7c-2.4 0-4.4 1.4-5.3 3.4C12.3 10.2 11.4 10 10.5 10 7.5 10 5 12.5 5 15.5 5 18.6 6 22 8 22z" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" opacity="0.5"/>
+                            <!-- Upload arrow -->
+                            <path d="M16 14v8M13 16.5l3-3 3 3" fill="none" stroke="#00D4AA" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                            <!-- Container nodes below cloud -->
+                            <rect x="6" y="25" width="5" height="4" rx="1" fill="none" stroke="#0099FF" stroke-width="0.7" opacity="0.3"/>
+                            <rect x="13.5" y="25" width="5" height="4" rx="1" fill="none" stroke="#0099FF" stroke-width="0.7" opacity="0.3"/>
+                            <rect x="21" y="25" width="5" height="4" rx="1" fill="none" stroke="#0099FF" stroke-width="0.7" opacity="0.3"/>
+                            <line x1="8.5" y1="25" x2="16" y2="22" stroke="url(#heroGrad)" stroke-width="0.5" stroke-dasharray="1.5,1.5" opacity="0.2"/>
+                            <line x1="16" y1="25" x2="16" y2="22" stroke="url(#heroGrad)" stroke-width="0.5" stroke-dasharray="1.5,1.5" opacity="0.2"/>
+                            <line x1="23.5" y1="25" x2="16" y2="22" stroke="url(#heroGrad)" stroke-width="0.5" stroke-dasharray="1.5,1.5" opacity="0.2"/>
                         </svg>
                     </div>
                     <h3 data-i18n="service.3.title">Cloud & Infrastructure</h3>
                     <p data-i18n="service.3.desc">Seamless cloud migration, hybrid deployments, and infrastructure optimization on AWS, Azure, or GCP.</p>
                 </div>
 
-                <!-- Service 4 -->
+                <!-- Service 4: Digital Transformation -->
                 <div class="service-card reveal reveal-delay-4">
                     <div class="service-icon">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 2c7.732 0 14 6.268 14 14s-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2m0 2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12m6 11c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1m-12 0c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1m6-8c3.314 0 6 2.686 6 6v2c0 1.105-.895 2-2 2H12c-1.105 0-2-.895-2-2v-2c0-3.314 2.686-6 6-6m0 2c-2.209 0-4 1.791-4 4v2h8v-2c0-2.209-1.791-4-4-4z"/>
+                            <!-- Transformation cycle arrows -->
+                            <path d="M16 5C10 5 5 10 5 16" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                            <path d="M16 27C22 27 27 22 27 16" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                            <!-- Arrow tips -->
+                            <polygon points="4,16 7,13.5 7,18.5" fill="#00D4AA" opacity="0.5"/>
+                            <polygon points="28,16 25,18.5 25,13.5" fill="#0099FF" opacity="0.5"/>
+                            <!-- Center nodes: analog → digital -->
+                            <rect x="8" y="13" width="6" height="6" rx="0.5" fill="none" stroke="rgba(240,240,245,0.3)" stroke-width="0.8"/>
+                            <line x1="9" y1="15" x2="13" y2="15" stroke="rgba(240,240,245,0.15)" stroke-width="0.5"/>
+                            <line x1="9" y1="17" x2="12" y2="17" stroke="rgba(240,240,245,0.15)" stroke-width="0.5"/>
+                            <!-- Arrow between -->
+                            <line x1="15.5" y1="16" x2="17.5" y2="16" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                            <polygon points="17.5,15 19,16 17.5,17" fill="#00D4AA" opacity="0.4"/>
+                            <!-- Digital representation -->
+                            <rect x="19.5" y="13" width="6" height="6" rx="1.5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.5"/>
+                            <text x="20.5" y="17.5" font-family="monospace" font-size="3.5" fill="#00D4AA" opacity="0.4">01</text>
+                            <!-- Gear -->
+                            <circle cx="16" cy="24" r="3" fill="none" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.3"/>
+                            <circle cx="16" cy="24" r="1.2" fill="none" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.3"/>
                         </svg>
                     </div>
                     <h3 data-i18n="service.4.title">Digital Transformation</h3>
                     <p data-i18n="service.4.desc">End-to-end digitalization—process automation, ecosystem integration, operational excellence.</p>
                 </div>
 
-                <!-- Service 5 -->
+                <!-- Service 5: AI & Data -->
                 <div class="service-card reveal reveal-delay-1">
                     <div class="service-icon">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2m0 2c6.627 0 12 5.373 12 12s-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4m0 2c1.105 0 2 .895 2 2v6h4c1.105 0 2 .895 2 2s-.895 2-2 2h-6c-1.105 0-2-.895-2-2V8c0-1.105.895-2 2-2z"/>
+                            <!-- Neural network nodes -->
+                            <!-- Input layer -->
+                            <circle cx="6" cy="10" r="2" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                            <circle cx="6" cy="16" r="2" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                            <circle cx="6" cy="22" r="2" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
+                            <!-- Hidden layer 1 -->
+                            <circle cx="13" cy="8" r="2" fill="none" stroke="#00B4D8" stroke-width="0.8" opacity="0.5"/>
+                            <circle cx="13" cy="16" r="2" fill="none" stroke="#00B4D8" stroke-width="0.8" opacity="0.5"/>
+                            <circle cx="13" cy="24" r="2" fill="none" stroke="#00B4D8" stroke-width="0.8" opacity="0.5"/>
+                            <!-- Hidden layer 2 -->
+                            <circle cx="20" cy="10" r="2" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.5"/>
+                            <circle cx="20" cy="16" r="2.5" fill="rgba(0,153,255,0.1)" stroke="#0099FF" stroke-width="0.8" opacity="0.6"/>
+                            <circle cx="20" cy="22" r="2" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.5"/>
+                            <!-- Output -->
+                            <circle cx="27" cy="16" r="2.5" fill="rgba(0,212,170,0.15)" stroke="#00D4AA" stroke-width="1" opacity="0.6"/>
+                            <!-- Connections (selected, not all) -->
+                            <line x1="8" y1="10" x2="11" y2="8" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
+                            <line x1="8" y1="10" x2="11" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="8" y1="16" x2="11" y2="8" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="8" y1="16" x2="11" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
+                            <line x1="8" y1="16" x2="11" y2="24" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="8" y1="22" x2="11" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="8" y1="22" x2="11" y2="24" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
+                            <line x1="15" y1="8" x2="18" y2="10" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
+                            <line x1="15" y1="8" x2="18" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="15" y1="16" x2="18" y2="10" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="15" y1="16" x2="18" y2="16" stroke="url(#heroGrad)" stroke-width="0.5" opacity="0.25"/>
+                            <line x1="15" y1="16" x2="18" y2="22" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="15" y1="24" x2="18" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
+                            <line x1="15" y1="24" x2="18" y2="22" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
+                            <line x1="22" y1="10" x2="25" y2="16" stroke="url(#heroGrad)" stroke-width="0.5" opacity="0.2"/>
+                            <line x1="22" y1="16" x2="25" y2="16" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.3"/>
+                            <line x1="22" y1="22" x2="25" y2="16" stroke="url(#heroGrad)" stroke-width="0.5" opacity="0.2"/>
+                            <!-- Signal pulse -->
+                            <circle r="1" fill="#00D4AA" opacity="0.6">
+                                <animateMotion dur="2s" repeatCount="indefinite" path="M6,16 L13,16 L20,16 L27,16"/>
+                            </circle>
                         </svg>
                     </div>
                     <h3 data-i18n="service.5.title">AI & Data Intelligence</h3>
                     <p data-i18n="service.5.desc">Machine learning, predictive analytics, intelligent automation—unlocking business value from data.</p>
                 </div>
 
-                <!-- Service 6 -->
+                <!-- Service 6: Security -->
                 <div class="service-card reveal reveal-delay-2">
                     <div class="service-icon">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 2c7.732 0 14 6.268 14 14s-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2m0 2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12m5.854 7.146L13 18l-2.854-2.854c-.391-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414L12.586 20l-3.854 3.854c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293s.512-.098.707-.293L13 22l5.146 5.146c.195.195.451.293.707.293s.512-.098.707-.293c.391-.391.391-1.023 0-1.414L14.414 20l3.854-3.854c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0z"/>
+                            <!-- Shield shape -->
+                            <path d="M16 3L5 8v7c0 7.3 4.7 12.4 11 14 6.3-1.6 11-6.7 11-14V8L16 3z" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" opacity="0.5"/>
+                            <path d="M16 5L7 9v6c0 6.2 3.9 10.6 9 12 5.1-1.4 9-5.8 9-12V9L16 5z" fill="rgba(0,212,170,0.04)" stroke="none"/>
+                            <!-- Lock icon inside -->
+                            <rect x="12.5" y="15" width="7" height="6" rx="1.5" fill="none" stroke="#00D4AA" stroke-width="1" opacity="0.5"/>
+                            <path d="M13.5,15 L13.5,13 Q13.5,10 16,10 Q18.5,10 18.5,13 L18.5,15" fill="none" stroke="#00D4AA" stroke-width="1" opacity="0.5"/>
+                            <circle cx="16" cy="18" r="0.8" fill="#00D4AA" opacity="0.5"/>
+                            <!-- Zero-trust rings -->
+                            <circle cx="16" cy="15" r="11" fill="none" stroke="url(#heroGrad)" stroke-width="0.4" stroke-dasharray="2,3" opacity="0.15"/>
+                            <circle cx="16" cy="15" r="13.5" fill="none" stroke="url(#heroGrad)" stroke-width="0.3" stroke-dasharray="1.5,4" opacity="0.1"/>
                         </svg>
                     </div>
                     <h3 data-i18n="service.6.title">Security & Compliance</h3>
