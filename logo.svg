@@ -1,11 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00D4AA"/>
+      <stop offset="50%" stop-color="#00B8D4"/>
       <stop offset="100%" stop-color="#0099FF"/>
     </linearGradient>
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0099FF" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="roundedSquare">
+      <rect width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
   </defs>
-  <rect width="512" height="512" rx="96" fill="#06060A"/>
-  <circle cx="256" cy="256" r="180" fill="url(#g)" opacity="0.15"/>
-  <text x="256" y="300" text-anchor="middle" fill="url(#g)" font-size="240" font-weight="700" font-family="sans-serif">E</text>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="#06060A"/>
+
+  <!-- Subtle grid pattern -->
+  <g clip-path="url(#roundedSquare)" opacity="0.04">
+    <line x1="128" y1="0" x2="128" y2="512" stroke="#00D4AA" stroke-width="1"/>
+    <line x1="256" y1="0" x2="256" y2="512" stroke="#00D4AA" stroke-width="1"/>
+    <line x1="384" y1="0" x2="384" y2="512" stroke="#00D4AA" stroke-width="1"/>
+    <line x1="0" y1="128" x2="512" y2="128" stroke="#00D4AA" stroke-width="1"/>
+    <line x1="0" y1="256" x2="512" y2="256" stroke="#00D4AA" stroke-width="1"/>
+    <line x1="0" y1="384" x2="512" y2="384" stroke="#00D4AA" stroke-width="1"/>
+  </g>
+
+  <!-- Ambient glow behind the E -->
+  <ellipse cx="256" cy="270" rx="140" ry="130" fill="url(#grad)" opacity="0.08"/>
+
+  <!-- The architectural E letterform -->
+  <g filter="url(#glow)">
+    <!-- Main vertical stroke of E -->
+    <rect x="132" y="120" width="42" height="272" rx="6" fill="url(#grad)"/>
+
+    <!-- Top horizontal bar -->
+    <rect x="132" y="120" width="228" height="38" rx="6" fill="url(#grad)"/>
+
+    <!-- Middle horizontal bar (shorter, distinctive) -->
+    <rect x="132" y="237" width="188" height="38" rx="6" fill="url(#grad)"/>
+
+    <!-- Bottom horizontal bar -->
+    <rect x="132" y="354" width="228" height="38" rx="6" fill="url(#grad)"/>
+  </g>
+
+  <!-- Circuit/node decorations - representing IT/digital -->
+  <!-- Top-right node -->
+  <circle cx="372" cy="139" r="12" fill="none" stroke="url(#grad)" stroke-width="3" opacity="0.9"/>
+  <circle cx="372" cy="139" r="5" fill="#00D4AA" opacity="0.9"/>
+
+  <!-- Middle-right node -->
+  <circle cx="332" cy="256" r="12" fill="none" stroke="url(#grad)" stroke-width="3" opacity="0.9"/>
+  <circle cx="332" cy="256" r="5" fill="#00B8D4" opacity="0.9"/>
+
+  <!-- Bottom-right node -->
+  <circle cx="372" cy="373" r="12" fill="none" stroke="url(#grad)" stroke-width="3" opacity="0.9"/>
+  <circle cx="372" cy="373" r="5" fill="#0099FF" opacity="0.9"/>
+
+  <!-- Connecting lines from bar ends to nodes -->
+  <line x1="360" y1="139" x2="348" y2="139" stroke="url(#grad)" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+  <line x1="320" y1="256" x2="310" y2="256" stroke="url(#grad)" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+  <line x1="360" y1="373" x2="348" y2="373" stroke="url(#grad)" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+
+  <!-- Vertical connection line between nodes -->
+  <line x1="372" y1="151" x2="372" y2="237" stroke="url(#grad)" stroke-width="1.5" opacity="0.2"/>
+  <line x1="372" y1="268" x2="332" y2="268" stroke="url(#grad)" stroke-width="1.5" opacity="0.15"/>
+  <line x1="372" y1="280" x2="372" y2="361" stroke="url(#grad)" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- Small floating data dots -->
+  <circle cx="392" cy="180" r="3" fill="#00D4AA" opacity="0.5"/>
+  <circle cx="380" cy="210" r="2" fill="#0099FF" opacity="0.4"/>
+  <circle cx="396" cy="320" r="2.5" fill="#00B8D4" opacity="0.45"/>
+  <circle cx="350" cy="300" r="2" fill="#00D4AA" opacity="0.35"/>
+
+  <!-- Subtle shine overlay on the E -->
+  <rect x="132" y="120" width="42" height="136" rx="6" fill="url(#shine)" opacity="0.5"/>
+  <rect x="174" y="120" width="186" height="19" rx="4" fill="url(#shine)" opacity="0.4"/>
 </svg>
