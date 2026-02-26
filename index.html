@@ -155,6 +155,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta name="theme-color" content="#06060A">
     <style>
         /* ═══════════════════════════════════════════════════
@@ -2360,6 +2361,8 @@
         // ═══════════════════════════════════════════════════
         const translations = {
             en: {
+                'meta.title': 'EcoVibe — Digital Transformation & IT Consulting',
+                'meta.description': 'EcoVibe delivers cutting-edge IT consulting and software solutions to power your enterprise digital transformation.',
                 logo: 'EcoVibe',
                 'nav.about': 'About',
                 'nav.services': 'Services',
@@ -2437,6 +2440,8 @@
                 'footer.kvk': 'EcoVibe · KVK 95066675 · Netherlands'
             },
             zh: {
+                'meta.title': 'EcoVibe — 数字化转型与IT咨询服务',
+                'meta.description': 'EcoVibe 提供前沿的IT咨询和软件解决方案，助力企业实现数字化转型。',
                 logo: 'EcoVibe',
                 'nav.about': '关于我们',
                 'nav.services': '服务',
@@ -2514,6 +2519,8 @@
                 'footer.kvk': 'EcoVibe · KVK 95066675 · 荷兰'
             },
             nl: {
+                'meta.title': 'EcoVibe — Digitale Transformatie & IT-Advies',
+                'meta.description': 'EcoVibe levert geavanceerde IT-advies en softwareoplossingen voor de digitale transformatie van uw onderneming.',
                 logo: 'EcoVibe',
                 'nav.about': 'Over ons',
                 'nav.services': 'Diensten',
@@ -2598,17 +2605,50 @@
         // i18n FUNCTION
         // ═══════════════════════════════════════════════════
         function updatePageTranslations() {
+            const t = translations[currentLang] || translations['en'];
+
+            // Update visible page content (uses innerHTML for embedded HTML in translations like <br> and <span>)
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                const text = translations[currentLang]?.[key] || translations['en'][key];
-                if (text) el.innerHTML = text;
+                const text = t[key] || translations['en'][key];
+                // Safe: content comes from hardcoded translation strings, not user input
+                if (text) el.innerHTML = text; // eslint-disable-line no-unsanitized/property
             });
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
-                const text = translations[currentLang]?.[key] || translations['en'][key];
+                const text = t[key] || translations['en'][key];
                 if (text) el.placeholder = text;
             });
+
+            // Update <html lang>
             document.documentElement.lang = currentLang;
+
+            // Update <title> for multi-language SEO
+            const metaTitle = t['meta.title'] || translations['en']['meta.title'];
+            if (metaTitle) document.title = metaTitle;
+
+            // Update <meta name="description">
+            const metaDesc = t['meta.description'] || translations['en']['meta.description'];
+            const descTag = document.querySelector('meta[name="description"]');
+            if (descTag && metaDesc) descTag.setAttribute('content', metaDesc);
+
+            // Update Open Graph tags for social sharing
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle && metaTitle) ogTitle.setAttribute('content', metaTitle);
+
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc && metaDesc) ogDesc.setAttribute('content', metaDesc);
+
+            const ogLocaleMap = { en: 'en_US', zh: 'zh_CN', nl: 'nl_NL' };
+            const ogLocale = document.querySelector('meta[property="og:locale"]');
+            if (ogLocale) ogLocale.setAttribute('content', ogLocaleMap[currentLang] || 'en_US');
+
+            // Update Twitter Card tags
+            const twTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twTitle && metaTitle) twTitle.setAttribute('content', metaTitle);
+
+            const twDesc = document.querySelector('meta[name="twitter:description"]');
+            if (twDesc && metaDesc) twDesc.setAttribute('content', metaDesc);
         }
 
         // ═══════════════════════════════════════════════════
