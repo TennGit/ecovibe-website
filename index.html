@@ -11,8 +11,8 @@
 
     <!-- Hreflang for multi-language SEO -->
     <link rel="alternate" hreflang="en" href="https://www.ecovibe.space/">
-    <link rel="alternate" hreflang="zh" href="https://www.ecovibe.space/">
-    <link rel="alternate" hreflang="nl" href="https://www.ecovibe.space/">
+    <link rel="alternate" hreflang="nl" href="https://www.ecovibe.space/nl/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://www.ecovibe.space/zh/">
     <link rel="alternate" hreflang="x-default" href="https://www.ecovibe.space/">
 
     <!-- Open Graph -->
@@ -32,69 +32,54 @@
     <meta name="twitter:description" content="AI automation and custom digital solutions for Dutch SMEs. Automate admin, customer enquiries, reporting and internal workflows — without replacing your existing systems.">
     <meta name="twitter:image" content="https://www.ecovibe.space/og-image.png">
 
-    <!-- JSON-LD Structured Data: Organization with Logo -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "EcoVibe",
-        "url": "https://www.ecovibe.space",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.ecovibe.space/logo.png",
-            "width": 512,
-            "height": 512
-        },
-        "description": "AI automation and custom digital solutions for Dutch SMEs. Automate admin, customer enquiries, reporting and internal workflows — without replacing your existing systems.",
-        "email": "info@ecovibe.space",
-        "sameAs": [],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "info@ecovibe.space",
-            "contactType": "customer service",
-            "availableLanguage": ["English", "Chinese", "Dutch"]
-        },
-        "knowsLanguage": ["en", "zh", "nl"],
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "NL"
-        },
-        "taxID": "KVK 95066675",
-        "serviceArea": {
-            "@type": "Place",
-            "name": "Worldwide"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD Structured Data: WebSite with SearchAction -->
+    <!-- JSON-LD Structured Data: WebSite -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://www.ecovibe.space/#website",
         "name": "EcoVibe",
+        "publisher": { "@id": "https://www.ecovibe.space/#organization" },
         "url": "https://www.ecovibe.space",
         "inLanguage": ["en", "zh", "nl"],
         "description": "AI automation and custom digital solutions for Dutch SMEs. Automate admin, customer enquiries, reporting and internal workflows — without replacing your existing systems."
     }
     </script>
 
-    <!-- JSON-LD Structured Data: ProfessionalService -->
+    <!-- JSON-LD Structured Data: the business (ProfessionalService is a kind of Organization) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://www.ecovibe.space/#organization",
         "name": "EcoVibe",
-        "url": "https://www.ecovibe.space",
-        "logo": "https://www.ecovibe.space/logo.png",
+        "url": "https://www.ecovibe.space/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.ecovibe.space/logo.png",
+            "width": 512,
+            "height": 512
+        },
+        "image": "https://www.ecovibe.space/og-image.png",
         "description": "AI automation, workflow automation and fractional tech leadership for Dutch SMEs.",
         "email": "info@ecovibe.space",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@ecovibe.space",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "Dutch", "Chinese"]
+        },
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "NL"
         },
+        "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "KVK",
+            "value": "95066675"
+        },
         "priceRange": "€395 – €2,500+",
-        "knowsLanguage": ["en", "zh", "nl"],
+        "knowsLanguage": ["en", "nl", "zh"],
         "areaServed": {
             "@type": "Country",
             "name": "Netherlands"
@@ -170,10 +155,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"%3E%3Crect width="32" height="32" rx="8" fill="%2312312B"/%3E%3Crect x="8" y="7" width="3.5" height="18" rx="1" fill="%23F6F3EC"/%3E%3Crect x="8" y="7" width="14" height="3" rx="1" fill="%23F6F3EC"/%3E%3Crect x="8" y="14.5" width="10" height="3" rx="1" fill="%23F6F3EC"/%3E%3Crect x="8" y="22" width="14" height="3" rx="1" fill="%23F6F3EC"/%3E%3Ccircle cx="23.5" cy="16" r="2.2" fill="%236DBF95"/%3E%3C/svg%3E">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta name="theme-color" content="#F6F3EC">
     <style>
@@ -280,7 +265,7 @@
         }
 
         /* CJK has no true italic; keep the accent to colour only */
-        html[lang="zh"] .gradient-text {
+        html[lang^="zh"] .gradient-text {
             font-style: normal;
         }
 
@@ -500,8 +485,10 @@
         }
 
         .lang-option {
+            display: block;
             width: 100%;
             text-align: left;
+            text-decoration: none;
             background: none;
             border: none;
             border-radius: 8px;
@@ -1012,7 +999,7 @@
             border-radius: var(--radius-card);
         }
 
-        .pricing-custom h4 {
+        .pricing-custom h3 {
             font-family: var(--font-display);
             font-weight: 400;
             font-size: 1.6rem;
@@ -1176,7 +1163,7 @@
             color: var(--ink);
         }
 
-        .process-step h4 {
+        .process-step h3 {
             font-size: 1.08rem;
             font-weight: 600;
             margin-bottom: 6px;
@@ -1245,7 +1232,7 @@
             stroke-linejoin: round;
         }
 
-        .feature-content h4 {
+        .feature-content h3 {
             font-size: 1.02rem;
             font-weight: 600;
             margin-bottom: 2px;
@@ -1407,7 +1394,7 @@
             font-size: 0.95rem;
         }
 
-        .footer-col h4 {
+        .footer-col-title {
             color: var(--paper);
             font-size: 0.95rem;
             font-weight: 600;
@@ -1665,16 +1652,16 @@
                 <li><a href="#contact" data-i18n="nav.contact">Book a Scan</a></li>
             </ul>
             <div class="language-switcher">
-                <button class="lang-toggle" id="langToggle">
+                <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Language">
                     <span id="currentLang">EN</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 5.5L7 8.5L10 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                 </button>
                 <ul class="lang-dropdown" id="langDropdown">
-                    <li><button class="lang-option active" data-lang="en">English</button></li>
-                    <li><button class="lang-option" data-lang="zh">中文</button></li>
-                    <li><button class="lang-option" data-lang="nl">Nederlands</button></li>
+                    <li><a class="lang-option active" href="/" hreflang="en" lang="en" data-lang="en" aria-current="page">English</a></li>
+                    <li><a class="lang-option" href="/zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">中文</a></li>
+                    <li><a class="lang-option" href="/nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
                 </ul>
             </div>
             <button class="hamburger" id="hamburger">
@@ -2000,7 +1987,7 @@
 
             <div class="pricing-custom reveal">
                 <div>
-                    <h4 data-i18n="pricing.custom.title">Need something custom?</h4>
+                    <h3 data-i18n="pricing.custom.title">Need something custom?</h3>
                     <p data-i18n="pricing.custom.desc">Larger integrations, custom software or ongoing support — we'll scope it together and send a fixed quote.</p>
                 </div>
                 <a href="#contact" class="btn-secondary" data-package="custom"><span data-i18n="pricing.custom.cta">Request a Quote</span></a>
@@ -2093,25 +2080,25 @@
             <div class="process-grid">
                 <div class="process-step reveal reveal-delay-1">
                     <div class="step-number">01</div>
-                    <h4 data-i18n="step.1.title">20-min call</h4>
+                    <h3 data-i18n="step.1.title">20-min call</h3>
                     <p data-i18n="step.1.desc">Tell us which tasks take up your team's time. No obligation.</p>
                 </div>
 
                 <div class="process-step reveal reveal-delay-2">
                     <div class="step-number">02</div>
-                    <h4 data-i18n="step.2.title">Automation Scan</h4>
+                    <h3 data-i18n="step.2.title">Automation Scan</h3>
                     <p data-i18n="step.2.desc">We map your workflows and deliver 3–5 concrete opportunities with an ROI estimate.</p>
                 </div>
 
                 <div class="process-step reveal reveal-delay-3">
                     <div class="step-number">03</div>
-                    <h4 data-i18n="step.3.title">Build</h4>
+                    <h3 data-i18n="step.3.title">Build</h3>
                     <p data-i18n="step.3.desc">Fixed scope, fixed price. We build the automation and connect it to your existing tools.</p>
                 </div>
 
                 <div class="process-step reveal reveal-delay-4">
                     <div class="step-number">04</div>
-                    <h4 data-i18n="step.4.title">Hand-over & support</h4>
+                    <h3 data-i18n="step.4.title">Hand-over & support</h3>
                     <p data-i18n="step.4.desc">Documentation, a short training and support whenever you need it.</p>
                 </div>
             </div>
@@ -2182,7 +2169,7 @@
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M19.5 9H20a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v2.5L16 18h-3"/></svg>
                             </div>
                             <div class="feature-content">
-                                <h4 data-i18n="feature.speed.title">Direct contact</h4>
+                                <h3 data-i18n="feature.speed.title">Direct contact</h3>
                                 <p data-i18n="feature.speed.desc">The person you talk to is the person who builds your solution.</p>
                             </div>
                         </div>
@@ -2192,7 +2179,7 @@
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/></svg>
                             </div>
                             <div class="feature-content">
-                                <h4 data-i18n="feature.elastic.title">Works with your existing tools</h4>
+                                <h3 data-i18n="feature.elastic.title">Works with your existing tools</h3>
                                 <p data-i18n="feature.elastic.desc">Outlook, Excel, your CRM or accounting software — no big migrations needed.</p>
                             </div>
                         </div>
@@ -2202,7 +2189,7 @@
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12V4.5A1.5 1.5 0 0 1 4.5 3H12l9 9-8.5 8.5z"/><circle cx="7.5" cy="7.5" r="1.4"/><path d="M10.5 13.5l2 2 4-4"/></svg>
                             </div>
                             <div class="feature-content">
-                                <h4 data-i18n="feature.security.title">Fixed price, agreed upfront</h4>
+                                <h3 data-i18n="feature.security.title">Fixed price, agreed upfront</h3>
                                 <p data-i18n="feature.security.desc">Clear scope and price before work starts. No hourly surprises.</p>
                             </div>
                         </div>
@@ -2238,12 +2225,12 @@
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="name" data-i18n="form.name.label">Your Name</label>
-                    <input type="text" id="name" name="name" required data-i18n-placeholder="form.name.placeholder">
+                    <input type="text" id="name" name="name" required data-i18n-placeholder="form.name.placeholder" placeholder="John Doe">
                 </div>
 
                 <div class="form-group">
                     <label for="email" data-i18n="form.email.label">Email</label>
-                    <input type="email" id="email" name="email" required data-i18n-placeholder="form.email.placeholder">
+                    <input type="email" id="email" name="email" required data-i18n-placeholder="form.email.placeholder" placeholder="john@example.com">
                 </div>
 
                 <div class="form-group">
@@ -2260,7 +2247,7 @@
 
                 <div class="form-group">
                     <label for="message" data-i18n="form.message.label">Your Message</label>
-                    <textarea id="message" name="message" required data-i18n-placeholder="form.message.placeholder"></textarea>
+                    <textarea id="message" name="message" required data-i18n-placeholder="form.message.placeholder" placeholder="Which tasks take up the most time? E.g. invoices, quotes, customer emails..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary">
@@ -2293,7 +2280,7 @@
                     <p data-i18n="hero.lead">AI automation and custom digital solutions for Dutch SMEs.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Product</h4>
+                    <p class="footer-col-title" data-i18n="footer.product">Product</p>
                     <ul>
                         <li><a href="#automate" data-i18n="footer.product.services">Services</a></li>
                         <li><a href="#process" data-i18n="footer.product.process">Process</a></li>
@@ -2301,17 +2288,16 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 data-i18n="footer.company">Company</h4>
+                    <p class="footer-col-title" data-i18n="footer.company">Company</p>
                     <ul>
                         <li><a href="#about" data-i18n="footer.company.about">About</a></li>
                         <li><a href="#contact" data-i18n="footer.company.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 data-i18n="footer.legal">Legal</h4>
+                    <p class="footer-col-title" data-i18n="footer.legal">Legal</p>
                     <ul>
-                        <li><a href="#" data-i18n="footer.legal.privacy">Privacy Policy</a></li>
-                        <li><a href="#" data-i18n="footer.legal.terms">Terms of Service</a></li>
+                        <li><a href="/privacy/" data-i18n="footer.legal.privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -2427,12 +2413,12 @@
                 'form.submit': 'Book an Automation Scan',
                 'footer.product.services': 'Services',
                 'footer.product.process': 'Process',
+                'footer.product': 'Product',
                 'footer.company': 'Company',
                 'footer.company.about': 'About',
                 'footer.company.contact': 'Contact',
                 'footer.legal': 'Legal',
                 'footer.legal.privacy': 'Privacy Policy',
-                'footer.legal.terms': 'Terms of Service',
                 'footer.copyright': '© 2026 EcoVibe. All rights reserved.',
                 'footer.email': 'Email: <a href="mailto:info@ecovibe.space">info@ecovibe.space</a>',
                 'footer.kvk': 'EcoVibe · KVK 95066675 · Netherlands',
@@ -2594,12 +2580,12 @@
                 'form.submit': '预约自动化诊断',
                 'footer.product.services': '服务',
                 'footer.product.process': '流程',
+                'footer.product': '服务',
                 'footer.company': '公司',
                 'footer.company.about': '关于我们',
                 'footer.company.contact': '联系我们',
                 'footer.legal': '法律',
                 'footer.legal.privacy': '隐私政策',
-                'footer.legal.terms': '服务条款',
                 'footer.copyright': '© 2026 EcoVibe. 保留所有权利。',
                 'footer.email': '电子邮箱：<a href="mailto:info@ecovibe.space">info@ecovibe.space</a>',
                 'footer.kvk': 'EcoVibe · KVK 95066675 · 荷兰',
@@ -2761,12 +2747,12 @@
                 'form.submit': 'Boek een Automatiseringsscan',
                 'footer.product.services': 'Diensten',
                 'footer.product.process': 'Werkwijze',
+                'footer.product': 'Diensten',
                 'footer.company': 'Bedrijf',
                 'footer.company.about': 'Over ons',
                 'footer.company.contact': 'Contact',
                 'footer.legal': 'Juridisch',
                 'footer.legal.privacy': 'Privacybeleid',
-                'footer.legal.terms': 'Algemene Voorwaarden',
                 'footer.copyright': '© 2026 EcoVibe. Alle rechten voorbehouden.',
                 'footer.email': 'E-mail: <a href="mailto:info@ecovibe.space">info@ecovibe.space</a>',
                 'footer.kvk': 'EcoVibe · KVK 95066675 · Nederland',
@@ -2832,89 +2818,29 @@
             }
         };
 
-        let currentLang = localStorage.getItem('ecovibe-lang') || 'en';
-
-        // ═══════════════════════════════════════════════════
-        // i18n FUNCTION
-        // ═══════════════════════════════════════════════════
-        function updatePageTranslations() {
-            const t = translations[currentLang] || translations['en'];
-
-            // Update visible page content (uses innerHTML for embedded HTML in translations like <br> and <span>)
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                const text = t[key] || translations['en'][key];
-                // Safe: content comes from hardcoded translation strings, not user input
-                if (text) el.innerHTML = text; // eslint-disable-line no-unsanitized/property
-            });
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                const key = el.getAttribute('data-i18n-placeholder');
-                const text = t[key] || translations['en'][key];
-                if (text) el.placeholder = text;
-            });
-
-            // Update <html lang>
-            document.documentElement.lang = currentLang;
-
-            // Update <title> for multi-language SEO
-            const metaTitle = t['meta.title'] || translations['en']['meta.title'];
-            if (metaTitle) document.title = metaTitle;
-
-            // Update <meta name="description">
-            const metaDesc = t['meta.description'] || translations['en']['meta.description'];
-            const descTag = document.querySelector('meta[name="description"]');
-            if (descTag && metaDesc) descTag.setAttribute('content', metaDesc);
-
-            // Update Open Graph tags for social sharing
-            const ogTitle = document.querySelector('meta[property="og:title"]');
-            if (ogTitle && metaTitle) ogTitle.setAttribute('content', metaTitle);
-
-            const ogDesc = document.querySelector('meta[property="og:description"]');
-            if (ogDesc && metaDesc) ogDesc.setAttribute('content', metaDesc);
-
-            const ogLocaleMap = { en: 'en_US', zh: 'zh_CN', nl: 'nl_NL' };
-            const ogLocale = document.querySelector('meta[property="og:locale"]');
-            if (ogLocale) ogLocale.setAttribute('content', ogLocaleMap[currentLang] || 'en_US');
-
-            // Update Twitter Card tags
-            const twTitle = document.querySelector('meta[name="twitter:title"]');
-            if (twTitle && metaTitle) twTitle.setAttribute('content', metaTitle);
-
-            const twDesc = document.querySelector('meta[name="twitter:description"]');
-            if (twDesc && metaDesc) twDesc.setAttribute('content', metaDesc);
-        }
-
         // ═══════════════════════════════════════════════════
         // LANGUAGE SWITCHER
         // ═══════════════════════════════════════════════════
         const langToggle = document.getElementById('langToggle');
         const langDropdown = document.getElementById('langDropdown');
         const langOptions = document.querySelectorAll('.lang-option');
-        const currentLangSpan = document.getElementById('currentLang');
 
         langToggle.addEventListener('click', () => {
-            langDropdown.classList.toggle('active');
+            const open = langDropdown.classList.toggle('active');
+            langToggle.setAttribute('aria-expanded', String(open));
         });
 
+        // Options are plain links to the other language pages; just remember the choice
         langOptions.forEach(option => {
-            option.addEventListener('click', (e) => {
-                e.preventDefault();
-                const newLang = option.getAttribute('data-lang');
-                currentLang = newLang;
-                localStorage.setItem('ecovibe-lang', newLang);
-
-                langOptions.forEach(opt => opt.classList.remove('active'));
-                option.classList.add('active');
-                currentLangSpan.textContent = newLang.toUpperCase();
-
-                updatePageTranslations();
-                langDropdown.classList.remove('active');
+            option.addEventListener('click', () => {
+                try { localStorage.setItem('ecovibe-lang', option.getAttribute('data-lang')); } catch (err) { /* storage unavailable */ }
             });
         });
 
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.language-switcher')) {
                 langDropdown.classList.remove('active');
+                langToggle.setAttribute('aria-expanded', 'false');
             }
         });
 
@@ -3024,16 +2950,8 @@
         // ═══════════════════════════════════════════════════
         // INITIALIZE
         // ═══════════════════════════════════════════════════
-        updatePageTranslations();
-        if (currentLang !== 'en') {
-            document.querySelectorAll('.lang-option').forEach(opt => {
-                opt.classList.remove('active');
-                if (opt.getAttribute('data-lang') === currentLang) {
-                    opt.classList.add('active');
-                }
-            });
-            currentLangSpan.textContent = currentLang.toUpperCase();
-        }
+        // Content is already rendered in the page's language at build time
+        // (scripts/build-i18n.js); nothing to translate on load.
     </script>
 </body>
 </html>
