@@ -167,62 +167,47 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300D4AA'/%3E%3Cstop offset='100%25' stop-color='%230099FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%2306060A'/%3E%3Crect x='8' y='7' width='3.5' height='18' rx='1' fill='url(%23g)'/%3E%3Crect x='8' y='7' width='15' height='3' rx='1' fill='url(%23g)'/%3E%3Crect x='8' y='14.5' width='12' height='3' rx='1' fill='url(%23g)'/%3E%3Crect x='8' y='22' width='15' height='3' rx='1' fill='url(%23g)'/%3E%3Ccircle cx='24.5' cy='8.5' r='1.8' fill='none' stroke='url(%23g)' stroke-width='0.8'/%3E%3Ccircle cx='24.5' cy='8.5' r='0.8' fill='%2300D4AA'/%3E%3Ccircle cx='21.5' cy='16' r='1.8' fill='none' stroke='url(%23g)' stroke-width='0.8'/%3E%3Ccircle cx='21.5' cy='16' r='0.8' fill='%2300B8D4'/%3E%3Ccircle cx='24.5' cy='23.5' r='1.8' fill='none' stroke='url(%23g)' stroke-width='0.8'/%3E%3Ccircle cx='24.5' cy='23.5' r='0.8' fill='%230099FF'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"%3E%3Crect width="32" height="32" rx="8" fill="%2312312B"/%3E%3Crect x="8" y="7" width="3.5" height="18" rx="1" fill="%23F6F3EC"/%3E%3Crect x="8" y="7" width="14" height="3" rx="1" fill="%23F6F3EC"/%3E%3Crect x="8" y="14.5" width="10" height="3" rx="1" fill="%23F6F3EC"/%3E%3Crect x="8" y="22" width="14" height="3" rx="1" fill="%23F6F3EC"/%3E%3Ccircle cx="23.5" cy="16" r="2.2" fill="%236DBF95"/%3E%3C/svg%3E">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    <meta name="theme-color" content="#06060A">
+    <meta name="theme-color" content="#F6F3EC">
     <style>
         /* ═══════════════════════════════════════════════════
            DESIGN TOKENS
            ═══════════════════════════════════════════════════ */
         :root {
-            /* Surfaces */
-            --bg-primary: #06060A;
-            --bg-secondary: #0C0C14;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --bg-card-hover: rgba(255, 255, 255, 0.06);
+            --paper: #F6F3EC;
+            --paper-deep: #EDE7DA;
+            --card: #FFFDF8;
+            --ink: #12312B;
+            --ink-soft: #4E5F59;
+            --ink-faint: #7C8A85;
+            --rule: #E2DCCF;
+            --leaf: #2F7D5B;
+            --leaf-deep: #1F5C42;
+            --leaf-wash: #E3EEE6;
+            --amber: #E0A23B;
+            --amber-wash: #F7E7C6;
 
-            /* Borders */
-            --border-subtle: rgba(255, 255, 255, 0.06);
-            --border-medium: rgba(255, 255, 255, 0.1);
+            --font-display: 'Instrument Serif', 'Noto Serif SC', 'Songti SC', Georgia, serif;
+            --font-body: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
 
-            /* Text */
-            --text-primary: #F0F0F5;
-            --text-secondary: rgba(240, 240, 245, 0.6);
-            --text-tertiary: rgba(240, 240, 245, 0.4);
-
-            /* Accent Gradient */
-            --accent-start: #00D4AA;
-            --accent-mid: #00B4D8;
-            --accent-end: #0099FF;
-            --gradient-accent: linear-gradient(135deg, var(--accent-start), var(--accent-mid), var(--accent-end));
-
-            /* Glow */
-            --glow-primary: rgba(0, 212, 170, 0.15);
-            --glow-secondary: rgba(0, 153, 255, 0.15);
-
-            /* Spacing */
-            --section-padding: clamp(80px, 10vw, 140px);
-            --container-max: 1200px;
-
-            /* Typography */
-            --font-display: 'Space Grotesk', system-ui, sans-serif;
-            --font-body: 'Inter', system-ui, sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-
-            /* Animation */
-            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --section-padding: clamp(80px, 10vw, 136px);
+            --container-max: 1180px;
+            --radius-card: 14px;
+            --radius-control: 999px;
+            --shadow-paper: 0 1px 0 rgba(18, 49, 43, 0.04), 0 12px 32px -18px rgba(18, 49, 43, 0.25);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        /* ═══════════════════════════════════════════════════
-           RESET & BASE
-           ═══════════════════════════════════════════════════ */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -230,1291 +215,667 @@
 
         html {
             scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
             font-family: var(--font-body);
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-size: 1.0625rem;
             line-height: 1.6;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-        }
-
-        ::selection {
-            background: rgba(0, 212, 170, 0.3);
-            color: #fff;
         }
 
         a {
             color: inherit;
-            text-decoration: none;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
+        :focus-visible {
+            outline: 2px solid var(--leaf);
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
-        /* ═══════════════════════════════════════════════════
-           UTILITY
-           ═══════════════════════════════════════════════════ */
+        ::selection {
+            background: var(--amber-wash);
+            color: var(--ink);
+        }
+
+        section[id] {
+            scroll-margin-top: 72px;
+        }
+
         .container {
-            width: 100%;
             max-width: var(--container-max);
             margin: 0 auto;
             padding: 0 clamp(20px, 4vw, 40px);
         }
 
+        /* Kept for the scroll script; the redesign has no progress bar */
+        .scroll-progress {
+            display: none;
+        }
+
+        /* Content is always visible; the page has one orchestrated moment (the hero) */
+        .reveal {
+            opacity: 1;
+        }
+
+        /* ═══════════════════════════════════════════════════
+           TYPOGRAPHY
+           ═══════════════════════════════════════════════════ */
+        h1,
+        h2 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
         .gradient-text {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-style: italic;
+            color: var(--leaf-deep);
+        }
+
+        /* CJK has no true italic; keep the accent to colour only */
+        html[lang="zh"] .gradient-text {
+            font-style: normal;
         }
 
         .section-label {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent-start);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 24px;
-            height: 1px;
-            background: var(--gradient-accent);
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--leaf);
+            margin-bottom: 0.75rem;
         }
 
         .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 600;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
+            font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+            line-height: 1.04;
+            max-width: 17ch;
         }
 
         .section-desc {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            max-width: 560px;
-            line-height: 1.7;
+            font-size: 1.0625rem;
+            color: var(--ink-soft);
+            max-width: 34rem;
+            line-height: 1.65;
         }
 
-        /* Reveal animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        /* Editorial section header: title left, explanation right */
+        .automate-header,
+        .roi-header,
+        .pricing-header,
+        .services-header,
+        .process-header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+            column-gap: clamp(32px, 6vw, 96px);
+            align-items: end;
+            margin-bottom: clamp(40px, 6vw, 64px);
         }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .automate-header .section-label,
+        .roi-header .section-label,
+        .pricing-header .section-label,
+        .services-header .section-label,
+        .process-header .section-label {
+            grid-column: 1 / -1;
         }
 
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
+        .automate-header .section-desc,
+        .roi-header .section-desc,
+        .pricing-header .section-desc,
+        .services-header .section-desc,
+        .process-header .section-desc {
+            padding-bottom: 0.4rem;
+        }
+
+        /* ═══════════════════════════════════════════════════
+           BUTTONS
+           ═══════════════════════════════════════════════════ */
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 12px 24px;
+            border-radius: var(--radius-control);
+            font-family: var(--font-body);
+            font-size: 0.98rem;
+            font-weight: 500;
+            line-height: 1.2;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--leaf-deep);
+            color: #FFFDF8;
+            border: 1px solid var(--leaf-deep);
+        }
+
+        .btn-primary:hover {
+            background: var(--ink);
+            border-color: var(--ink);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid rgba(18, 49, 43, 0.28);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--ink);
+            background: rgba(18, 49, 43, 0.04);
+        }
 
         /* ═══════════════════════════════════════════════════
            NAVIGATION
            ═══════════════════════════════════════════════════ */
         .nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 0 clamp(20px, 4vw, 40px);
-            transition: all 0.4s var(--ease-out-expo);
+            inset: 0 0 auto 0;
+            z-index: 100;
+            background: rgba(246, 243, 236, 0.86);
+            backdrop-filter: saturate(1.4) blur(12px);
+            -webkit-backdrop-filter: saturate(1.4) blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
         }
 
         .nav.scrolled {
-            background: rgba(6, 6, 10, 0.85);
-            backdrop-filter: blur(20px) saturate(1.5);
-            -webkit-backdrop-filter: blur(20px) saturate(1.5);
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom-color: var(--rule);
         }
 
         .nav-inner {
             max-width: var(--container-max);
             margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 40px);
+            height: 72px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            height: 80px;
+            gap: 32px;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.3rem;
-            letter-spacing: -0.02em;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+            margin-right: auto;
         }
 
         .logo-mark {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            width: 32px;
+            height: 32px;
         }
 
         .logo-mark svg {
             width: 100%;
             height: 100%;
-            filter: drop-shadow(0 0 8px rgba(0, 212, 170, 0.3));
-        }
-
-        .logo-mark::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 8px;
-            background: var(--gradient-accent);
-            z-index: -1;
-            opacity: 0.25;
-            filter: blur(10px);
+            display: block;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 36px;
+            gap: 28px;
             list-style: none;
         }
 
         .nav-links a {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-            position: relative;
+            text-decoration: none;
+            font-size: 0.95rem;
+            color: var(--ink-soft);
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
+            color: var(--ink);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background: var(--gradient-accent);
-            transition: width 0.3s var(--ease-out-expo);
+        .nav-links li:last-child a {
+            color: var(--leaf-deep);
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid rgba(31, 92, 66, 0.35);
+            border-radius: var(--radius-control);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links li:last-child a:hover {
+            background: var(--leaf-deep);
+            border-color: var(--leaf-deep);
+            color: #FFFDF8;
         }
 
         .language-switcher {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-left: 24px;
             position: relative;
         }
 
         .lang-toggle {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
-            border-radius: 50px;
-            border: 1px solid var(--border-medium);
-            background: transparent;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-secondary);
+            gap: 4px;
+            background: none;
+            border: none;
+            font: 500 0.9rem var(--font-body);
+            color: var(--ink-soft);
             cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .lang-toggle:hover {
-            background: var(--bg-card);
-            border-color: var(--accent-start);
-            color: var(--text-primary);
+            padding: 8px 4px;
         }
 
         .lang-dropdown {
             position: absolute;
-            top: 100%;
+            top: calc(100% + 8px);
             right: 0;
-            margin-top: 8px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-medium);
-            border-radius: 12px;
-            padding: 8px 0;
+            min-width: 150px;
             list-style: none;
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: 12px;
+            box-shadow: var(--shadow-paper);
+            padding: 6px;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1001;
+            transform: translateY(-4px);
+            transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
         }
 
         .lang-dropdown.active {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            transform: none;
         }
 
-        .lang-dropdown li {
-            padding: 0;
-        }
-
-        .lang-dropdown button {
+        .lang-option {
             width: 100%;
-            padding: 10px 20px;
-            border: none;
-            background: transparent;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
             text-align: left;
-            font-family: var(--font-body);
+            background: none;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font: 0.92rem var(--font-body);
+            color: var(--ink);
+            cursor: pointer;
         }
 
-        .lang-dropdown button:hover {
-            background: var(--bg-card);
-            color: var(--text-primary);
+        .lang-option:hover {
+            background: var(--paper);
         }
 
-        .lang-dropdown button.active {
-            color: var(--accent-start);
+        .lang-option.active {
+            color: var(--leaf-deep);
+            font-weight: 500;
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
-            gap: 6px;
+            justify-content: center;
+            gap: 5px;
+            width: 40px;
+            height: 40px;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 0;
+            padding: 8px;
         }
 
         .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all 0.3s ease;
+            display: block;
+            height: 1.5px;
+            background: var(--ink);
+            border-radius: 2px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
         }
 
         /* ═══════════════════════════════════════════════════
-           SCROLL PROGRESS BAR
-           ═══════════════════════════════════════════════════ */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--gradient-accent);
-            z-index: 2000;
-            width: 0%;
-            transition: width 0.1s ease;
-        }
-
-        /* ═══════════════════════════════════════════════════
-           FLOATING CODE SYMBOLS (Background decoration)
-           ═══════════════════════════════════════════════════ */
-        .floating-code {
-            position: absolute;
-            font-family: var(--font-mono);
-            font-size: 1.5rem;
-            color: rgba(0, 212, 170, 0.1);
-            pointer-events: none;
-            animation: float-gentle 8s ease-in-out infinite;
-        }
-
-        @keyframes float-gentle {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(2deg); }
-        }
-
-        .floating-code:nth-child(1) { animation-delay: 0s; }
-        .floating-code:nth-child(2) { animation-delay: 1s; font-size: 1.2rem; }
-        .floating-code:nth-child(3) { animation-delay: 2s; }
-        .floating-code:nth-child(4) { animation-delay: 3s; font-size: 1.3rem; }
-
-        /* ═══════════════════════════════════════════════════
-           HERO SECTION
+           HERO
            ═══════════════════════════════════════════════════ */
         .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 0 80px;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 153, 255, 0.08) 0%, transparent 50%),
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 50px,
-                    rgba(255, 255, 255, 0.02) 50px,
-                    rgba(255, 255, 255, 0.02) 51px
-                );
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            padding: calc(72px + clamp(48px, 8vw, 104px)) 0 clamp(64px, 8vw, 112px);
         }
 
         .hero-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+            gap: clamp(32px, 5vw, 72px);
             align-items: center;
         }
 
-        .hero-left h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--leaf-deep);
             margin-bottom: 1.5rem;
         }
 
-        .hero-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            border: 1px solid var(--border-medium);
-            border-radius: 50px;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent-start);
-            margin-bottom: 2rem;
-            background: rgba(0, 212, 170, 0.05);
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--amber);
+            box-shadow: 0 0 0 4px var(--amber-wash);
+        }
+
+        .hero-left h1 {
+            font-size: clamp(2.9rem, 6.2vw, 5.1rem);
+            line-height: 0.98;
+            letter-spacing: -0.015em;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-lead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--ink);
+            max-width: 30rem;
+            margin-bottom: 0.75rem;
         }
 
         .hero-desc {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-            max-width: 520px;
+            color: var(--ink-soft);
+            max-width: 31rem;
+            margin-bottom: 2.25rem;
         }
 
         .hero-cta {
             display: flex;
-            gap: 20px;
             flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
             gap: 12px;
-            padding: 16px 32px;
-            border: none;
-            border-radius: 12px;
-            background: var(--gradient-accent);
-            color: #fff;
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s var(--ease-out-expo);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .btn-primary:hover::before {
-            transform: translateX(100%);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 48px rgba(0, 212, 170, 0.3);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            border: 1px solid var(--border-medium);
-            border-radius: 12px;
-            background: transparent;
-            color: var(--text-primary);
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s var(--ease-out-expo);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-card);
-            border-color: var(--accent-start);
-            color: var(--accent-start);
         }
 
         .hero-right {
             position: relative;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero-illustration {
-            animation: float-slow 6s ease-in-out infinite;
-        }
-
-        @keyframes float-slow {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-40px); }
-        }
-
-        /* ═══════════════════════════════════════════════════
-           ABOUT SECTION
-           ═══════════════════════════════════════════════════ */
-        .about {
-            position: relative;
-            padding: var(--section-padding) 0;
-            overflow: hidden;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 153, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-left {
-            position: relative;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-illustration {
+            display: block;
             width: 100%;
-            height: 100%;
-        }
-
-        .about-right .section-label {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-right .section-title {
-            margin-bottom: 2rem;
-        }
-
-        .about-right .section-desc {
-            margin-bottom: 2.5rem;
-        }
-
-        .features-grid {
-            display: grid;
-            gap: 24px;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 16px;
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border-medium);
-            border-radius: 12px;
-            background: var(--bg-card);
-            flex-shrink: 0;
-        }
-
-        .feature-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--accent-start);
-            fill: none;
-            stroke-width: 1.5;
-        }
-
-        .feature-content h4 {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .feature-content p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* ═══════════════════════════════════════════════════
-           SERVICES SECTION
-           ═══════════════════════════════════════════════════ */
-        .services {
-            position: relative;
-            padding: var(--section-padding) 0;
-            overflow: hidden;
-        }
-
-        .services::before {
-            content: '';
-            position: absolute;
-            top: -200px;
-            left: -200px;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 212, 170, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .services-header .section-label {
-            justify-content: center;
-        }
-
-        .services-header .section-title {
+            height: auto;
+            max-width: 560px;
             margin-left: auto;
-            margin-right: auto;
+            overflow: visible;
         }
 
-        @media (max-width: 1024px) {
-            .automate-grid {
-                grid-template-columns: repeat(2, 1fr);
+        /* The one orchestrated moment: documents settle, the route draws, the stamp lands */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-illustration .doc {
+                animation: doc-settle 0.9s var(--ease-out) both;
+            }
+
+            .hero-illustration .doc-2 { animation-delay: 0.12s; }
+            .hero-illustration .doc-3 { animation-delay: 0.24s; }
+
+            .hero-illustration .route {
+                stroke-dasharray: 4 7;
+                animation: route-flow 1.6s linear 0.6s both;
+            }
+
+            .hero-illustration .hub,
+            .hero-illustration .result {
+                animation: doc-settle 0.8s var(--ease-out) 0.9s both;
+            }
+
+            .hero-illustration .stamp {
+                transform-box: fill-box;
+                transform-origin: center;
+                animation: stamp-in 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) 1.5s both;
             }
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
+        @keyframes doc-settle {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: none; }
         }
 
-        .service-card {
-            padding: 32px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(20px);
-            transition: all 0.4s var(--ease-out-expo);
-            position: relative;
-            overflow: hidden;
+        @keyframes route-flow {
+            from { opacity: 0; stroke-dashoffset: 80; }
+            to { opacity: 1; stroke-dashoffset: 0; }
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0, 212, 170, 0.05) 0%, rgba(0, 153, 255, 0.05) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--border-medium);
-            transform: translateY(-8px);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-top: 16px;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--border-medium);
-            border-radius: 14px;
-            background: var(--bg-card);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card:hover .service-icon {
-            border-color: var(--accent-start);
-            background: rgba(0, 212, 170, 0.1);
-        }
-
-        .service-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--accent-start);
-            fill: none;
-            stroke-width: 1.5;
-            transition: all 0.3s ease;
-        }
-
-        .services-header .section-desc,
-        .process-header .section-desc,
-        .roi-header .section-desc {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .capabilities {
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        .capabilities-label {
-            display: inline-block;
-            font-family: var(--font-display);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            text-align: left;
-        }
-
-        .capability {
-            padding: 20px 24px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.015);
-        }
-
-        .capability h4 {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-        }
-
-        .capability p {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.55;
+        @keyframes stamp-in {
+            from { opacity: 0; transform: scale(1.5); }
+            to { opacity: 1; transform: none; }
         }
 
         /* ═══════════════════════════════════════════════════
-           WHAT CAN WE AUTOMATE SECTION
+           WHAT WE AUTOMATE — a ruled list, not a card grid
            ═══════════════════════════════════════════════════ */
         .automate {
-            position: relative;
             padding: var(--section-padding) 0;
-        }
-
-        .automate-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .automate-header .section-label {
-            justify-content: center;
-        }
-
-        .automate-header .section-title,
-        .automate-header .section-desc {
-            margin-left: auto;
-            margin-right: auto;
+            border-top: 1px solid var(--rule);
         }
 
         .automate-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: clamp(32px, 6vw, 96px);
         }
 
         .automate-card {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            padding: 24px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.02);
-            transition: border-color 0.3s ease, background 0.3s ease;
-        }
-
-        .automate-card:hover {
-            border-color: var(--border-medium);
-            background: rgba(255, 255, 255, 0.04);
+            display: grid;
+            grid-template-columns: 48px minmax(0, 1fr);
+            gap: 20px;
+            padding: 28px 0;
+            border-top: 1px solid var(--rule);
         }
 
         .automate-icon {
-            flex-shrink: 0;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border-medium);
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
-            background: rgba(0, 212, 170, 0.06);
+            background: var(--leaf-wash);
+            display: grid;
+            place-items: center;
         }
 
         .automate-icon svg {
-            width: 22px;
-            height: 22px;
+            width: 26px;
+            height: 26px;
             fill: none;
-            stroke: var(--accent-start);
-            stroke-width: 1.6;
+            stroke: var(--ink);
+            stroke-width: 1.5;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
 
+        .automate-icon svg .accent {
+            stroke: var(--leaf);
+        }
+
+        .automate-icon svg .accent-fill {
+            fill: var(--amber);
+            stroke: none;
+        }
+
         .automate-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.05rem;
+            font-size: 1.12rem;
             font-weight: 600;
-            color: var(--text-primary);
+            letter-spacing: -0.01em;
             margin-bottom: 6px;
         }
 
         .automate-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.55;
+            color: var(--ink-soft);
+            font-size: 0.98rem;
+            max-width: 32rem;
         }
 
         .automate-footer {
-            margin-top: 2.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
         }
 
         .automate-footer p {
             font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
+            font-size: 1.6rem;
         }
 
         /* ═══════════════════════════════════════════════════
-           ROI EXAMPLE SECTION
+           ROI EXAMPLE
            ═══════════════════════════════════════════════════ */
         .roi {
-            position: relative;
             padding: var(--section-padding) 0;
-        }
-
-        .roi-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .roi-header .section-label {
-            justify-content: center;
-        }
-
-        .roi-header .section-title {
-            margin-left: auto;
-            margin-right: auto;
+            background: var(--paper-deep);
         }
 
         .roi-grid {
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 24px;
+            grid-template-columns: minmax(0, 1fr) 190px minmax(0, 1fr);
+            gap: clamp(16px, 3vw, 32px);
             align-items: stretch;
         }
 
         .roi-card {
-            padding: 28px 32px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .roi-after {
-            border-color: rgba(0, 212, 170, 0.35);
-            background: rgba(0, 212, 170, 0.04);
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: var(--radius-card);
+            padding: clamp(24px, 3vw, 36px);
         }
 
         .roi-card-label {
             display: block;
             font-family: var(--font-display);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
+            font-size: 1.7rem;
+            line-height: 1.1;
             margin-bottom: 1.25rem;
         }
 
         .roi-after .roi-card-label {
-            color: var(--accent-start);
+            color: var(--leaf-deep);
         }
 
         .roi-card ul {
             list-style: none;
-            display: grid;
-            gap: 14px;
         }
 
         .roi-card li {
             display: flex;
-            align-items: center;
+            align-items: baseline;
             gap: 12px;
-            color: var(--text-primary);
-            font-size: 0.975rem;
+            padding: 14px 0;
+            border-top: 1px solid var(--rule);
+            color: var(--ink-soft);
         }
 
-        .roi-before li {
-            justify-content: space-between;
+        .roi-before li span {
+            flex: 1;
         }
 
         .roi-before li strong {
-            font-family: var(--font-display);
-            color: var(--text-secondary);
             font-weight: 600;
+            color: var(--ink);
+            font-variant-numeric: tabular-nums;
             white-space: nowrap;
         }
 
-        .roi-card .check,
-        .credentials-list .check {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-            color: var(--accent-start);
+        .roi-after li {
+            align-items: center;
+            color: var(--ink);
         }
 
         .roi-arrow {
             display: flex;
             align-items: center;
-            color: var(--accent-start);
+            justify-content: center;
         }
 
         .roi-arrow svg {
-            width: 28px;
-            height: 28px;
+            width: 100%;
+            height: auto;
+            max-width: 190px;
         }
 
         .roi-result {
-            margin-top: 2rem;
-            padding: 28px 32px;
-            border: 1px solid var(--border-medium);
-            border-radius: 16px;
+            margin-top: clamp(16px, 3vw, 32px);
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 24px;
-            flex-wrap: wrap;
+            padding: clamp(24px, 3vw, 36px);
+            border-radius: var(--radius-card);
+            background: var(--ink);
+            color: var(--paper);
         }
 
         .roi-saving {
             font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            line-height: 1.1;
+        }
+
+        .roi-saving .gradient-text {
+            color: var(--amber);
         }
 
         .roi-price {
-            margin-top: 4px;
-            color: var(--text-secondary);
+            margin-top: 6px;
+            color: rgba(246, 243, 236, 0.7);
+        }
+
+        .roi-result .btn-primary {
+            background: var(--amber);
+            border-color: var(--amber);
+            color: var(--ink);
+            flex-shrink: 0;
+        }
+
+        .roi-result .btn-primary:hover {
+            background: #EDB65A;
+            border-color: #EDB65A;
+        }
+
+        .check {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: var(--leaf);
         }
 
         /* ═══════════════════════════════════════════════════
-           PROCESS SECTION
-           ═══════════════════════════════════════════════════ */
-        .process {
-            position: relative;
-            padding: var(--section-padding) 0;
-            overflow: hidden;
-        }
-
-        .process::before {
-            content: '';
-            position: absolute;
-            bottom: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 153, 255, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .process-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .process-header .section-label {
-            justify-content: center;
-        }
-
-        .process-header .section-title {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .process-step {
-            padding: 32px 24px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(20px);
-            position: relative;
-            text-align: center;
-            transition: all 0.3s var(--ease-out-expo);
-        }
-
-        .process-step:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: var(--border-medium);
-            transform: translateY(-4px);
-        }
-
-        .step-number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .process-step h4 {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .process-step p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* ═══════════════════════════════════════════════════
-           CREDENTIALS SECTION
-           ═══════════════════════════════════════════════════ */
-        .credentials {
-            margin: 4rem 0;
-            text-align: center;
-        }
-
-        .credentials-lead {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1.75rem;
-        }
-
-        .credentials-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .credentials-list li {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.02);
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* ═══════════════════════════════════════════════════
-           CONTACT SECTION
-           ═══════════════════════════════════════════════════ */
-        .contact {
-            position: relative;
-            padding: var(--section-padding) 0;
-            overflow: hidden;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 212, 170, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .contact-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .contact-header .section-label {
-            justify-content: center;
-        }
-
-        .contact-header .section-title {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-header .section-desc {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-form {
-            max-width: 560px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid var(--border-medium);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(20px);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-tertiary);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-start);
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
-        }
-
-        .form-group select option {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 140px;
-            font-family: var(--font-body);
-        }
-
-        .contact-form .btn-primary {
-            width: 100%;
-            justify-content: center;
-            margin-top: 12px;
-        }
-
-        /* ═══════════════════════════════════════════════════
-           FOOTER
-           ═══════════════════════════════════════════════════ */
-        .footer {
-            position: relative;
-            padding: 60px 0;
-            border-top: 1px solid var(--border-subtle);
-            background: rgba(6, 6, 10, 0.5);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-col a {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        .footer-col a:hover {
-            color: var(--accent-start);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-copyright {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* ═══════════════════════════════════════════════════
-           RESPONSIVE
-           ═══════════════════════════════════════════════════ */
-
-        /* ═══════════════════════════════════════════════════
-           PRICING SECTION
+           PRICING
            ═══════════════════════════════════════════════════ */
         .pricing {
-            position: relative;
             padding: var(--section-padding) 0;
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .pricing-header .section-label {
-            justify-content: center;
-        }
-
-        .pricing-header .section-desc {
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
             align-items: stretch;
         }
 
@@ -1522,45 +883,37 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            padding: 32px 28px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.02);
-            transition: border-color 0.3s ease, transform 0.4s var(--ease-out-expo);
-        }
-
-        .pricing-card:hover {
-            border-color: var(--border-medium);
-            transform: translateY(-6px);
+            padding: 32px 26px 26px;
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: var(--radius-card);
         }
 
         .pricing-card.featured {
-            border-color: rgba(0, 212, 170, 0.5);
-            background: linear-gradient(160deg, rgba(0, 212, 170, 0.08), rgba(0, 153, 255, 0.04) 60%, rgba(255, 255, 255, 0.02));
-            box-shadow: 0 0 40px var(--glow-primary);
+            background: var(--ink);
+            border-color: var(--ink);
+            color: var(--paper);
+            box-shadow: 0 24px 48px -24px rgba(18, 49, 43, 0.55);
         }
 
         .pricing-tag {
             position: absolute;
-            top: -12px;
-            left: 28px;
+            top: -13px;
+            left: 26px;
             padding: 4px 12px;
-            border-radius: 50px;
-            background: var(--gradient-accent);
-            color: #06060A;
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            border-radius: var(--radius-control);
+            background: var(--amber);
+            color: var(--ink);
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .pricing-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin-bottom: 16px;
-            min-height: 2.8em;
+            line-height: 1.35;
+            min-height: 2.7em;
+            margin-bottom: 18px;
         }
 
         .pricing-price {
@@ -1568,13 +921,13 @@
             align-items: baseline;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .pricing-from,
         .pricing-unit {
-            font-size: 0.85rem;
-            color: var(--text-tertiary);
+            font-size: 0.88rem;
+            color: var(--ink-faint);
         }
 
         .pricing-from:empty,
@@ -1584,15 +937,14 @@
 
         .pricing-amount {
             font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-size: 3rem;
+            line-height: 1;
+            letter-spacing: -0.01em;
         }
 
         .pricing-desc {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
+            color: var(--ink-soft);
             margin-bottom: 20px;
         }
 
@@ -1601,29 +953,52 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 28px;
             flex-grow: 1;
+            margin-bottom: 26px;
+            padding-top: 18px;
+            border-top: 1px solid var(--rule);
         }
 
         .pricing-features li {
             display: flex;
             gap: 10px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+            font-size: 0.93rem;
+            line-height: 1.45;
         }
 
         .pricing-features .check {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
             margin-top: 3px;
-            color: var(--accent-start);
         }
 
         .pricing-cta {
-            justify-content: center;
-            text-align: center;
+            width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .pricing-card.featured .pricing-from,
+        .pricing-card.featured .pricing-unit,
+        .pricing-card.featured .pricing-desc {
+            color: rgba(246, 243, 236, 0.72);
+        }
+
+        .pricing-card.featured .pricing-features {
+            border-top-color: rgba(246, 243, 236, 0.16);
+        }
+
+        .pricing-card.featured .check {
+            color: var(--amber);
+        }
+
+        .pricing-card.featured .btn-primary {
+            background: var(--amber);
+            border-color: var(--amber);
+            color: var(--ink);
+        }
+
+        .pricing-card.featured .btn-primary:hover {
+            background: #EDB65A;
+            border-color: #EDB65A;
         }
 
         .pricing-custom {
@@ -1631,194 +1006,631 @@
             align-items: center;
             justify-content: space-between;
             gap: 24px;
-            margin-top: 32px;
-            padding: 28px 32px;
-            border: 1px dashed var(--border-medium);
-            border-radius: 16px;
+            margin-top: 16px;
+            padding: 26px 28px;
+            border: 1px dashed rgba(18, 49, 43, 0.3);
+            border-radius: var(--radius-card);
         }
 
         .pricing-custom h4 {
             font-family: var(--font-display);
-            font-size: 1.15rem;
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .pricing-custom p {
+            color: var(--ink-soft);
+            font-size: 0.97rem;
+        }
+
+        .pricing-custom .btn-secondary {
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--ink-faint);
+        }
+
+        /* ═══════════════════════════════════════════════════
+           SERVICES
+           ═══════════════════════════════════════════════════ */
+        .services {
+            padding: var(--section-padding) 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(24px, 4vw, 56px);
+        }
+
+        .service-card {
+            padding-top: 28px;
+            border-top: 2px solid var(--ink);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 20px;
+        }
+
+        .service-icon svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.85rem;
+            line-height: 1.08;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--ink-soft);
+        }
+
+        .capabilities {
+            margin-top: clamp(56px, 7vw, 88px);
+            padding: clamp(24px, 3vw, 36px);
+            background: var(--paper-deep);
+            border-radius: var(--radius-card);
+        }
+
+        .capabilities-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .capability h4 {
+            font-size: 0.98rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .capability p {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            line-height: 1.5;
+        }
+
+        /* ═══════════════════════════════════════════════════
+           PROCESS — a real sequence, so it gets numbers and a line
+           ═══════════════════════════════════════════════════ */
+        .process {
+            padding: var(--section-padding) 0;
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .process .section-label {
+            color: var(--amber);
+        }
+
+        .process .section-title {
+            color: var(--paper);
+        }
+
+        .process .section-title .gradient-text {
+            color: #A9D3BC;
+        }
+
+        .process .section-desc {
+            color: rgba(246, 243, 236, 0.72);
+        }
+
+        .process-grid {
+            --process-gap: clamp(20px, 3vw, 40px);
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: var(--process-gap);
+            position: relative;
+        }
+
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            right: calc((100% - 3 * var(--process-gap)) / 4 - 22px);
+            height: 1px;
+            background: repeating-linear-gradient(90deg, rgba(246, 243, 236, 0.35) 0 4px, transparent 4px 10px);
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .step-number {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--ink);
+            border: 1px solid rgba(246, 243, 236, 0.4);
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .process-step:nth-child(2) .step-number {
+            background: var(--amber);
+            border-color: var(--amber);
+            color: var(--ink);
+        }
+
+        .process-step h4 {
+            font-size: 1.08rem;
             font-weight: 600;
             margin-bottom: 6px;
         }
 
-        .pricing-custom p {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
+        .process-step p {
+            color: rgba(246, 243, 236, 0.72);
+            font-size: 0.97rem;
         }
 
-        .pricing-note {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
+        /* ═══════════════════════════════════════════════════
+           ABOUT
+           ═══════════════════════════════════════════════════ */
+        .about {
+            padding: var(--section-padding) 0;
         }
 
-        .hero-lead {
+        .about-container {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+            gap: clamp(40px, 6vw, 96px);
+            align-items: center;
+        }
+
+        .about-illustration {
+            display: block;
+            width: 100%;
+            max-width: 460px;
+            height: auto;
+        }
+
+        .about-right .section-title {
+            margin-bottom: 1.25rem;
+        }
+
+        .features-grid {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-item {
+            display: grid;
+            grid-template-columns: 40px minmax(0, 1fr);
+            gap: 16px;
+            padding: 18px 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--leaf-wash);
+            display: grid;
+            place-items: center;
+        }
+
+        .feature-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: var(--leaf-deep);
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-content h4 {
+            font-size: 1.02rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .feature-content p {
+            color: var(--ink-soft);
+            font-size: 0.97rem;
+        }
+
+        /* ═══════════════════════════════════════════════════
+           CREDENTIALS
+           ═══════════════════════════════════════════════════ */
+        .credentials {
+            padding: 40px 0;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .credentials .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px 48px;
+            flex-wrap: wrap;
+        }
+
+        .credentials-lead {
             font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            max-width: 520px;
+            font-size: 1.5rem;
+            line-height: 1.2;
+            max-width: 22ch;
         }
 
+        .credentials-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .credentials-list li {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: var(--radius-control);
+            font-size: 0.92rem;
+        }
+
+        /* ═══════════════════════════════════════════════════
+           CONTACT
+           ═══════════════════════════════════════════════════ */
+        .contact {
+            padding: var(--section-padding) 0;
+        }
+
+        .contact .container {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+            gap: clamp(40px, 6vw, 96px);
+            align-items: start;
+        }
+
+        .contact-header .section-title {
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-form {
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: 18px;
+            padding: clamp(24px, 3.5vw, 40px);
+            box-shadow: var(--shadow-paper);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.92rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #D6CFC0;
+            border-radius: 10px;
+            background: #FFFFFF;
+            color: var(--ink);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2312312B' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--ink-faint);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--leaf);
+            box-shadow: 0 0 0 3px rgba(47, 125, 91, 0.16);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 132px;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        /* ═══════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════ */
+        .footer {
+            background: var(--ink);
+            color: rgba(246, 243, 236, 0.72);
+            padding: 64px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 170px));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .nav-logo {
+            color: var(--paper);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            max-width: 22rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-col h4 {
+            color: var(--paper);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-col a {
+            text-decoration: none;
+            font-size: 0.93rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--paper);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(246, 243, 236, 0.14);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 8px 24px;
+            font-size: 0.88rem;
+        }
+
+        .footer-bottom a {
+            color: var(--amber);
+            text-decoration: none;
+        }
+
+        /* ═══════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════ */
         @media (max-width: 1100px) {
             .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-                row-gap: 36px;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 28px;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        @media (max-width: 640px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card h3 {
-                min-height: 0;
-            }
-
-            .pricing-custom {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .pricing-custom .btn-secondary {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .hero-container,
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-right,
-            .about-left {
-                height: 350px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
+        @media (max-width: 900px) {
             .footer-content {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
-        }
 
-        @media (max-width: 768px) {
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
             .nav-links {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 8px clamp(20px, 4vw, 40px) 20px;
+                background: var(--paper);
+                border-bottom: 1px solid var(--rule);
                 display: none;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px 0;
+                font-size: 1.05rem;
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .nav-links li:last-child a {
+                margin-top: 16px;
+                text-align: center;
+                border: none;
+                background: var(--leaf-deep);
+                color: #FFFDF8;
             }
 
             .hamburger {
                 display: flex;
             }
 
-            .hero {
-                min-height: auto;
-                padding: 100px 0 40px;
+            .nav-inner {
+                gap: 12px;
             }
 
-            .hero-left h1 {
-                font-size: 2rem;
+            .hero-container,
+            .about-container,
+            .contact .container {
+                grid-template-columns: minmax(0, 1fr);
             }
 
-            .hero-right {
-                height: 300px;
+            .hero-illustration {
+                max-width: 520px;
+                margin: 0 auto;
             }
 
-            .about-right,
-            .contact-header {
-                text-align: center;
+            .about-left {
+                order: 2;
             }
 
-            .about-right .section-desc,
-            .contact-header .section-desc {
-                margin-left: auto;
-                margin-right: auto;
+            .about-illustration {
+                margin: 0 auto;
+                max-width: 380px;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-item {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .feature-icon {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .roi-grid {
-                grid-template-columns: 1fr;
+            .automate-header,
+            .roi-header,
+            .pricing-header,
+            .services-header,
+            .process-header {
+                grid-template-columns: minmax(0, 1fr);
+                row-gap: 1rem;
             }
 
             .automate-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
 
-            .roi-arrow {
-                justify-content: center;
-                transform: rotate(90deg);
+            .roi-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .roi-arrow svg {
+                max-width: 220px;
+            }
+
+            .services-grid {
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .process-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 28px;
             }
 
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 24px;
+            .process-grid::before {
+                top: 22px;
+                bottom: 22px;
+                left: 22px;
+                right: auto;
+                width: 1px;
+                height: auto;
+                background: repeating-linear-gradient(180deg, rgba(246, 243, 236, 0.35) 0 4px, transparent 4px 10px);
             }
 
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
+            .process-step {
+                display: grid;
+                grid-template-columns: 44px minmax(0, 1fr);
+                column-gap: 20px;
+            }
+
+            .process-step .step-number {
+                grid-row: span 2;
+                margin-bottom: 0;
             }
         }
 
-        @media (max-width: 480px) {
-            :root {
-                --section-padding: 60px 0;
+        @media (max-width: 600px) {
+            .pricing-grid,
+            .capabilities-grid {
+                grid-template-columns: minmax(0, 1fr);
             }
 
-            .hero-left h1 {
-                font-size: 1.75rem;
+            .pricing-card h3 {
+                min-height: 0;
             }
 
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .btn-primary,
-            .btn-secondary {
+            .hero-cta .btn-primary,
+            .hero-cta .btn-secondary {
                 width: 100%;
-                justify-content: center;
             }
 
+            .roi-result,
+            .pricing-custom,
+            .automate-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-            .nav-links {
-                display: none;
+            .roi-result .btn-primary,
+            .pricing-custom .btn-secondary {
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .language-switcher .lang-toggle span {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
             }
         }
     </style>
@@ -1832,27 +1644,15 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">
                 <div class="logo-mark">
-                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="logog" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#00D4AA"/>
-                                <stop offset="50%" stop-color="#00B8D4"/>
-                                <stop offset="100%" stop-color="#0099FF"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="32" height="32" rx="7" fill="#06060A"/>
-                        <!-- E letterform -->
-                        <rect x="8" y="7" width="3.5" height="18" rx="1" fill="url(#logog)"/>
-                        <rect x="8" y="7" width="15" height="3" rx="1" fill="url(#logog)"/>
-                        <rect x="8" y="14.5" width="12" height="3" rx="1" fill="url(#logog)"/>
-                        <rect x="8" y="22" width="15" height="3" rx="1" fill="url(#logog)"/>
-                        <!-- Circuit nodes -->
-                        <circle cx="24.5" cy="8.5" r="1.8" fill="none" stroke="url(#logog)" stroke-width="0.8"/>
-                        <circle cx="24.5" cy="8.5" r="0.8" fill="#00D4AA"/>
-                        <circle cx="21.5" cy="16" r="1.8" fill="none" stroke="url(#logog)" stroke-width="0.8"/>
-                        <circle cx="21.5" cy="16" r="0.8" fill="#00B8D4"/>
-                        <circle cx="24.5" cy="23.5" r="1.8" fill="none" stroke="url(#logog)" stroke-width="0.8"/>
-                        <circle cx="24.5" cy="23.5" r="0.8" fill="#0099FF"/>
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="32" height="32" rx="8" fill="#12312B"/>
+                        <g transform="translate(0 0) scale(1.0)">
+    <rect x="8" y="7" width="3.5" height="18" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="7" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="14.5" width="10" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="22" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <circle cx="23.5" cy="16" r="2.2" fill="#6DBF95"/>
+</g>
                     </svg>
                 </div>
                 <span data-i18n="logo">EcoVibe</span>
@@ -1887,10 +1687,6 @@
 
     <!-- Hero Section -->
     <section class="hero reveal">
-        <div class="floating-code">{</div>
-        <div class="floating-code">}</div>
-        <div class="floating-code">&lt;&gt;</div>
-        <div class="floating-code">//</div>
 
         <div class="container">
             <div class="hero-container">
@@ -1902,9 +1698,6 @@
                     <div class="hero-cta">
                         <a href="#contact" class="btn-primary" data-package="scan">
                             <span data-i18n="hero.cta">Book an Automation Scan</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.5 10H12.5M12.5 10L10 7.5M12.5 10L10 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
                         </a>
                         <a href="#pricing" class="btn-secondary">
                             <span data-i18n="hero.learn">View Packages</span>
@@ -1912,273 +1705,110 @@
                     </div>
                 </div>
                 <div class="hero-right">
-                    <svg class="hero-illustration" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="1.0"/>
-                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.85"/>
-                            </linearGradient>
-                            <linearGradient id="heroGrad2" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.7"/>
-                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.4"/>
-                            </linearGradient>
-                            <linearGradient id="dataFlow" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0"/>
-                                <stop offset="50%" stop-color="#00D4AA" stop-opacity="1"/>
-                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0"/>
-                            </linearGradient>
-                            <filter id="glow">
-                                <feGaussianBlur stdDeviation="3" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <filter id="softGlow">
-                                <feGaussianBlur stdDeviation="6" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <clipPath id="termClip"><rect x="56" y="36" width="290" height="195" rx="6"/></clipPath>
-                            <clipPath id="dashClip"><rect x="316" y="36" width="160" height="195" rx="6"/></clipPath>
-                        </defs>
+                    <svg class="hero-illustration" viewBox="0 0 560 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emails, PDF invoices and spreadsheets flow automatically into your CRM, saving about 12 hours a week">
+                        <circle cx="318" cy="252" r="218" fill="#EDE7DA"/>
 
-                        <!-- ═══ Background grid ═══ -->
-                        <g opacity="0.1">
-                            <line x1="0" y1="65" x2="520" y2="65" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="130" x2="520" y2="130" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="195" x2="520" y2="195" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="260" x2="520" y2="260" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="325" x2="520" y2="325" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="390" x2="520" y2="390" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="455" x2="520" y2="455" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="65" y1="0" x2="65" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="130" y1="0" x2="130" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="195" y1="0" x2="195" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="260" y1="0" x2="260" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="325" y1="0" x2="325" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="390" y1="0" x2="390" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="455" y1="0" x2="455" y2="520" stroke="#00D4AA" stroke-width="0.5"/>
+                        <!-- Incoming email -->
+                        <g class="doc doc-1"><g transform="translate(26 40) rotate(-4)">
+                            <rect width="178" height="116" rx="12" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <rect x="16" y="16" width="28" height="20" rx="4" fill="none" stroke="#12312B" stroke-width="1.6"/>
+                            <path d="M17 18l13 9 13-9" fill="none" stroke="#12312B" stroke-width="1.6" stroke-linejoin="round"/>
+                            <circle cx="44" cy="16" r="4.5" fill="#E0A23B"/>
+                            <rect x="56" y="18" width="84" height="6" rx="3" fill="#12312B"/>
+                            <rect x="56" y="30" width="56" height="5" rx="2.5" fill="#7C8A85" opacity="0.5"/>
+                            <rect x="16" y="56" width="146" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="16" y="68" width="130" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="16" y="80" width="98" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="16" y="94" width="52" height="12" rx="6" fill="#E3EEE6"/>
+                        </g></g>
+
+                        <!-- PDF invoice -->
+                        <g class="doc doc-2"><g transform="translate(74 176) rotate(3)">
+                            <path d="M0 10a10 10 0 0 1 10-10h112l28 28v158a10 10 0 0 1-10 10H10a10 10 0 0 1-10-10z" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <path d="M122 0v22a6 6 0 0 0 6 6h22" fill="#EDE7DA" stroke="#E2DCCF"/>
+                            <rect x="14" y="16" width="34" height="17" rx="4" fill="#12312B"/>
+                            <text x="31" y="28.5" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#F6F3EC" letter-spacing="0.5">PDF</text>
+                            <rect x="14" y="48" width="92" height="6" rx="3" fill="#12312B" opacity="0.85"/>
+                            <rect x="14" y="60" width="58" height="5" rx="2.5" fill="#7C8A85" opacity="0.5"/>
+                            <rect x="14" y="86" width="72" height="5" rx="2.5" fill="#E2DCCF"/><rect x="110" y="86" width="26" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="14" y="100" width="60" height="5" rx="2.5" fill="#E2DCCF"/><rect x="110" y="100" width="26" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="14" y="114" width="80" height="5" rx="2.5" fill="#E2DCCF"/><rect x="110" y="114" width="26" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="14" y="128" width="50" height="5" rx="2.5" fill="#E2DCCF"/><rect x="110" y="128" width="26" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <path d="M14 148h122" stroke="#12312B" stroke-width="1"/>
+                            <text x="136" y="176" text-anchor="end" font-family="Instrument Serif, Georgia, serif" font-size="22" fill="#12312B">€ 1.240,00</text>
+                        </g></g>
+
+                        <!-- Spreadsheet -->
+                        <g class="doc doc-3"><g transform="translate(34 388) rotate(-3)">
+                            <rect width="186" height="100" rx="12" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <rect x="14" y="14" width="158" height="16" rx="3" fill="#EDE7DA"/>
+                            <rect x="94" y="14" width="39" height="72" fill="#E3EEE6"/>
+                            <path d="M14 30h158M14 48h158M14 66h158M14 86h158M53.5 14v72M94 14v72M133 14v72" stroke="#E2DCCF"/>
+                            <rect x="14" y="14" width="158" height="72" rx="3" fill="none" stroke="#E2DCCF"/>
+                            <rect x="102" y="37" width="22" height="4" rx="2" fill="#2F7D5B"/>
+                            <rect x="102" y="55" width="16" height="4" rx="2" fill="#2F7D5B"/>
+                            <rect x="102" y="73" width="20" height="4" rx="2" fill="#2F7D5B"/>
+                        </g></g>
+
+                        <!-- Routes into EcoVibe -->
+                        <g fill="none" stroke="#2F7D5B" stroke-width="2" stroke-linecap="round">
+                            <path class="route" d="M208 92C262 96 252 222 278 244"/>
+                            <path class="route" d="M226 282C250 280 258 268 276 262"/>
+                            <path class="route" d="M224 432C266 428 256 296 280 280"/>
+                            <path class="route" d="M360 262C376 262 380 252 396 250"/>
                         </g>
 
-                        <!-- ═══ TERMINAL WINDOW — code editor ═══ -->
-                        <g>
-                            <rect x="50" y="20" width="300" height="210" rx="10" fill="rgba(6,6,10,0.9)" stroke="url(#heroGrad)" stroke-width="1.5" opacity="0.9"/>
-                            <!-- Title bar -->
-                            <rect x="50" y="20" width="300" height="28" rx="10" fill="rgba(255,255,255,0.03)"/>
-                            <circle cx="66" cy="34" r="4" fill="#FF5F56"/>
-                            <circle cx="80" cy="34" r="4" fill="#FFBD2E"/>
-                            <circle cx="94" cy="34" r="4" fill="#27C93F"/>
-                            <text x="200" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(240,240,245,0.6)">main.ts — EcoVibe</text>
-
-                            <!-- Real code lines -->
-                            <g clip-path="url(#termClip)" font-family="JetBrains Mono, monospace" font-size="8.5">
-                                <!-- Line numbers -->
-                                <text x="60" y="62" fill="rgba(240,240,245,0.35)">1</text>
-                                <text x="60" y="74" fill="rgba(240,240,245,0.35)">2</text>
-                                <text x="60" y="86" fill="rgba(240,240,245,0.35)">3</text>
-                                <text x="60" y="98" fill="rgba(240,240,245,0.35)">4</text>
-                                <text x="60" y="110" fill="rgba(240,240,245,0.35)">5</text>
-                                <text x="60" y="122" fill="rgba(240,240,245,0.35)">6</text>
-                                <text x="60" y="134" fill="rgba(240,240,245,0.35)">7</text>
-                                <text x="60" y="146" fill="rgba(240,240,245,0.35)">8</text>
-                                <text x="60" y="158" fill="rgba(240,240,245,0.35)">9</text>
-                                <text x="56" y="170" fill="rgba(240,240,245,0.35)">10</text>
-                                <text x="56" y="182" fill="rgba(240,240,245,0.35)">11</text>
-                                <text x="56" y="194" fill="rgba(240,240,245,0.35)">12</text>
-                                <text x="56" y="206" fill="rgba(240,240,245,0.35)">13</text>
-                                <text x="56" y="218" fill="rgba(240,240,245,0.35)">14</text>
-
-                                <!-- Actual code -->
-                                <text x="76" y="62"><tspan fill="#C792EA">import</tspan><tspan fill="#F0F0F5"> { Module } </tspan><tspan fill="#C792EA">from</tspan><tspan fill="#C3E88D"> '@nestjs/common'</tspan></text>
-                                <text x="76" y="74"><tspan fill="#C792EA">import</tspan><tspan fill="#F0F0F5"> { I18nService } </tspan><tspan fill="#C792EA">from</tspan><tspan fill="#C3E88D"> './i18n'</tspan></text>
-                                <text x="76" y="86" fill="rgba(240,240,245,0.2)"></text>
-                                <text x="76" y="98"><tspan fill="#FFCB6B">@Module</tspan><tspan fill="#89DDFF">({</tspan></text>
-                                <text x="76" y="110"><tspan fill="#F0F0F5">  providers: [</tspan></text>
-                                <text x="76" y="122"><tspan fill="#F0F0F5">    </tspan><tspan fill="#82AAFF">ApiGateway</tspan><tspan fill="#89DDFF">,</tspan></text>
-                                <text x="76" y="134"><tspan fill="#F0F0F5">    </tspan><tspan fill="#82AAFF">AuthService</tspan><tspan fill="#89DDFF">,</tspan></text>
-                                <text x="76" y="146"><tspan fill="#F0F0F5">    </tspan><tspan fill="#82AAFF">I18nService</tspan><tspan fill="#89DDFF">,</tspan></text>
-                                <text x="76" y="158"><tspan fill="#F0F0F5">  ]</tspan><tspan fill="#89DDFF">,</tspan></text>
-                                <text x="76" y="170"><tspan fill="#F0F0F5">  </tspan><tspan fill="#F0F0F5">exports: [</tspan><tspan fill="#82AAFF">ApiGateway</tspan><tspan fill="#F0F0F5">]</tspan></text>
-                                <text x="76" y="182"><tspan fill="#89DDFF">})</tspan></text>
-                                <text x="76" y="194"><tspan fill="#C792EA">export class</tspan><tspan fill="#FFCB6B"> AppModule</tspan><tspan fill="#F0F0F5"> {}</tspan></text>
-                                <!-- Cursor blink -->
-                                <rect x="166" y="196" width="6" height="10" fill="#00D4AA" opacity="0.6">
-                                    <animate attributeName="opacity" values="0.6;0;0.6" dur="1.2s" repeatCount="indefinite"/>
-                                </rect>
-                            </g>
+                        <!-- EcoVibe hub -->
+                        <g class="hub">
+                            <circle cx="318" cy="262" r="54" fill="none" stroke="#2F7D5B" stroke-width="1.2" stroke-dasharray="2 5" opacity="0.6"/>
+                            <circle cx="318" cy="262" r="40" fill="#12312B"/>
+                            <g transform="translate(298 241) scale(1.25)">
+    <rect x="8" y="7" width="3.5" height="18" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="7" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="14.5" width="10" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="22" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <circle cx="23.5" cy="16" r="2.2" fill="#6DBF95"/>
+</g>
                         </g>
 
-                        <!-- ═══ MONITORING DASHBOARD (right panel) ═══ -->
-                        <g>
-                            <rect x="310" y="20" width="170" height="210" rx="10" fill="rgba(6,6,10,0.9)" stroke="url(#heroGrad)" stroke-width="1.0" opacity="0.9"/>
-                            <rect x="310" y="20" width="170" height="28" rx="10" fill="rgba(255,255,255,0.03)"/>
-                            <text x="395" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">system monitor</text>
-
-                            <g clip-path="url(#dashClip)">
-                                <!-- CPU graph -->
-                                <text x="322" y="62" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">CPU</text>
-                                <text x="460" y="62" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.85">23%</text>
-                                <polyline points="322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60" fill="none" stroke="#00D4AA" stroke-width="1.2" opacity="0.75"/>
-                                <polyline points="322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60" fill="url(#heroGrad2)" stroke="none" opacity="0.5">
-                                    <animate attributeName="points" values="322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60;322,75 335,78 348,72 361,76 374,68 387,73 400,67 413,71 426,64 439,69 452,62 465,65;322,78 335,74 348,76 361,70 374,72 387,68 400,71 413,65 426,69 439,63 452,66 465,60" dur="4s" repeatCount="indefinite"/>
-                                </polyline>
-
-                                <!-- Memory bar -->
-                                <text x="322" y="98" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">MEM</text>
-                                <text x="460" y="98" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.85">4.2G</text>
-                                <rect x="322" y="103" width="143" height="5" rx="2" fill="rgba(255,255,255,0.05)"/>
-                                <rect x="322" y="103" width="86" height="5" rx="2" fill="url(#heroGrad)" opacity="0.7"/>
-
-                                <!-- Network throughput -->
-                                <text x="322" y="126" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">NET</text>
-                                <text x="448" y="126" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.8">↑↓ 2.4Gb</text>
-                                <polyline points="322,140 332,137 342,141 352,134 362,138 372,132 382,136 392,129 402,133 412,127 422,131 432,125 442,129 452,123 462,127" fill="none" stroke="#0099FF" stroke-width="1" opacity="0.6"/>
-
-                                <!-- Container pods -->
-                                <text x="322" y="162" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">PODS</text>
-                                <g opacity="0.8">
-                                    <rect x="322" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
-                                    <circle cx="329" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
-                                    <rect x="340" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
-                                    <circle cx="347" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
-                                    <rect x="358" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
-                                    <circle cx="365" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
-                                    <rect x="376" y="168" width="14" height="14" rx="3" fill="none" stroke="#FFBD2E" stroke-width="0.8"/>
-                                    <circle cx="383" cy="175" r="2" fill="#FFBD2E" opacity="0.6"/>
-                                    <rect x="394" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
-                                    <circle cx="401" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
-                                    <rect x="412" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
-                                    <circle cx="419" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
-                                    <rect x="430" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
-                                    <circle cx="437" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
-                                    <rect x="448" y="168" width="14" height="14" rx="3" fill="none" stroke="#27C93F" stroke-width="0.8"/>
-                                    <circle cx="455" cy="175" r="2" fill="#27C93F" opacity="0.6"/>
-                                </g>
-
-                                <!-- Latency -->
-                                <text x="322" y="200" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">P99</text>
-                                <text x="446" y="200" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.8">12ms</text>
-                                <rect x="322" y="205" width="143" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
-                                <rect x="322" y="205" width="24" height="4" rx="2" fill="#00D4AA" opacity="0.8"/>
+                        <!-- Result: an up-to-date CRM record and a report that built itself -->
+                        <g class="result"><g transform="translate(398 138)">
+                            <rect y="6" width="144" height="232" rx="14" fill="#12312B" opacity="0.07"/>
+                            <rect width="144" height="232" rx="14" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <circle cx="32" cy="34" r="17" fill="#E3EEE6"/>
+                            <circle cx="32" cy="29" r="5.5" fill="none" stroke="#1F5C42" stroke-width="1.6"/>
+                            <path d="M22.5 43c1.6-4.4 5.2-6.5 9.5-6.5s7.9 2.1 9.5 6.5" fill="none" stroke="#1F5C42" stroke-width="1.6" stroke-linecap="round"/>
+                            <rect x="58" y="26" width="66" height="7" rx="3.5" fill="#12312B"/>
+                            <rect x="58" y="39" width="44" height="5" rx="2.5" fill="#7C8A85" opacity="0.5"/>
+                            <path d="M14 66h116" stroke="#E2DCCF"/>
+                            <g fill="none" stroke="#2F7D5B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="23" cy="84" r="8" fill="#E3EEE6" stroke="none"/><path d="M19.5 84.5l2.5 2.5 4.5-5"/>
+                                <circle cx="23" cy="108" r="8" fill="#E3EEE6" stroke="none"/><path d="M19.5 108.5l2.5 2.5 4.5-5"/>
+                                <circle cx="23" cy="132" r="8" fill="#E3EEE6" stroke="none"/><path d="M19.5 132.5l2.5 2.5 4.5-5"/>
                             </g>
-                        </g>
-
-                        <!-- ═══ MICROSERVICES ARCHITECTURE (center area) ═══ -->
-                        <g transform="translate(40, 258)">
-                            <!-- API Gateway node -->
-                            <g filter="url(#glow)">
-                                <rect x="155" y="0" width="130" height="36" rx="8" fill="rgba(0,212,170,0.08)" stroke="#00D4AA" stroke-width="1.2" opacity="0.95"/>
-                                <text x="220" y="14" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.8">API GATEWAY</text>
-                                <text x="220" y="27" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#00D4AA">:443 → router</text>
+                            <rect x="38" y="81" width="86" height="6" rx="3" fill="#E2DCCF"/>
+                            <rect x="38" y="105" width="70" height="6" rx="3" fill="#E2DCCF"/>
+                            <rect x="38" y="129" width="80" height="6" rx="3" fill="#E2DCCF"/>
+                            <path d="M14 156h116" stroke="#E2DCCF"/>
+                            <g fill="#2F7D5B">
+                                <rect x="18" y="194" width="12" height="18" rx="2"/>
+                                <rect x="36" y="186" width="12" height="26" rx="2"/>
+                                <rect x="54" y="190" width="12" height="22" rx="2"/>
+                                <rect x="72" y="178" width="12" height="34" rx="2"/>
+                                <rect x="90" y="182" width="12" height="30" rx="2"/>
+                                <rect x="108" y="170" width="12" height="42" rx="2" fill="#E0A23B"/>
                             </g>
+                        </g></g>
 
-                            <!-- Connection lines from gateway down -->
-                            <line x1="180" y1="36" x2="70" y2="70" stroke="url(#heroGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.55"/>
-                            <line x1="220" y1="36" x2="220" y2="70" stroke="url(#heroGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.55"/>
-                            <line x1="260" y1="36" x2="370" y2="70" stroke="url(#heroGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.55"/>
-
-                            <!-- Data flow particles on connections -->
-                            <circle r="2" fill="#00D4AA" opacity="0.8">
-                                <animateMotion dur="2s" repeatCount="indefinite" path="M180,36 L70,70"/>
-                            </circle>
-                            <circle r="2" fill="#0099FF" opacity="0.8">
-                                <animateMotion dur="1.8s" repeatCount="indefinite" path="M220,36 L220,70"/>
-                            </circle>
-                            <circle r="2" fill="#00D4AA" opacity="0.8">
-                                <animateMotion dur="2.2s" repeatCount="indefinite" path="M260,36 L370,70"/>
-                            </circle>
-
-                            <!-- Service: Auth -->
-                            <rect x="10" y="70" width="120" height="46" rx="6" fill="rgba(6,6,10,0.8)" stroke="url(#heroGrad)" stroke-width="1" opacity="0.85"/>
-                            <circle cx="26" cy="85" r="5" fill="none" stroke="#FFCB6B" stroke-width="1" opacity="0.85"/>
-                            <path d="M24,84 L26,86 L29,82" fill="none" stroke="#FFCB6B" stroke-width="0.8" opacity="0.85"/>
-                            <text x="36" y="88" font-family="JetBrains Mono, monospace" font-size="7.5" fill="rgba(240,240,245,0.8)">auth-svc</text>
-                            <text x="24" y="106" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.55)">JWT · OAuth2 · RBAC</text>
-
-                            <!-- Service: Core -->
-                            <rect x="160" y="70" width="120" height="46" rx="6" fill="rgba(6,6,10,0.8)" stroke="url(#heroGrad)" stroke-width="1" opacity="0.85"/>
-                            <rect x="174" y="80" width="8" height="10" rx="1" fill="none" stroke="#82AAFF" stroke-width="0.8" opacity="0.85"/>
-                            <rect x="177" y="83" width="2" height="4" fill="#82AAFF" opacity="0.7"/>
-                            <text x="188" y="88" font-family="JetBrains Mono, monospace" font-size="7.5" fill="rgba(240,240,245,0.8)">core-api</text>
-                            <text x="174" y="106" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.55)">REST · GraphQL · gRPC</text>
-
-                            <!-- Service: i18n / Intl -->
-                            <rect x="310" y="70" width="120" height="46" rx="6" fill="rgba(6,6,10,0.8)" stroke="url(#heroGrad)" stroke-width="1" opacity="0.85"/>
-                            <circle cx="326" cy="87" r="6" fill="none" stroke="#C792EA" stroke-width="0.8" opacity="0.8"/>
-                            <text x="323" y="90" font-family="JetBrains Mono, monospace" font-size="6" fill="#C792EA" opacity="0.8">🌐</text>
-                            <text x="338" y="88" font-family="JetBrains Mono, monospace" font-size="7.5" fill="rgba(240,240,245,0.8)">i18n-svc</text>
-                            <text x="322" y="106" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.55)">EN · ZH · NL · DE</text>
-
-                            <!-- Message Queue bar -->
-                            <rect x="50" y="138" width="340" height="24" rx="5" fill="rgba(0,153,255,0.04)" stroke="#0099FF" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.7"/>
-                            <text x="220" y="154" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.6">──── message bus (events) ────</text>
-
-                            <!-- Connection lines from services to message queue -->
-                            <line x1="70" y1="116" x2="70" y2="138" stroke="url(#heroGrad)" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
-                            <line x1="220" y1="116" x2="220" y2="138" stroke="url(#heroGrad)" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
-                            <line x1="370" y1="116" x2="370" y2="138" stroke="url(#heroGrad)" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
-
-                            <!-- Data stores row -->
-                            <!-- PostgreSQL -->
-                            <g transform="translate(25, 182)">
-                                <rect x="0" y="0" width="105" height="36" rx="5" fill="rgba(6,6,10,0.7)" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.75"/>
-                                <ellipse cx="20" cy="12" rx="8" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.7"/>
-                                <line x1="12" y1="12" x2="12" y2="22" stroke="#00D4AA" stroke-width="0.8" opacity="0.7"/>
-                                <line x1="28" y1="12" x2="28" y2="22" stroke="#00D4AA" stroke-width="0.8" opacity="0.7"/>
-                                <ellipse cx="20" cy="22" rx="8" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.7"/>
-                                <text x="36" y="20" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">PostgreSQL</text>
+                        <!-- The stamp: time handed back -->
+                        <g class="stamp"><g transform="rotate(-8 470 420)">
+                            <circle cx="470" cy="420" r="58" fill="#F7E7C6" stroke="#C88A22" stroke-width="2.5"/>
+                            <circle cx="470" cy="420" r="49" fill="none" stroke="#C88A22" stroke-width="1" stroke-dasharray="2 3.5"/>
+                            <text x="470" y="425" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="38" fill="#8A5A0B">+12 h</text>
+                            <g fill="none" stroke="#8A5A0B" stroke-width="1.6" stroke-linecap="round">
+                                <circle cx="470" cy="446" r="8"/><path d="M470 441v5l3.5 2"/>
                             </g>
-
-                            <!-- Redis -->
-                            <g transform="translate(168, 182)">
-                                <rect x="0" y="0" width="105" height="36" rx="5" fill="rgba(6,6,10,0.7)" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.75"/>
-                                <rect x="10" y="8" width="16" height="3" rx="1" fill="#FF5F56" opacity="0.6"/>
-                                <rect x="10" y="14" width="16" height="3" rx="1" fill="#FF5F56" opacity="0.5"/>
-                                <rect x="10" y="20" width="16" height="3" rx="1" fill="#FF5F56" opacity="0.4"/>
-                                <text x="34" y="20" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">Redis cache</text>
-                            </g>
-
-                            <!-- S3/Object Store -->
-                            <g transform="translate(310, 182)">
-                                <rect x="0" y="0" width="105" height="36" rx="5" fill="rgba(6,6,10,0.7)" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.75"/>
-                                <rect x="10" y="9" width="14" height="18" rx="2" fill="none" stroke="#FFBD2E" stroke-width="0.8" opacity="0.65"/>
-                                <line x1="13" y1="14" x2="21" y2="14" stroke="#FFBD2E" stroke-width="0.5" opacity="0.55"/>
-                                <line x1="13" y1="18" x2="19" y2="18" stroke="#FFBD2E" stroke-width="0.5" opacity="0.55"/>
-                                <text x="30" y="20" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">Object store</text>
-                            </g>
-
-                            <!-- Connection lines from message queue to data stores -->
-                            <line x1="100" y1="162" x2="75" y2="182" stroke="url(#heroGrad)" stroke-width="0.6" stroke-dasharray="2,3" opacity="0.45"/>
-                            <line x1="220" y1="162" x2="220" y2="182" stroke="url(#heroGrad)" stroke-width="0.6" stroke-dasharray="2,3" opacity="0.45"/>
-                            <line x1="340" y1="162" x2="365" y2="182" stroke="url(#heroGrad)" stroke-width="0.6" stroke-dasharray="2,3" opacity="0.45"/>
-                        </g>
-
-                        <!-- ═══ CI/CD Pipeline strip at bottom ═══ -->
-                        <g transform="translate(50, 490)">
-                            <rect x="0" y="0" width="420" height="22" rx="4" fill="rgba(39,201,63,0.04)" stroke="#27C93F" stroke-width="0.6" opacity="0.6"/>
-                            <!-- Pipeline stages -->
-                            <circle cx="40" cy="11" r="4" fill="#27C93F" opacity="0.7"/>
-                            <text x="52" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.65">build</text>
-                            <line x1="80" y1="11" x2="110" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.45"/>
-                            <circle cx="120" cy="11" r="4" fill="#27C93F" opacity="0.7"/>
-                            <text x="132" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.65">test</text>
-                            <line x1="152" y1="11" x2="182" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.45"/>
-                            <circle cx="192" cy="11" r="4" fill="#27C93F" opacity="0.7"/>
-                            <text x="204" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.65">scan</text>
-                            <line x1="230" y1="11" x2="260" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.45"/>
-                            <circle cx="270" cy="11" r="4" fill="#FFBD2E" opacity="0.7"/>
-                            <text x="282" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#FFBD2E" opacity="0.65">staging</text>
-                            <line x1="318" y1="11" x2="348" y2="11" stroke="#27C93F" stroke-width="0.5" opacity="0.45"/>
-                            <circle cx="358" cy="11" r="4" fill="#27C93F" opacity="0.7"/>
-                            <text x="370" y="14" font-family="JetBrains Mono, monospace" font-size="6" fill="#27C93F" opacity="0.65">deploy</text>
-                            <!-- Animated pipeline progress -->
-                            <rect x="0" y="20" width="420" height="2" rx="1" fill="rgba(255,255,255,0.03)"/>
-                            <rect x="0" y="20" width="0" height="2" rx="1" fill="url(#heroGrad)" opacity="0.75">
-                                <animate attributeName="width" values="0;420;0" dur="6s" repeatCount="indefinite"/>
-                            </rect>
-                        </g>
-
-                        <!-- ═══ Floating ambient elements ═══ -->
-                        <text x="8" y="52" font-family="JetBrains Mono, monospace" font-size="9" fill="url(#heroGrad)" opacity="0.15">kubectl apply -f</text>
-                        <text x="370" y="510" font-family="JetBrains Mono, monospace" font-size="9" fill="url(#heroGrad)" opacity="0.15">docker compose up</text>
-                        <text x="6" y="480" font-family="JetBrains Mono, monospace" font-size="8" fill="url(#heroGrad)" opacity="0.12">git push origin main</text>
+                        </g></g>
                     </svg>
                 </div>
             </div>
@@ -2195,42 +1825,42 @@
             </div>
             <div class="automate-grid">
                 <div class="automate-card reveal reveal-delay-1">
-                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></div>
+                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13.5" rx="2.5"/><path d="M3.8 7l8.2 5.8L20.2 7"/><circle class="accent-fill" cx="19.5" cy="5.5" r="3"/></svg></div>
                     <div>
                         <h3 data-i18n="automate.1.title">Email & customer enquiries</h3>
                         <p data-i18n="automate.1.desc">Sort, label and answer incoming enquiries automatically, and route the rest to the right person.</p>
                     </div>
                 </div>
                 <div class="automate-card reveal reveal-delay-2">
-                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6M10 17h6"/></svg></div>
+                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path class="accent" d="M9 13h7M9 16.5h4.5"/></svg></div>
                     <div>
                         <h3 data-i18n="automate.2.title">PDF & document processing</h3>
                         <p data-i18n="automate.2.desc">Read invoices, orders and forms, extract the data and put it where it belongs.</p>
                     </div>
                 </div>
                 <div class="automate-card reveal reveal-delay-3">
-                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 8a5 5 0 0 1 0 8M17 4v4h4"/></svg></div>
+                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5c.6-3 2.8-5 5.5-5s4.9 2 5.5 5"/><path class="accent" d="M15.5 8.5a3.5 3.5 0 1 1 1 4.9"/><path class="accent" d="M15.3 5.8v2.9h2.9"/></svg></div>
                     <div>
                         <h3 data-i18n="automate.3.title">CRM follow-up</h3>
                         <p data-i18n="automate.3.desc">Keep your CRM up to date and send timely follow-ups without manual copy-pasting.</p>
                     </div>
                 </div>
                 <div class="automate-card reveal reveal-delay-1">
-                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 4v16"/><path d="M13 17l2-3 2 2 2-4"/></svg></div>
+                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M3.5 9h17M9 9v11.5"/><path class="accent" d="M11.5 17l2.5-3 2 1.5 2.5-3.5"/></svg></div>
                     <div>
                         <h3 data-i18n="automate.4.title">Excel & reporting</h3>
                         <p data-i18n="automate.4.desc">Weekly and monthly reports that build themselves from your existing data.</p>
                     </div>
                 </div>
                 <div class="automate-card reveal reveal-delay-2">
-                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 8h6M9 12h4"/></svg></div>
+                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"/><path class="accent" d="M12 6.5l1 2.2 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3z"/></svg></div>
                     <div>
                         <h3 data-i18n="automate.5.title">Internal knowledge base</h3>
                         <p data-i18n="automate.5.desc">An AI assistant that answers staff questions from your own documents and procedures.</p>
                     </div>
                 </div>
                 <div class="automate-card reveal reveal-delay-3">
-                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6"/><path d="M9 16l1.5 1.5L14 15"/></svg></div>
+                    <div class="automate-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.3-2 1.3-2-1.3-2 1.3-2-1.3L6 21z"/><path d="M9 8h6M9 11.5h6"/><path class="accent" d="M9.5 15.5l1.6 1.5 3.4-3.5"/></svg></div>
                     <div>
                         <h3 data-i18n="automate.6.title">Quotes & onboarding</h3>
                         <p data-i18n="automate.6.desc">Generate quotes and run new-customer onboarding steps from a single trigger.</p>
@@ -2262,8 +1892,17 @@
                         <li><span data-i18n="roi.before.3">Updating the CRM</span><strong data-i18n="roi.before.3.hours">10 h/month</strong></li>
                     </ul>
                 </div>
-                <div class="roi-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="roi-arrow">
+                    <svg viewBox="0 0 200 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="33 hours a month before, about 13 hours after: 20 hours saved">
+                        <path d="M10 240h180" stroke="#12312B" stroke-width="1" opacity="0.3"/>
+                        <rect x="22" y="42" width="54" height="198" rx="6" fill="#CFC6B4"/>
+                        <rect x="96" y="162" width="54" height="78" rx="6" fill="#2F7D5B"/>
+                        <text x="49" y="30" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="24" fill="#12312B">33 h</text>
+                        <text x="123" y="150" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="24" fill="#1F5C42">≈13 h</text>
+                        <path d="M84 42h82" stroke="#C88A22" stroke-width="1.4" stroke-dasharray="3 4"/>
+                        <path d="M166 42v120M160 42h12M160 162h12" stroke="#C88A22" stroke-width="1.6" fill="none"/>
+                        <text transform="translate(188 102) rotate(90)" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#8A5A0B">−20 h</text>
+                    </svg>
                 </div>
                 <div class="roi-card roi-after reveal reveal-delay-2">
                     <span class="roi-card-label" data-i18n="roi.after.label">After EcoVibe</span>
@@ -2383,44 +2022,9 @@
                 <!-- Service 1: AI & Workflow Automation -->
                 <div class="service-card reveal reveal-delay-1">
                     <div class="service-icon">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Neural network nodes -->
-                            <!-- Input layer -->
-                            <circle cx="6" cy="10" r="2" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
-                            <circle cx="6" cy="16" r="2" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
-                            <circle cx="6" cy="22" r="2" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.4"/>
-                            <!-- Hidden layer 1 -->
-                            <circle cx="13" cy="8" r="2" fill="none" stroke="#00B4D8" stroke-width="0.8" opacity="0.5"/>
-                            <circle cx="13" cy="16" r="2" fill="none" stroke="#00B4D8" stroke-width="0.8" opacity="0.5"/>
-                            <circle cx="13" cy="24" r="2" fill="none" stroke="#00B4D8" stroke-width="0.8" opacity="0.5"/>
-                            <!-- Hidden layer 2 -->
-                            <circle cx="20" cy="10" r="2" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.5"/>
-                            <circle cx="20" cy="16" r="2.5" fill="rgba(0,153,255,0.1)" stroke="#0099FF" stroke-width="0.8" opacity="0.6"/>
-                            <circle cx="20" cy="22" r="2" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.5"/>
-                            <!-- Output -->
-                            <circle cx="27" cy="16" r="2.5" fill="rgba(0,212,170,0.15)" stroke="#00D4AA" stroke-width="1" opacity="0.6"/>
-                            <!-- Connections (selected, not all) -->
-                            <line x1="8" y1="10" x2="11" y2="8" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
-                            <line x1="8" y1="10" x2="11" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="8" y1="16" x2="11" y2="8" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="8" y1="16" x2="11" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
-                            <line x1="8" y1="16" x2="11" y2="24" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="8" y1="22" x2="11" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="8" y1="22" x2="11" y2="24" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
-                            <line x1="15" y1="8" x2="18" y2="10" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
-                            <line x1="15" y1="8" x2="18" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="15" y1="16" x2="18" y2="10" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="15" y1="16" x2="18" y2="16" stroke="url(#heroGrad)" stroke-width="0.5" opacity="0.25"/>
-                            <line x1="15" y1="16" x2="18" y2="22" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="15" y1="24" x2="18" y2="16" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.15"/>
-                            <line x1="15" y1="24" x2="18" y2="22" stroke="url(#heroGrad)" stroke-width="0.4" opacity="0.2"/>
-                            <line x1="22" y1="10" x2="25" y2="16" stroke="url(#heroGrad)" stroke-width="0.5" opacity="0.2"/>
-                            <line x1="22" y1="16" x2="25" y2="16" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.3"/>
-                            <line x1="22" y1="22" x2="25" y2="16" stroke="url(#heroGrad)" stroke-width="0.5" opacity="0.2"/>
-                            <!-- Signal pulse -->
-                            <circle r="1" fill="#00D4AA" opacity="0.6">
-                                <animateMotion dur="2s" repeatCount="indefinite" path="M6,16 L13,16 L20,16 L27,16"/>
-                            </circle>
+                        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="28" cy="28" r="28" fill="#E3EEE6"/>
+                            <g fill="none" stroke="#12312B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 25.5a11 11 0 0 1 19.3-6.3"/><path d="M37.5 14v5.5H32"/><path d="M38.5 30.5a11 11 0 0 1-19.3 6.3"/><path d="M18.5 42v-5.5H24"/><circle cx="28" cy="28" r="3.6" fill="#E0A23B" stroke="none"/></g>
                         </svg>
                     </div>
                     <h3 data-i18n="service.1.title">AI & Workflow Automation</h3>
@@ -2430,24 +2034,9 @@
                 <!-- Service 2: Custom Business Tools -->
                 <div class="service-card reveal reveal-delay-2">
                     <div class="service-icon">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Terminal window -->
-                            <rect x="3" y="5" width="26" height="22" rx="3" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" opacity="0.5"/>
-                            <rect x="3" y="5" width="26" height="6" rx="3" fill="rgba(0,212,170,0.08)"/>
-                            <circle cx="7" cy="8" r="1" fill="#FF5F56" opacity="0.7"/>
-                            <circle cx="10.5" cy="8" r="1" fill="#FFBD2E" opacity="0.7"/>
-                            <circle cx="14" cy="8" r="1" fill="#27C93F" opacity="0.7"/>
-                            <!-- Code lines -->
-                            <text x="6" y="16" font-family="monospace" font-size="3.5" fill="#C792EA" opacity="0.6">const</text>
-                            <text x="14.5" y="16" font-family="monospace" font-size="3.5" fill="#82AAFF" opacity="0.5">app</text>
-                            <text x="20" y="16" font-family="monospace" font-size="3.5" fill="rgba(240,240,245,0.3)">=</text>
-                            <line x1="6" y1="19" x2="22" y2="19" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.2"/>
-                            <line x1="8" y1="22" x2="20" y2="22" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.15"/>
-                            <line x1="6" y1="25" x2="16" y2="25" stroke="url(#heroGrad)" stroke-width="0.6" opacity="0.2"/>
-                            <!-- Cursor -->
-                            <rect x="16.5" y="24" width="1.5" height="3" fill="#00D4AA" opacity="0.5">
-                                <animate attributeName="opacity" values="0.5;0;0.5" dur="1.2s" repeatCount="indefinite"/>
-                            </rect>
+                        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="28" cy="28" r="28" fill="#E3EEE6"/>
+                            <g fill="none" stroke="#12312B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="14.5" y="16.5" width="27" height="23" rx="3"/><path d="M14.5 22.5h27"/><rect x="19" y="29" width="4" height="6" rx="1" fill="#E0A23B" stroke="none"/><path d="M27 35v-8M33 35v-4"/></g>
                         </svg>
                     </div>
                     <h3 data-i18n="service.2.title">Custom Business Tools</h3>
@@ -2457,20 +2046,9 @@
                 <!-- Service 3: Technology Advisory -->
                 <div class="service-card reveal reveal-delay-3">
                     <div class="service-icon">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Roadmap / strategy icon -->
-                            <path d="M6 6h20v20H6z" fill="none" stroke="url(#heroGrad)" stroke-width="1.2" rx="2" opacity="0.4"/>
-                            <line x1="6" y1="12" x2="26" y2="12" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.2"/>
-                            <line x1="6" y1="18" x2="26" y2="18" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.2"/>
-                            <line x1="16" y1="6" x2="16" y2="26" stroke="url(#heroGrad)" stroke-width="0.8" opacity="0.2"/>
-                            <!-- Strategy path -->
-                            <polyline points="9,22 12,16 18,14 22,9" fill="none" stroke="url(#heroGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="9" cy="22" r="1.5" fill="#00D4AA"/>
-                            <circle cx="12" cy="16" r="1.5" fill="#00B4D8"/>
-                            <circle cx="18" cy="14" r="1.5" fill="#0099FF"/>
-                            <circle cx="22" cy="9" r="1.5" fill="#0099FF"/>
-                            <!-- Target -->
-                            <circle cx="22" cy="9" r="3" fill="none" stroke="#00D4AA" stroke-width="0.6" opacity="0.4"/>
+                        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="28" cy="28" r="28" fill="#E3EEE6"/>
+                            <g fill="none" stroke="#12312B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="28" r="12.5"/><path d="M28 19l3.6 9h-7.2z" fill="#E0A23B" stroke="none"/><path d="M24.4 28h7.2L28 37z" fill="#12312B" stroke="none"/></g>
                         </svg>
                     </div>
                     <h3 data-i18n="service.3.title">Technology Advisory</h3>
@@ -2545,338 +2123,50 @@
         <div class="container">
             <div class="about-container">
                 <div class="about-left">
-                    <svg class="about-illustration" viewBox="0 0 440 540" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="archGrad" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="1.0"/>
-                                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.85"/>
-                            </linearGradient>
-                            <linearGradient id="archGrad2" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#00D4AA" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="transparent"/>
-                            </linearGradient>
-                            <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-                                <polygon points="0 0, 8 3, 0 6" fill="#00D4AA" opacity="0.8"/>
-                            </marker>
-                            <filter id="archGlow">
-                                <feGaussianBlur stdDeviation="2" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-
-                        <!-- Background subtle pattern -->
-                        <g opacity="0.08">
-                            <line x1="0" y1="90" x2="440" y2="90" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="180" x2="440" y2="180" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="270" x2="440" y2="270" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="360" x2="440" y2="360" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="0" y1="450" x2="440" y2="450" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="88" y1="0" x2="88" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="176" y1="0" x2="176" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="264" y1="0" x2="264" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
-                            <line x1="352" y1="0" x2="352" y2="540" stroke="#00D4AA" stroke-width="0.5"/>
+                    <svg class="about-illustration" viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Your existing email, spreadsheets, accounting and CRM stay in place, and EcoVibe connects them">
+                        <rect width="460" height="460" rx="28" fill="#EDE7DA"/>
+                        <g fill="none" stroke="#2F7D5B" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 7">
+                            <path d="M150 150C186 172 192 196 196 204"/>
+                            <path d="M310 150C274 172 268 196 264 204"/>
+                            <path d="M150 310C186 288 192 264 196 256"/>
+                            <path d="M310 310C274 288 268 264 264 256"/>
                         </g>
-
-                        <!-- ═══ LAYER 1: CLIENT TIER ═══ -->
-                        <g>
-                            <!-- Layer label -->
-                            <text x="20" y="28" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.7" letter-spacing="2">CLIENT TIER</text>
-                            <line x1="20" y1="34" x2="420" y2="34" stroke="#00D4AA" stroke-width="0.5" opacity="0.2"/>
-
-                            <!-- Browser clients -->
-                            <g transform="translate(20, 44)">
-                                <!-- Web app -->
-                                <rect x="0" y="0" width="120" height="52" rx="6" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="1" opacity="0.9"/>
-                                <rect x="0" y="0" width="120" height="16" rx="6" fill="rgba(255,255,255,0.02)"/>
-                                <circle cx="10" cy="8" r="2.5" fill="#FF5F56" opacity="0.5"/>
-                                <circle cx="19" cy="8" r="2.5" fill="#FFBD2E" opacity="0.5"/>
-                                <circle cx="28" cy="8" r="2.5" fill="#27C93F" opacity="0.5"/>
-                                <text x="60" y="11" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.55)">React + Next.js</text>
-                                <!-- Mini wireframe inside -->
-                                <rect x="6" y="20" width="108" height="4" rx="1" fill="rgba(0,212,170,0.35)"/>
-                                <rect x="6" y="28" width="52" height="18" rx="2" fill="rgba(0,212,170,0.15)"/>
-                                <rect x="62" y="28" width="52" height="18" rx="2" fill="rgba(0,153,255,0.15)"/>
-                                <rect x="8" y="30" width="30" height="2" rx="1" fill="rgba(240,240,245,0.3)"/>
-                                <rect x="8" y="35" width="45" height="1.5" rx="1" fill="rgba(240,240,245,0.15)"/>
-                                <rect x="8" y="39" width="38" height="1.5" rx="1" fill="rgba(240,240,245,0.15)"/>
-                                <rect x="64" y="30" width="24" height="2" rx="1" fill="rgba(240,240,245,0.3)"/>
-                                <rect x="64" y="35" width="40" height="1.5" rx="1" fill="rgba(240,240,245,0.15)"/>
-                            </g>
-
-                            <!-- Mobile app -->
-                            <g transform="translate(160, 44)">
-                                <rect x="0" y="0" width="120" height="52" rx="6" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="1" opacity="0.9"/>
-                                <!-- Phone frame -->
-                                <rect x="42" y="6" width="22" height="40" rx="4" fill="none" stroke="rgba(240,240,245,0.35)" stroke-width="0.8"/>
-                                <rect x="44" y="11" width="18" height="28" rx="1" fill="rgba(0,212,170,0.15)"/>
-                                <circle cx="53" cy="45" r="1.5" fill="none" stroke="rgba(240,240,245,0.25)" stroke-width="0.5"/>
-                                <rect x="46" y="14" width="14" height="2" rx="1" fill="rgba(0,212,170,0.35)"/>
-                                <rect x="46" y="19" width="10" height="1" rx="0.5" fill="rgba(240,240,245,0.22)"/>
-                                <rect x="46" y="22" width="14" height="8" rx="1" fill="rgba(0,153,255,0.2)"/>
-                                <rect x="46" y="33" width="8" height="1" rx="0.5" fill="rgba(240,240,245,0.18)"/>
-                                <!-- Tablet frame -->
-                                <rect x="72" y="10" width="32" height="36" rx="4" fill="none" stroke="rgba(240,240,245,0.25)" stroke-width="0.7"/>
-                                <rect x="74" y="14" width="28" height="26" rx="1" fill="rgba(0,153,255,0.12)"/>
-                                <text x="20" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.45)">React</text>
-                                <text x="20" y="38" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.45)">Native</text>
-                            </g>
-
-                            <!-- API consumers -->
-                            <g transform="translate(300, 44)">
-                                <rect x="0" y="0" width="120" height="52" rx="6" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="1" opacity="0.9"/>
-                                <text x="60" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.6)">3rd Party</text>
-                                <!-- API doc lines -->
-                                <text x="12" y="30" font-family="JetBrains Mono, monospace" font-size="5.5"><tspan fill="#C792EA" opacity="0.8">GET</tspan><tspan fill="rgba(240,240,245,0.45)"> /api/v2/data</tspan></text>
-                                <text x="12" y="40" font-family="JetBrains Mono, monospace" font-size="5.5"><tspan fill="#82AAFF" opacity="0.8">POST</tspan><tspan fill="rgba(240,240,245,0.45)"> /api/v2/sync</tspan></text>
-                                <text x="12" y="50" font-family="JetBrains Mono, monospace" font-size="5.5"><tspan fill="#FFCB6B" opacity="0.8">WS</tspan><tspan fill="rgba(240,240,245,0.45)"> /realtime</tspan></text>
-                            </g>
+                        <g transform="translate(34 46)">
+                            <rect width="124" height="100" rx="14" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <rect x="18" y="18" width="34" height="25" rx="5" fill="none" stroke="#12312B" stroke-width="1.8"/><path d="M19 20l16 11 16-11" fill="none" stroke="#12312B" stroke-width="1.8" stroke-linejoin="round"/>
+                            <rect x="18" y="68" width="70" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="18" y="80" width="46" height="5" rx="2.5" fill="#E2DCCF"/>
                         </g>
-
-                        <!-- ═══ Connection arrows: Client → Gateway ═══ -->
-                        <g opacity="0.6">
-                            <line x1="80" y1="96" x2="140" y2="120" stroke="url(#archGrad)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowhead)"/>
-                            <line x1="220" y1="96" x2="220" y2="120" stroke="url(#archGrad)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowhead)"/>
-                            <line x1="360" y1="96" x2="300" y2="120" stroke="url(#archGrad)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowhead)"/>
+                        <g transform="translate(302 46)">
+                            <rect width="124" height="100" rx="14" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <rect x="18" y="16" width="40" height="30" rx="4" fill="none" stroke="#12312B" stroke-width="1.8"/><path d="M18 26h40M18 36h40M31 16v30M44 16v30" stroke="#12312B" stroke-width="1.2"/><rect x="44" y="26" width="14" height="20" fill="#E3EEE6"/>
+                            <rect x="18" y="68" width="70" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="18" y="80" width="46" height="5" rx="2.5" fill="#E2DCCF"/>
                         </g>
-
-                        <!-- ═══ LAYER 2: EDGE / GATEWAY ═══ -->
-                        <g>
-                            <text x="20" y="118" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.7" letter-spacing="2">EDGE</text>
-
-                            <!-- Load balancer + CDN + WAF -->
-                            <g transform="translate(20, 126)">
-                                <rect x="0" y="0" width="400" height="40" rx="8" fill="rgba(0,153,255,0.04)" stroke="#0099FF" stroke-width="1" opacity="0.8"/>
-                                <!-- LB icon -->
-                                <g transform="translate(20, 8)">
-                                    <line x1="12" y1="0" x2="0" y2="12" stroke="#0099FF" stroke-width="0.8" opacity="0.8"/>
-                                    <line x1="12" y1="0" x2="24" y2="12" stroke="#0099FF" stroke-width="0.8" opacity="0.8"/>
-                                    <line x1="12" y1="0" x2="12" y2="12" stroke="#0099FF" stroke-width="0.8" opacity="0.8"/>
-                                    <circle cx="0" cy="14" r="3" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.7"/>
-                                    <circle cx="12" cy="14" r="3" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.7"/>
-                                    <circle cx="24" cy="14" r="3" fill="none" stroke="#0099FF" stroke-width="0.8" opacity="0.7"/>
-                                </g>
-                                <text x="58" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.65)">Load Balancer</text>
-                                <!-- Separator -->
-                                <line x1="150" y1="8" x2="150" y2="32" stroke="rgba(240,240,245,0.06)" stroke-width="1"/>
-                                <!-- CDN icon -->
-                                <circle cx="170" cy="20" r="8" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.65"/>
-                                <ellipse cx="170" cy="20" rx="8" ry="4" fill="none" stroke="#00D4AA" stroke-width="0.5" opacity="0.5"/>
-                                <line x1="162" y1="20" x2="178" y2="20" stroke="#00D4AA" stroke-width="0.5" opacity="0.5"/>
-                                <text x="185" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.65)">CDN</text>
-                                <!-- Separator -->
-                                <line x1="220" y1="8" x2="220" y2="32" stroke="rgba(240,240,245,0.06)" stroke-width="1"/>
-                                <!-- WAF -->
-                                <g transform="translate(236, 12)">
-                                    <rect x="0" y="0" width="14" height="16" rx="2" fill="none" stroke="#FFCB6B" stroke-width="0.8" opacity="0.65"/>
-                                    <line x1="3" y1="5" x2="11" y2="5" stroke="#FFCB6B" stroke-width="0.5" opacity="0.5"/>
-                                    <line x1="3" y1="8" x2="11" y2="8" stroke="#FFCB6B" stroke-width="0.5" opacity="0.5"/>
-                                    <line x1="3" y1="11" x2="8" y2="11" stroke="#FFCB6B" stroke-width="0.5" opacity="0.5"/>
-                                </g>
-                                <text x="258" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.65)">WAF</text>
-                                <!-- Separator -->
-                                <line x1="290" y1="8" x2="290" y2="32" stroke="rgba(240,240,245,0.06)" stroke-width="1"/>
-                                <!-- SSL -->
-                                <g transform="translate(306, 11)">
-                                    <rect x="2" y="6" width="10" height="10" rx="2" fill="none" stroke="#27C93F" stroke-width="0.8" opacity="0.7"/>
-                                    <path d="M4,6 L4,4 Q4,0 7,0 Q10,0 10,4 L10,6" fill="none" stroke="#27C93F" stroke-width="0.8" opacity="0.7"/>
-                                </g>
-                                <text x="324" y="24" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.65)">TLS 1.3</text>
-                                <!-- Status indicator -->
-                                <circle cx="388" cy="20" r="3" fill="#27C93F" opacity="0.7">
-                                    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite"/>
-                                </circle>
-                            </g>
+                        <g transform="translate(34 314)">
+                            <rect width="124" height="100" rx="14" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <text x="18" y="50" font-family="Instrument Serif, Georgia, serif" font-size="44" fill="#1F5C42">€</text><path d="M52 24h40M52 34h28" stroke="#E2DCCF" stroke-width="5" stroke-linecap="round"/>
+                            <rect x="18" y="68" width="70" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="18" y="80" width="46" height="5" rx="2.5" fill="#E2DCCF"/>
                         </g>
-
-                        <!-- ═══ Connection: Gateway → Services ═══ -->
-                        <g opacity="0.55">
-                            <line x1="120" y1="166" x2="80" y2="200" stroke="url(#archGrad)" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
-                            <line x1="220" y1="166" x2="220" y2="200" stroke="url(#archGrad)" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
-                            <line x1="320" y1="166" x2="360" y2="200" stroke="url(#archGrad)" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+                        <g transform="translate(302 314)">
+                            <rect width="124" height="100" rx="14" fill="#FFFDF8" stroke="#E2DCCF"/>
+                            <circle cx="34" cy="31" r="14" fill="#E3EEE6"/><circle cx="34" cy="27" r="4.5" fill="none" stroke="#1F5C42" stroke-width="1.6"/><path d="M26 39c1.4-3.6 4.4-5.4 8-5.4s6.6 1.8 8 5.4" fill="none" stroke="#1F5C42" stroke-width="1.6" stroke-linecap="round"/><path d="M58 26h40M58 36h26" stroke="#E2DCCF" stroke-width="5" stroke-linecap="round"/>
+                            <rect x="18" y="68" width="70" height="5" rx="2.5" fill="#E2DCCF"/>
+                            <rect x="18" y="80" width="46" height="5" rx="2.5" fill="#E2DCCF"/>
                         </g>
-
-                        <!-- Animated data packets -->
-                        <circle r="1.5" fill="#00D4AA" opacity="0.7">
-                            <animateMotion dur="2.5s" repeatCount="indefinite" path="M120,166 L80,200"/>
-                        </circle>
-                        <circle r="1.5" fill="#0099FF" opacity="0.7">
-                            <animateMotion dur="2s" repeatCount="indefinite" path="M220,166 L220,200"/>
-                        </circle>
-                        <circle r="1.5" fill="#00D4AA" opacity="0.7">
-                            <animateMotion dur="2.8s" repeatCount="indefinite" path="M320,166 L360,200"/>
-                        </circle>
-
-                        <!-- ═══ LAYER 3: SERVICES ═══ -->
-                        <g>
-                            <text x="20" y="198" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.7" letter-spacing="2">SERVICES</text>
-
-                            <!-- Kubernetes cluster outline -->
-                            <rect x="14" y="206" width="412" height="100" rx="10" fill="none" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="8,4" opacity="0.35"/>
-                            <text x="30" y="218" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.35)">☸ k8s cluster</text>
-
-                            <!-- Service pods -->
-                            <!-- Auth service -->
-                            <g transform="translate(24, 225)">
-                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.85"/>
-                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,212,170,0.04)"/>
-                                <circle cx="10" cy="7" r="2" fill="#27C93F" opacity="0.5"/>
-                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.7)">auth-svc</text>
-                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#C792EA" opacity="0.7">class</tspan><tspan fill="rgba(240,240,245,0.55)"> AuthGuard</tspan></text>
-                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.4)">  validate(jwt)</tspan></text>
-                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.4)">  refresh(token)</tspan></text>
-                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.3)">replicas: 3</text>
-                            </g>
-
-                            <!-- Core API -->
-                            <g transform="translate(124, 225)">
-                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.85"/>
-                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,212,170,0.04)"/>
-                                <circle cx="10" cy="7" r="2" fill="#27C93F" opacity="0.5"/>
-                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.7)">core-api</text>
-                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#FFCB6B" opacity="0.7">@Get</tspan><tspan fill="rgba(240,240,245,0.45)">(</tspan><tspan fill="#C3E88D" opacity="0.6">'/v2'</tspan><tspan fill="rgba(240,240,245,0.2)">)</tspan></text>
-                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.4)">  findAll(query)</tspan></text>
-                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.4)">  create(dto)</tspan></text>
-                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.3)">replicas: 5</text>
-                            </g>
-
-                            <!-- i18n Service -->
-                            <g transform="translate(224, 225)">
-                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.85"/>
-                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,153,255,0.04)"/>
-                                <circle cx="10" cy="7" r="2" fill="#27C93F" opacity="0.5"/>
-                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.7)">i18n-svc</text>
-                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.4)">locales:</text>
-                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#27C93F" opacity="0.6">✓</tspan><tspan fill="rgba(240,240,245,0.4)"> en nl zh de fr</tspan></text>
-                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.4)">  translate(key)</text>
-                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.3)">replicas: 2</text>
-                            </g>
-
-                            <!-- Worker/Queue processor -->
-                            <g transform="translate(326, 225)">
-                                <rect x="0" y="0" width="90" height="68" rx="5" fill="rgba(6,6,10,0.85)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.85"/>
-                                <rect x="0" y="0" width="90" height="14" rx="5" fill="rgba(0,153,255,0.04)"/>
-                                <circle cx="10" cy="7" r="2" fill="#FFBD2E" opacity="0.5"/>
-                                <text x="17" y="10" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.7)">worker</text>
-                                <text x="8" y="28" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#82AAFF" opacity="0.7">async</tspan><tspan fill="rgba(240,240,245,0.4)"> process()</tspan></text>
-                                <text x="8" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.4)">  queue.consume()</tspan></text>
-                                <text x="8" y="48" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="rgba(240,240,245,0.4)">  emit(result)</tspan></text>
-                                <text x="8" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(240,240,245,0.3)">replicas: 4</text>
-                            </g>
-                        </g>
-
-                        <!-- ═══ Event Bus ═══ -->
-                        <g transform="translate(20, 320)">
-                            <rect x="0" y="0" width="400" height="22" rx="4" fill="rgba(0,153,255,0.03)" stroke="#0099FF" stroke-width="0.6" stroke-dasharray="6,4" opacity="0.6"/>
-                            <text x="200" y="14" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#0099FF" opacity="0.55">──── event stream (Kafka / RabbitMQ) ────</text>
-                            <!-- Animated stream pulse -->
-                            <rect x="0" y="19" width="0" height="2" rx="1" fill="url(#archGrad)" opacity="0.55">
-                                <animate attributeName="width" values="0;400;0" dur="5s" repeatCount="indefinite"/>
-                            </rect>
-                        </g>
-
-                        <!-- ═══ Connection: Services → Event Bus ═══ -->
-                        <g opacity="0.45">
-                            <line x1="69" y1="293" x2="69" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
-                            <line x1="169" y1="293" x2="169" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
-                            <line x1="269" y1="293" x2="269" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
-                            <line x1="371" y1="293" x2="371" y2="320" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3"/>
-                        </g>
-
-                        <!-- ═══ Connection: Event Bus → Data ═══ -->
-                        <g opacity="0.45">
-                            <line x1="100" y1="342" x2="80" y2="370" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3" marker-end="url(#arrowhead)"/>
-                            <line x1="220" y1="342" x2="220" y2="370" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3" marker-end="url(#arrowhead)"/>
-                            <line x1="340" y1="342" x2="360" y2="370" stroke="url(#archGrad)" stroke-width="0.6" stroke-dasharray="2,3" marker-end="url(#arrowhead)"/>
-                        </g>
-
-                        <!-- ═══ LAYER 4: DATA TIER ═══ -->
-                        <g>
-                            <text x="20" y="366" font-family="JetBrains Mono, monospace" font-size="7" fill="#0099FF" opacity="0.7" letter-spacing="2">DATA TIER</text>
-
-                            <!-- PostgreSQL -->
-                            <g transform="translate(20, 376)">
-                                <rect x="0" y="0" width="120" height="46" rx="5" fill="rgba(6,6,10,0.8)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.8"/>
-                                <ellipse cx="18" cy="14" rx="9" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.6"/>
-                                <line x1="9" y1="14" x2="9" y2="30" stroke="#00D4AA" stroke-width="0.8" opacity="0.6"/>
-                                <line x1="27" y1="14" x2="27" y2="30" stroke="#00D4AA" stroke-width="0.8" opacity="0.6"/>
-                                <ellipse cx="18" cy="30" rx="9" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.8" opacity="0.6"/>
-                                <ellipse cx="18" cy="22" rx="9" ry="5" fill="none" stroke="#00D4AA" stroke-width="0.5" opacity="0.4"/>
-                                <text x="38" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">PostgreSQL</text>
-                                <text x="38" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.4)">primary + replica</text>
-                            </g>
-
-                            <!-- Redis -->
-                            <g transform="translate(160, 376)">
-                                <rect x="0" y="0" width="120" height="46" rx="5" fill="rgba(6,6,10,0.8)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.8"/>
-                                <rect x="8" y="10" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.5"/>
-                                <rect x="8" y="17" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.4"/>
-                                <rect x="8" y="24" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.3"/>
-                                <rect x="8" y="31" width="20" height="4" rx="1" fill="#FF5F56" opacity="0.22"/>
-                                <text x="36" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">Redis</text>
-                                <text x="36" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.4)">cache + session</text>
-                            </g>
-
-                            <!-- Elasticsearch / S3 -->
-                            <g transform="translate(300, 376)">
-                                <rect x="0" y="0" width="120" height="46" rx="5" fill="rgba(6,6,10,0.8)" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.8"/>
-                                <g opacity="0.55" transform="translate(8, 8)">
-                                    <circle cx="10" cy="10" r="8" fill="none" stroke="#FFBD2E" stroke-width="0.8"/>
-                                    <line x1="16" y1="16" x2="22" y2="22" stroke="#FFBD2E" stroke-width="0.8"/>
-                                </g>
-                                <text x="36" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(240,240,245,0.6)">Elastic</text>
-                                <text x="36" y="30" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(240,240,245,0.4)">search + logs</text>
-                            </g>
-                        </g>
-
-                        <!-- ═══ LAYER 5: INFRA / OBSERVABILITY ═══ -->
-                        <g>
-                            <text x="20" y="442" font-family="JetBrains Mono, monospace" font-size="7" fill="#00D4AA" opacity="0.7" letter-spacing="2">OBSERVABILITY</text>
-
-                            <g transform="translate(20, 452)">
-                                <rect x="0" y="0" width="400" height="36" rx="6" fill="rgba(6,6,10,0.7)" stroke="url(#archGrad)" stroke-width="0.6" opacity="0.6"/>
-
-                                <!-- Grafana-like mini chart -->
-                                <polyline points="16,24 26,18 36,22 46,14 56,20 66,12 76,16 86,10 96,14" fill="none" stroke="#00D4AA" stroke-width="1" opacity="0.6"/>
-                                <text x="106" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.5)">Grafana</text>
-
-                                <line x1="152" y1="6" x2="152" y2="30" stroke="rgba(240,240,245,0.05)" stroke-width="1"/>
-
-                                <!-- Prometheus -->
-                                <circle cx="172" cy="18" r="6" fill="none" stroke="#FF5F56" stroke-width="0.8" opacity="0.5"/>
-                                <circle cx="172" cy="18" r="2" fill="#FF5F56" opacity="0.4"/>
-                                <text x="184" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.5)">Prometheus</text>
-
-                                <line x1="248" y1="6" x2="248" y2="30" stroke="rgba(240,240,245,0.05)" stroke-width="1"/>
-
-                                <!-- Jaeger tracing -->
-                                <g transform="translate(260, 12)" opacity="0.5">
-                                    <rect x="0" y="0" width="18" height="3" rx="1" fill="#00D4AA"/>
-                                    <rect x="4" y="5" width="14" height="3" rx="1" fill="#0099FF"/>
-                                    <rect x="8" y="10" width="10" height="3" rx="1" fill="#C792EA"/>
-                                </g>
-                                <text x="284" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.5)">Tracing</text>
-
-                                <line x1="328" y1="6" x2="328" y2="30" stroke="rgba(240,240,245,0.05)" stroke-width="1"/>
-
-                                <!-- Alerts -->
-                                <text x="342" y="15" font-family="JetBrains Mono, monospace" font-size="8" fill="#27C93F" opacity="0.5">✓</text>
-                                <text x="356" y="20" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.5)">0 alerts</text>
-                            </g>
-                        </g>
-
-                        <!-- ═══ Region labels (bottom) ═══ -->
-                        <g transform="translate(20, 502)">
-                            <rect x="0" y="0" width="400" height="26" rx="5" fill="rgba(0,212,170,0.02)" stroke="url(#archGrad)" stroke-width="0.4" opacity="0.45"/>
-                            <text x="14" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.4)">regions:</text>
-                            <rect x="62" y="5" width="60" height="16" rx="3" fill="rgba(0,212,170,0.15)"/>
-                            <text x="68" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#00D4AA" opacity="0.65">eu-west-1</text>
-                            <rect x="130" y="5" width="60" height="16" rx="3" fill="rgba(0,153,255,0.12)"/>
-                            <text x="136" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#0099FF" opacity="0.55">eu-west-2</text>
-                            <rect x="198" y="5" width="66" height="16" rx="3" fill="rgba(0,153,255,0.12)"/>
-                            <text x="204" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#0099FF" opacity="0.55">us-east-1</text>
-                            <rect x="272" y="5" width="66" height="16" rx="3" fill="rgba(0,153,255,0.12)"/>
-                            <text x="278" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="#0099FF" opacity="0.55">ap-south-1</text>
-                            <text x="352" y="16" font-family="JetBrains Mono, monospace" font-size="6" fill="rgba(240,240,245,0.3)">multi-AZ</text>
+                        <circle cx="230" cy="230" r="64" fill="none" stroke="#2F7D5B" stroke-width="1.2" stroke-dasharray="2 5" opacity="0.6"/>
+                        <circle cx="230" cy="230" r="46" fill="#12312B"/>
+                        <g transform="translate(206 206) scale(1.5)">
+    <rect x="8" y="7" width="3.5" height="18" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="7" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="14.5" width="10" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="22" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <circle cx="23.5" cy="16" r="2.2" fill="#6DBF95"/>
+</g>
+                        <g fill="#E0A23B">
+                            <circle cx="196" cy="204" r="4"/><circle cx="264" cy="204" r="4"/>
+                            <circle cx="196" cy="256" r="4"/><circle cx="264" cy="256" r="4"/>
                         </g>
                     </svg>
                 </div>
@@ -2889,9 +2179,7 @@
                     <div class="features-grid">
                         <div class="feature-item reveal reveal-delay-1">
                             <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5m-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11m3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-                                </svg>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M19.5 9H20a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v2.5L16 18h-3"/></svg>
                             </div>
                             <div class="feature-content">
                                 <h4 data-i18n="feature.speed.title">Direct contact</h4>
@@ -2901,9 +2189,7 @@
 
                         <div class="feature-item reveal reveal-delay-2">
                             <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 4h7v7H4V4m9 0h7v7h-7V4M4 13h7v7H4v-7m9 0h7v7h-7v-7"/>
-                                </svg>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/></svg>
                             </div>
                             <div class="feature-content">
                                 <h4 data-i18n="feature.elastic.title">Works with your existing tools</h4>
@@ -2913,9 +2199,7 @@
 
                         <div class="feature-item reveal reveal-delay-3">
                             <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4m0 18c-4.1-1.2-7-5.2-7-9.5V6.5L12 3l7 3.5v3.5c0 4.3-2.9 8.3-7 9.5"/>
-                                </svg>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12V4.5A1.5 1.5 0 0 1 4.5 3H12l9 9-8.5 8.5z"/><circle cx="7.5" cy="7.5" r="1.4"/><path d="M10.5 13.5l2 2 4-4"/></svg>
                             </div>
                             <div class="feature-content">
                                 <h4 data-i18n="feature.security.title">Fixed price, agreed upfront</h4>
@@ -2929,7 +2213,7 @@
     </section>
 
     <!-- Credentials Section -->
-    <section class="credentials" style="position: relative; z-index: 2;">
+    <section class="credentials">
         <div class="container">
             <p class="credentials-lead reveal" data-i18n="cred.lead">Built by an experienced Tech Lead based in the Netherlands.</p>
             <ul class="credentials-list reveal">
@@ -2980,10 +2264,7 @@
                 </div>
 
                 <button type="submit" class="btn-primary">
-                    <span data-i18n="form.submit">Request a Call</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 10h11M11 3l7 7-7 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <span data-i18n="form.submit">Book an Automation Scan</span>
                 </button>
             </form>
         </div>
@@ -2993,6 +2274,24 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <div class="logo-mark">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="32" height="32" rx="8" fill="#12312B"/>
+                        <g transform="translate(0 0) scale(1.0)">
+    <rect x="8" y="7" width="3.5" height="18" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="7" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="14.5" width="10" height="3" rx="1" fill="#F6F3EC"/>
+    <rect x="8" y="22" width="14" height="3" rx="1" fill="#F6F3EC"/>
+    <circle cx="23.5" cy="16" r="2.2" fill="#6DBF95"/>
+</g>
+                    </svg>
+                        </div>
+                        <span>EcoVibe</span>
+                    </a>
+                    <p data-i18n="hero.lead">AI automation and custom digital solutions for Dutch SMEs.</p>
+                </div>
                 <div class="footer-col">
                     <h4>Product</h4>
                     <ul>
@@ -3019,8 +2318,8 @@
 
             <div class="footer-bottom">
                 <p class="footer-copyright" data-i18n="footer.copyright">© 2026 EcoVibe. All rights reserved.</p>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);" data-i18n="footer.email">Email: <a href="mailto:info@ecovibe.space" style="color: var(--accent-start); text-decoration: none;">info@ecovibe.space</a></p>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); opacity: 0.6; margin-top: 0.5rem;" data-i18n="footer.kvk">EcoVibe · KVK 95066675 · Netherlands</p>
+                <p data-i18n="footer.email">Email: <a href="mailto:info@ecovibe.space">info@ecovibe.space</a></p>
+                <p data-i18n="footer.kvk">EcoVibe · KVK 95066675 · Netherlands</p>
             </div>
         </div>
     </footer>
@@ -3135,7 +2434,7 @@
                 'footer.legal.privacy': 'Privacy Policy',
                 'footer.legal.terms': 'Terms of Service',
                 'footer.copyright': '© 2026 EcoVibe. All rights reserved.',
-                'footer.email': 'Email: <a href="mailto:info@ecovibe.space" style="color: var(--accent-start); text-decoration: none;">info@ecovibe.space</a>',
+                'footer.email': 'Email: <a href="mailto:info@ecovibe.space">info@ecovibe.space</a>',
                 'footer.kvk': 'EcoVibe · KVK 95066675 · Netherlands',
                 'services.label': 'What We Do',
                 'services.title': 'Three Ways We <span class="gradient-text">Help</span>',
@@ -3302,7 +2601,7 @@
                 'footer.legal.privacy': '隐私政策',
                 'footer.legal.terms': '服务条款',
                 'footer.copyright': '© 2026 EcoVibe. 保留所有权利。',
-                'footer.email': '电子邮箱：<a href="mailto:info@ecovibe.space" style="color: var(--accent-start); text-decoration: none;">info@ecovibe.space</a>',
+                'footer.email': '电子邮箱：<a href="mailto:info@ecovibe.space">info@ecovibe.space</a>',
                 'footer.kvk': 'EcoVibe · KVK 95066675 · 荷兰',
                 'services.label': '我们做什么',
                 'services.title': '我们提供的<span class="gradient-text">三项服务</span>',
@@ -3469,7 +2768,7 @@
                 'footer.legal.privacy': 'Privacybeleid',
                 'footer.legal.terms': 'Algemene Voorwaarden',
                 'footer.copyright': '© 2026 EcoVibe. Alle rechten voorbehouden.',
-                'footer.email': 'E-mail: <a href="mailto:info@ecovibe.space" style="color: var(--accent-start); text-decoration: none;">info@ecovibe.space</a>',
+                'footer.email': 'E-mail: <a href="mailto:info@ecovibe.space">info@ecovibe.space</a>',
                 'footer.kvk': 'EcoVibe · KVK 95066675 · Nederland',
                 'services.label': 'Wat We Doen',
                 'services.title': 'Drie Manieren Waarop We <span class="gradient-text">Helpen</span>',
@@ -3679,6 +2978,24 @@
 
             window.location.href = mailtoLink;
             contactForm.reset();
+        });
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.setAttribute('aria-label', 'Menu');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', String(open));
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
         });
 
         // Package CTAs preselect the matching option in the contact form
