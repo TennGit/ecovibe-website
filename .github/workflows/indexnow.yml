@@ -1,0 +1,30 @@
+# After each GitHub Pages deploy, tell IndexNow search engines (Bing, Yandex,
+# Seznam, Naver, ...) to recrawl every URL in the sitemap.
+# The key file at the site root proves ownership of the domain.
+name: Notify search engines
+
+on:
+  page_build:
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    if: github.event_name == 'workflow_dispatch' || github.event.build.status == 'built'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          HOST: www.ecovibe.space
+          KEY: 765995b886114be0d08ce5e49bf352ce
+        run: |
+          urls=$(grep -o '<loc>[^<]*' sitemap.xml | sed 's/<loc>//' | jq -R . | jq -s .)
+          body=$(jq -n --arg host "$HOST" --arg key "$KEY" --argjson urls "$urls" \
+            '{host: $host, key: $key, keyLocation: "https://\($host)/\($key).txt", urlList: $urls}')
+          echo "$body"
+          status=$(curl -s -o response.txt -w '%{http_code}' -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' -d "$body")
+          echo "IndexNow responded $status"; cat response.txt
+          # 200 = accepted, 202 = accepted while the key is being verified
+          [ "$status" = 200 ] || [ "$status" = 202 ]
